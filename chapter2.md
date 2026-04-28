@@ -282,12 +282,7 @@ Objetivo: descubrir nivel de compromiso, detalle en el cuidado y apertura a usar
 
 ### 2.2.2. Registro de entrevistas. 
 
-Las entrevitas están agrupadas en el siguiente link subido a Stream de Office: 
-[Link Entrevistas](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20181b152_upc_edu_pe/EYpd3umB9VZGiPRW58fSYIkB-otn2hpbIBkBy8tHaQd2YA?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=cEw7m9)
-
 ##### Segmento 1: Personas ocupadas (departamentos/oficinas)
-
-[![image.png](https://i.postimg.cc/T3KwXGD4/image.png)](https://postimg.cc/75yDgFX3)
 
 **Entrevistado:** Oscar <br>
 **Sexo:** Masculino <br>
@@ -306,8 +301,6 @@ En términos tecnológicos, Oscar se considera un usuario intermedio, habituado 
 Sus canales de interacción preferidos son las notificaciones móviles y, en menor medida, apps con interfaces simples y visuales. Utiliza Google Chrome como navegador principal, pero su consumo digital está centrado en la practicidad y el cumplimiento de tareas. No tiene lealtad hacia marcas específicas, pero valora la simplicidad, funcionalidad y bajo costo. Aunque no mencionó explícitamente estar dispuesto a pagar por una solución, valoraría una herramienta que lo ayude a mantener sus plantas sin añadirle estrés adicional.
 
 ---
-[![image.png](https://i.ibb.co/MyyNDg2t/Captura-de-pantalla-2025-09-12-222330.png)](https://ibb.co/xKK5S2CB)
-
 
 **Entrevistado:** Stefano <br>
 **Sexo:** Masculino <br>
@@ -319,10 +312,8 @@ Sus canales de interacción preferidos son las notificaciones móviles y, en men
 **Resumen de la Entrevista:** <br>
 Stefano nos cuenta que le gusta tener plantas en su casa, ya que considera que aportan un aspecto diferente y agradable al ambiente, dándole vida y frescura a su hogar. Disfruta de verlas crecer y mantener un espacio verde, pues le transmiten calma y equilibrio. Sin embargo, reconoce que actualmente, debido a su rutina laboral exigente y a la falta de tiempo libre, no puede dedicarles la atención que desearía. Entre las mayores dificultades que enfrenta se encuentran la falta de tiempo, el cansancio y el estrés acumulado por su jornada laboral, factores que lo llevan a olvidar con frecuencia regarlas o brindarles el mantenimiento necesario, lo que en ocasiones afecta su estado.
 Por ello, considera que la solución PlantCare sería de gran ayuda para él, ya que le permitiría monitorear el estado de sus plantas y recibir recordatorios automáticos sin tener que preocuparse constantemente por hacerlo de forma manual. Valora especialmente la posibilidad de contar con un sistema que automatice o facilite el riego y el seguimiento, ayudándole a mantener sus plantas saludables incluso en momentos de alta carga de trabajo. Además, comenta que utiliza principalmente su celular (iPhone), computadora y laptop, lo que demuestra que tiene un buen manejo de la tecnología y estaría dispuesto a integrar una aplicación digital a su rutina diaria siempre que esta sea intuitiva, práctica y visualmente atractiva. En general, Stefano representa el perfil de un usuario ocupado que busca una solución tecnológica confiable y eficiente para mantener su hogar verde sin descuidar sus responsabilidades laborales.
+
 ---
-
-[![Captura-de-pantalla-2025-10-09-191408.png](https://i.postimg.cc/ry4KFp0L/Captura-de-pantalla-2025-10-09-191408.png)](https://postimg.cc/F199TNVP)
-
 
 **Entrevistado:** Arturo <br>
 **Sexo:** Masculino <br>
@@ -337,8 +328,6 @@ Arturo nos comenta que le gusta cuidar sus plantas, nos comenta que hay ocasione
 
 ---
 ##### Segmento 2: Aficionados que cuidan varias macetas en casa
-
-[![Interview-Image.jpg](https://i.postimg.cc/XvqWz2Sh/Interview-Image.jpg)](https://postimg.cc/yDM2JyNX)
 
 **Entrevistado:** Ana <br>
 **Sexo:** Femenino <br>
@@ -356,8 +345,6 @@ En cuanto a su perfil tecnológico, Ana emplea con mayor frecuencia su ordenador
 
 ---
 
-[![entrevista.png](https://i.postimg.cc/qqxpHLzb/entrevista.png)](https://postimg.cc/hQvk9V8T)
-
 **Entrevistado:** Vasco <br>
 **Sexo:** Masculino <br>
 **Edad:** 24 años<br>
@@ -374,8 +361,6 @@ Le interesa contar con una solución digital sencilla, visual y accesible que pe
 
 ---
 
-[![image.png](https://i.postimg.cc/fbxTw0pp/image.png)](https://postimg.cc/Y4CwRjpz)
-
 **Entrevistado:** Maria Sedamano <br>
 **Sexo:** Femenino <br>
 **Edad:** 50 años<br>
@@ -390,7 +375,6 @@ Usa Instagram y WhatsApp con frecuencia, principalmente desde su Iphone, y naveg
 No se considera una persona muy tecnológica, pero tiene disposición para aprender si la herramienta es clara. Prefiere interactuar mediante notificaciones o recordatorios visuales y valora un diseño intuitivo y amigable.
 
 ---
-[![entrevistadsad.png](https://i.postimg.cc/zf6LgmMJ/entrevistadsad.png)](https://postimg.cc/94PX6kCS)
 
 **Entrevistado:** Natalia Ramirez <br>
 **Sexo:** Femenino <br>
@@ -529,7 +513,6 @@ En el siguiente Empathy Map observamos a Luz Ramos, una mujer que vive en casa c
 [https://uxpressia.com/w/KPfTT/p/MY9Lq](https://uxpressia.com/w/KPfTT/p/MY9Lq)
 
 [![Luz-Ramos-3.png](https://i.postimg.cc/5tS98Gfm/Luz-Ramos-3.png)](https://postimg.cc/t17HjBZ1)
-## 2.4. Big Picture EventStorming.
 
 Es un taller colaborativo diseñado para que un grupo de personas (desarrolladores, expertos en el negocio, gerentes de producto, etc.) exploren y entiendan un dominio de negocio complejo de manera rápida.
 
@@ -600,7 +583,7 @@ Al cierre de la sesión, se evalúan los logros alcanzados:
 - El surgimiento de un lenguaje común entre los participantes, que facilita la comunicación 
 - técnica y operativa en futuras etapas.
 
-## 2.5. Ubiquitous Language.
+## 2.4. Ubiquitous Language.
 
 | **Term**                             | **Definition** |
 |--------------------------------------|----------------|
