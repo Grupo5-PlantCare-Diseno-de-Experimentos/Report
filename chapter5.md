@@ -452,10 +452,10 @@ A continuación, se presentan las evidencias visuales del avance obtenido y un v
 [![image.png](https://i.postimg.cc/fTXXFKjX/image.png)](https://postimg.cc/yk1k30GY)
 [![image.png](https://i.postimg.cc/Nfh21Xq6/image.png)](https://postimg.cc/6T0QKyQq)
 
-
+link de ñla landing pague y web service: https://grupo5-plantcare-diseno-de-experimentos.github.io/LandingPage/
 
 #### 5.2.1.7. Services Documentation Evidence for Sprint Review.
-No hay services para este sprint porque se usó fake-api para el desarrollo de este sprint.
+se uso supabase como serveles backend para la documentacion de la api <a href="https://ibb.co/xqXdKJJ3"><img src="https://i.ibb.co/8gNtn66X/Captura-de-pantalla-2026-04-28-152754.png" alt="Captura-de-pantalla-2026-04-28-152754" border="0"></a>
 
 #### 5.2.1.8. Software Deployment Evidence for Sprint Review.
 
@@ -483,6 +483,9 @@ Esta aplicación consume los datos proporcionados por la Fake API previamente de
 *Evidencia del despliegue:*
 [![Imagen-de-Whats-App-2025-10-09-a-las-16-34-15-44fbe4e1.jpg](https://i.postimg.cc/3rGdJw4d/Imagen-de-Whats-App-2025-10-09-a-las-16-34-15-44fbe4e1.jpg)](https://postimg.cc/XXVVs4gb)
 [![image.png](https://i.postimg.cc/XqjhhJtm/image.png)](https://postimg.cc/XGPQBVjk)
+
+
+link del deslpliegue: https://grupo5-plantcare-diseno-de-experimentos.github.io/LandingPage/
 
 #### 5.2.1.9. Team Collaboration Insights during Sprint.
 
