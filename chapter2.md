@@ -228,7 +228,7 @@ Es una maceta inteligente de gama premium que incorpora sensores de humedad, tem
 - Modelo de negocio **flexible** con planes gratuitos, premium y agrícolas.  
 - Posicionamiento como **aliado verde** (sostenibilidad + ahorro de agua).  
 
----
+
 
 **Tácticas frente a competidores**
 
@@ -300,7 +300,7 @@ En términos tecnológicos, Oscar se considera un usuario intermedio, habituado 
 
 Sus canales de interacción preferidos son las notificaciones móviles y, en menor medida, apps con interfaces simples y visuales. Utiliza Google Chrome como navegador principal, pero su consumo digital está centrado en la practicidad y el cumplimiento de tareas. No tiene lealtad hacia marcas específicas, pero valora la simplicidad, funcionalidad y bajo costo. Aunque no mencionó explícitamente estar dispuesto a pagar por una solución, valoraría una herramienta que lo ayude a mantener sus plantas sin añadirle estrés adicional.
 
----
+
 
 **Entrevistado:** Stefano <br>
 **Sexo:** Masculino <br>
@@ -313,7 +313,7 @@ Sus canales de interacción preferidos son las notificaciones móviles y, en men
 Stefano nos cuenta que le gusta tener plantas en su casa, ya que considera que aportan un aspecto diferente y agradable al ambiente, dándole vida y frescura a su hogar. Disfruta de verlas crecer y mantener un espacio verde, pues le transmiten calma y equilibrio. Sin embargo, reconoce que actualmente, debido a su rutina laboral exigente y a la falta de tiempo libre, no puede dedicarles la atención que desearía. Entre las mayores dificultades que enfrenta se encuentran la falta de tiempo, el cansancio y el estrés acumulado por su jornada laboral, factores que lo llevan a olvidar con frecuencia regarlas o brindarles el mantenimiento necesario, lo que en ocasiones afecta su estado.
 Por ello, considera que la solución PlantCare sería de gran ayuda para él, ya que le permitiría monitorear el estado de sus plantas y recibir recordatorios automáticos sin tener que preocuparse constantemente por hacerlo de forma manual. Valora especialmente la posibilidad de contar con un sistema que automatice o facilite el riego y el seguimiento, ayudándole a mantener sus plantas saludables incluso en momentos de alta carga de trabajo. Además, comenta que utiliza principalmente su celular (iPhone), computadora y laptop, lo que demuestra que tiene un buen manejo de la tecnología y estaría dispuesto a integrar una aplicación digital a su rutina diaria siempre que esta sea intuitiva, práctica y visualmente atractiva. En general, Stefano representa el perfil de un usuario ocupado que busca una solución tecnológica confiable y eficiente para mantener su hogar verde sin descuidar sus responsabilidades laborales.
 
----
+
 
 **Entrevistado:** Arturo <br>
 **Sexo:** Masculino <br>
@@ -326,7 +326,8 @@ Por ello, considera que la solución PlantCare sería de gran ayuda para él, ya
 Arturo nos comenta que le gusta cuidar sus plantas, nos comenta que hay ocasiones en las que olvida regar sus plantas, lo cual le genera tristesa ya que le gusta mucho el aspecto que tiene las mismas en su apartamento y en su oficina. Le dedica dairiamente 30 min al cuidado de sus plantas, debido a la importancia que le da, ya que para el significan vida, como algo simbolico. El para recordar cuidarlas, usa el recordatorio de su celular, pero en ocasiones, no recuerda hacerlo , por mas que el celular le avise. El esta muy abierto al hecho de usar una app IOT que le ayude al cuidado de sus plantas, estando abierto tambien a la posibilidad de pagar un monto moderable por la membresia de la app. 
 
 
----
+
+
 ##### Segmento 2: Aficionados que cuidan varias macetas en casa
 
 **Entrevistado:** Ana <br>
@@ -343,7 +344,7 @@ Le resulta sumamente beneficiosa una aplicación que le permita registrar el des
 
 En cuanto a su perfil tecnológico, Ana emplea con mayor frecuencia su ordenador portátil con Windows y su teléfono inteligente Android de Samsung, utilizando en su mayoría Google Chrome para hacer búsquedas en línea. Usa estos dispositivos principalmente para su labor docente, lo que resalta su habilidad con las herramientas digitales y su disposición para emplear nuevas aplicaciones que sean fáciles de usar, efectivas y visualmente atractivas. Ana es una usuaria que se dedica a la prevención, la educación y el cuidado consciente de sus plantas, todo esto apoyado por la tecnología.
 
----
+
 
 **Entrevistado:** Vasco <br>
 **Sexo:** Masculino <br>
@@ -359,7 +360,7 @@ Utiliza con frecuencia su laptop con Windows y su smartphone Redmi 13C, navegand
 
 Le interesa contar con una solución digital sencilla, visual y accesible que permita llevar un historial del estado de sus plantas, mostrar estadísticas de humedad y ofrecer alertas personalizadas de riego basadas en el clima local. Prefiere un modelo de compra única de hardware antes que una suscripción mensual. Su perfil representa a un usuario joven, urbano y ambientalista que busca integrar la tecnología en su rutina diaria de manera práctica y sin complicaciones.
 
----
+
 
 **Entrevistado:** Maria Sedamano <br>
 **Sexo:** Femenino <br>
@@ -374,7 +375,7 @@ En cuanto a su personalidad, se muestra organizada, paciente y dedicada, con un 
 Usa Instagram y WhatsApp con frecuencia, principalmente desde su Iphone, y navega en Safari.
 No se considera una persona muy tecnológica, pero tiene disposición para aprender si la herramienta es clara. Prefiere interactuar mediante notificaciones o recordatorios visuales y valora un diseño intuitivo y amigable.
 
----
+
 
 **Entrevistado:** Natalia Ramirez <br>
 **Sexo:** Femenino <br>
@@ -390,7 +391,7 @@ En cuanto a tecnología, no se identifica como una usuaria experta, aunque utili
 
 No tiene afinidad marcada por marcas específicas, pero se muestra receptiva a opciones reconocidas que transmitan confianza. Está dispuesta a pagar una suscripción si la solución le resulta útil, clara y fácil de usar. Su apertura tecnológica está influenciada por la búsqueda de aprendizaje y mejora en el cuidado de sus plantas, más que por tendencias o modas.
 
----
+
 ### 2.2.3. Análisis de entrevistas. 
 
 __Analisis De Entrevista Segmento 1:__

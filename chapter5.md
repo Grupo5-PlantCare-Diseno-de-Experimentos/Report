@@ -42,7 +42,7 @@ Para el manejo del proyecto se usará las siguientes herramientas que son clave 
 | **Supabase** | Serveles backend facilita el uso para prototipos o MPVS. | [https://www.supabase.com/](https://www.supabase.com/) |
 
 
----
+
 <div style="page-break-after: always;"></div>
 
 **Herramientas de Desarrollo**
@@ -131,7 +131,7 @@ El equipo ha definido una serie de convenciones y guías de estilo para asegurar
 - Los nombres de archivos deberán emplear **minúsculas y guiones medios (kebab-case)** para HTML, CSS y JavaScript.
 - Se evitarán abreviaciones innecesarias y nombres ambiguos.
 
----
+
 
 ### Convenciones por Lenguaje
 

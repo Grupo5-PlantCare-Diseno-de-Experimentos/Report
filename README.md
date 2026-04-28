@@ -15,24 +15,24 @@ Séptimo Ciclo (07)
 <img src="https://img.shields.io/badge/Año-2026-red?style=flat-square">
 </p>
 
----
+
 
 <h1 align="center">📘 Informe de Trabajo Final</h1>
 
 <p align="center"><i>Diseño de Experimentos de Ingeniería de Software</i></p>
 
----
+
 
 <center>
 <table>
 <tr><td><b>Profesor</b></td><td>Julio Manuel Noriega Melendez</td></tr>
-<tr><td><b>NRC</b></td><td>____________</td></tr>
+<tr><td><b>NRC</b></td><td>12316</td></tr>
 <tr><td><b>Startup</b></td><td>PlantCare</td></tr>
 <tr><td><b>Producto</b></td><td>PlantCare</td></tr>
 </table>
 </center>
 
----
+
 
 <h3 align="center">👥 Integrantes</h3>
 
@@ -44,16 +44,14 @@ Séptimo Ciclo (07)
 <th>Apellidos y Nombres</th>
 </tr>
 
-<tr><td align="center">1</td><td>________</td><td>______________________</td></tr>
-<tr><td align="center">2</td><td>________</td><td>______________________</td></tr>
-<tr><td align="center">3</td><td>________</td><td>______________________</td></tr>
-<tr><td align="center">4</td><td>________</td><td>______________________</td></tr>
-<tr><td align="center">5</td><td>________</td><td>______________________</td></tr>
+<tr><td align="center">1</td><td>U20221B657</td><td>Casaverde De La Cru<</td></tr>
+<tr><td align="center">2</td><td>u202223405</td><td>Juan Sebastian Estupiñán Olortegui</td></tr>
+<tr><td align="center">3</td><td>u20231b842</td><td>Enrique Manuel Mantilla Maldonado</td></tr>
+<tr><td align="center">4</td><td>u20231a257</td><td>Brayan Alexis Corvacho Damian</td></tr>
 
 </table>
 </center>
 
----
 
 <p align="center">
 <b>Lima, Perú • Abril 2026</b>
@@ -65,7 +63,7 @@ Séptimo Ciclo (07)
 </p>
 
 
----
+
 
 <div style="page-break-after: always;"></div>
 
@@ -75,10 +73,10 @@ Séptimo Ciclo (07)
 
 | Versión | Fecha | Autor | Descripción de modificación |
 |:------:|:------:|:------|:----------------------------|
-| v1.0 | __/__/2026 | __________________ | Creación inicial del informe y estructura base |
+| v1.0 | 26/04/2026 | todos | Creación inicial del informe y estructura base |
+| v1.2 | 27/04/2026 | todos | creacion de la lading page y web app |
 
 
----
 
 <div style="page-break-after: always;"></div>
 
@@ -87,9 +85,8 @@ Séptimo Ciclo (07)
 #### 🔗 Repositorio del Informe
 
 **GitHub URL:**  
-[https://github.com/organizacion-equipo/project-report](https://github.com/organizacion-equipo/project-report)
+https://github.com/Grupo5-PlantCare-Diseno-de-Experimentos
 
----
 
 ##### Entrega 1
 
@@ -99,46 +96,8 @@ Séptimo Ciclo (07)
 - Definición de estructura inicial en Markdown.
 - Asignación de responsabilidades entre integrantes.
 - Desarrollo de portada y primeras secciones.
+- creacion de la lading pague y web app
 
-###### Evidencias
-
-######  Analíticos de colaboración
-
-> Insertar captura de Insights / Contributors
-
-![Entrega 1 - Collaboration](images/entrega1-collaboration.png)
-
-######  Historial de commits
-
-> Insertar captura del historial de commits
-
-![Entrega 1 - Commits](images/entrega1-commits.png)
-
----
-
-#### 📌 Entrega 2
-
-###### Actividades realizadas
-
-- Incorporación de nuevas secciones del informe.
-- Mejoras de redacción y consistencia.
-- Revisión grupal del contenido.
-- Ajustes según observaciones del docente.
-
-### Evidencias
-
-#### 📷 Analíticos de colaboración
-
-![Entrega 2 - Collaboration](images/entrega2-collaboration.png)
-
-#### 📷 Historial de commits
-
-![Entrega 2 - Commits](images/entrega2-commits.png)
-
----
-
-
-<div style="page-break-after: always;"></div>
 
 ###  Contenido
 
@@ -234,7 +193,6 @@ Séptimo Ciclo (07)
     - [6.3 Validation Interviews](#63-validation-interviews)
     - [6.4 Auditoría de Experiencias de Usuario](#64-auditoría-de-experiencias-de-usuario)
 
----
 
 
 

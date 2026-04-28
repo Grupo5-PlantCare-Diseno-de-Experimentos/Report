@@ -4,7 +4,7 @@
 
 ### 1.1.2 Perfiles de Integrantes del Equipo
 
----
+***
 
 #### 👤 Integrante 1
 
@@ -22,7 +22,7 @@
 
 Soy un estudiante con conocimientos en desarrollo frontend, diseño de interfaces modernas y metodologías ágiles. Posee habilidades en trabajo colaborativo, organización de tareas y resolución de problemas. Puede aportar en diseño UX/UI, documentación técnica y desarrollo web.
 
----
+***
 
 #### 👤 Integrante 2
 
@@ -41,9 +41,9 @@ Estudiante de séptimo ciclo de Ingeniería de Software en la UPC
 Desarrollador enfocado en tecnologías como TypeScript, Vue 3, Angular y C#, con experiencia práctica en la creación de plataformas logísticas B2B.
 Profesional integral que complementa sus habilidades técnicas con experiencia administrativa comercial y de facturación en el sector automotriz.
 
----
+***
 
----
+***
 
 #### 👤 Integrante 3
 
@@ -61,9 +61,9 @@ Profesional integral que complementa sus habilidades técnicas con experiencia a
 
 Estudiante de 7mo ciclo de la carrera de Ingeniería de Software en la Universidad Peruana de Ciencias Aplicadas, con conocimientos intermedios en los lenguajes de programación C++, Python, JavaScript y Node.js. Prospero a ser más colaborativo con respecto a los trabajos en equipo, e ir mejorando mis habilidades conforme vamos avanzando los proyectos.
 
----
+***
 
----
+
 
 #### 👤 Integrante 4
 
@@ -189,7 +189,7 @@ Describir si los usuarios nuevos están llegando al producto.
 |----------|------------|-----------|----------|
 | Adquisición de usuarios | Número de descargas de la app o visitas a la página de registro | Por medir | Aumentar adquisición en **X%** |
 
----
+
 
 **2. Activación**
 
@@ -226,7 +226,7 @@ Determinar si los usuarios encuentran valor continuo en el sistema.
 |----------|------------|-----------|----------|
 | Marcado de alertas como útiles o incorrectas | % de alertas con feedback + ratio positivo/negativo | Por medir | Reducir falsas alertas y mejorar calibración |
 
----
+
 
 **4. Monetización**
 
@@ -242,7 +242,7 @@ Validar si el producto genera ingresos sostenibles.
 |----------|------------|-----------|----------|
 | Añadir macetas adicionales al sistema | Número promedio de macetas por cuenta pagada | Por medir | Incremento sostenido por cohorte |
 
----
+
 
 **5. Remisión**
 
@@ -362,7 +362,7 @@ Medir si los usuarios satisfechos invitan a otros.
 - Funcional: Menor necesidad de supervisión manual; notificaciones fiables y configurables.  
 - Emocional: Tranquilidad, confianza en el sistema y reducción de ansiedad.
 
----
+
 
 ##### Segmento 2 — Aficionados
 
