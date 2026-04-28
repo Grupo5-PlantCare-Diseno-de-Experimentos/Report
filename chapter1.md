@@ -2,7 +2,45 @@
 
 ## 1.1. Startup Profile
 
+### 1.1.2 Perfiles de Integrantes del Equipo
 
+---
+
+#### 👤 Integrante 1
+
+<p align="center">
+  <img src="https://camo.githubusercontent.com/240cc4f5cfad98a03626304d463d59fde9918d805e8df2f6ca4ec9970814489d/68747470733a2f2f692e706f7374696d672e63632f476d4a6a513048472f45726e6573746f2d656c6567616e74652e706e67" width="140" alt="Integrante 1">
+</p>
+
+| Campo | Información |
+|:--|:--|
+| **Nombres y Apellidos** | Casaverde De La Cruz, Ernesto David |
+| **Código de Estudiante** | U20221b657|
+| **Carrera** | Ingeniería de Software |
+
+**Resumen Profesional**
+
+Soy un estudiante con conocimientos en desarrollo frontend, diseño de interfaces modernas y metodologías ágiles. Posee habilidades en trabajo colaborativo, organización de tareas y resolución de problemas. Puede aportar en diseño UX/UI, documentación técnica y desarrollo web.
+
+---
+
+#### 👤 Integrante 2
+
+<p align="center">
+  <img src="images/member2.jpg" width="140" alt="Integrante 2">
+</p>
+
+| Campo | Información |
+|:--|:--|
+| **Nombres y Apellidos** | ______________________________ |
+| **Código de Estudiante** | U____________ |
+| **Carrera** | Ingeniería de Software |
+
+**Resumen Profesional**
+
+lorem ips.
+
+---
 
 ### 1.1.1. Descripción de la Startup
 PlantCare fue diseñado para ayudar a los usuarios a mantener plantas saludables y reducir la carga del cuidado manual. Hemos observado que, debido a falta de tiempo y olvido, muchos usuarios pierden plantas y experimentan frustración, lo que disminuye su bienestar. ¿Cómo podríamos mejorar PlantCare para que las personas con agendas ocupadas y adultos mayores puedan mantener sus plantas vivas y saludables, midiendo el éxito por la retención de usuarios, la reducción de plantas muertas y la satisfacción percibida?
