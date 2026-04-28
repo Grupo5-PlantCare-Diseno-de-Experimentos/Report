@@ -204,49 +204,7 @@ Settings:
 
 [![Settings-Wireframe.png](https://i.postimg.cc/wB6cJdgq/Settings-Wireframe.png)](https://postimg.cc/QFyTGwFw)
 
-#### Mobile Application Wireframes
 
-[https://www.figma.com/design/soYjRW2pgWZNuAPj7SOik1/PlantCare?node-id=8-2270&t=3nMXXTmW2i14bcze-1](https://www.figma.com/design/soYjRW2pgWZNuAPj7SOik1/PlantCare?node-id=8-2270&t=3nMXXTmW2i14bcze-1)
-
-Onboarding:
-
-[![Onboarding-Wireframe.png](https://i.postimg.cc/G3YQZK7y/Onboarding-Wireframe.png)](https://postimg.cc/6TWnZrNW)
-
-Sign Up:
-
-[![Sign-Up-Wireframe-1.png](https://i.postimg.cc/T3Hgy5N6/Sign-Up-Wireframe-1.png)](https://postimg.cc/QF1HwCr4)
-
-Sign In:
-
-[![Sign-In-Wireframe-1.png](https://i.postimg.cc/wvNXYxVx/Sign-In-Wireframe-1.png)](https://postimg.cc/xJ0JK2hB)
-
-Dashboard:
-
-[![Dashboard-Wireframe-1.png](https://i.postimg.cc/d3BTJhZm/Dashboard-Wireframe-1.png)](https://postimg.cc/GT4pQhQH)
-
-Plant Grid:
-
-[![Plant-Grid-Wireframe-1.png](https://i.postimg.cc/T2CwYM4X/Plant-Grid-Wireframe-1.png)](https://postimg.cc/F1kmDqvP)
-
-Plant Detail:
-
-[![Plant-Detail-Wireframe-1.png](https://i.postimg.cc/qvCMLtMB/Plant-Detail-Wireframe-1.png)](https://postimg.cc/rDMkywr7)
-
-Analytics:
-
-[![Analytics-Wireframe-1.png](https://i.postimg.cc/4dwJdVwy/Analytics-Wireframe-1.png)](https://postimg.cc/8JJ8XF2g)
-
-Community:
-
-[![Community-Wireframe-1.png](https://i.postimg.cc/28gCVzdt/Community-Wireframe-1.png)](https://postimg.cc/HV0qN1h0)
-
-History:
-
-[![History-Wireframe-1.png](https://i.postimg.cc/jj4TgyV0/History-Wireframe-1.png)](https://postimg.cc/mckKhz28)
-
-Settings:
-
-[![Settings-Wireframe-1.png](https://i.postimg.cc/Xqp0Yhrp/Settings-Wireframe-1.png)](https://postimg.cc/WqLy956v)
 
 ### 4.4.2. Applications Wireflow Diagrams.
 
@@ -314,49 +272,7 @@ Settings:
 
 [![Settings-Mock-Up.png](https://i.postimg.cc/d1ByY5XP/Settings-Mock-Up.png)](https://postimg.cc/8J75dmNt)
 
-#### Mobile Application Mock-ups
 
-[https://www.figma.com/design/soYjRW2pgWZNuAPj7SOik1/PlantCare?node-id=8-2270&t=3nMXXTmW2i14bcze-1](https://www.figma.com/design/soYjRW2pgWZNuAPj7SOik1/PlantCare?node-id=8-2270&t=3nMXXTmW2i14bcze-1)
-
-Onboarding:
-
-[![Onboard-Mock-Up.png](https://i.postimg.cc/CM9qVnrK/Onboard-Mock-Up.png)](https://postimg.cc/K4rzPj2X)
-
-Sign Up:
-
-[![Sign-Up-Mock-Up-1.png](https://i.postimg.cc/PJ1rHJNW/Sign-Up-Mock-Up-1.png)](https://postimg.cc/H8sC4pwn)
-
-Sign In:
-
-[![Sign-In-Mock-Up-1.png](https://i.postimg.cc/W3ksmzGQ/Sign-In-Mock-Up-1.png)](https://postimg.cc/PpdGTtF4)
-
-Dashboard:
-
-[![Dashboard-Mock-Up-1.png](https://i.postimg.cc/tTWHZfbv/Dashboard-Mock-Up-1.png)](https://postimg.cc/bDy54ms1)
-
-Plant Grid:
-
-[![Plant-Grid-Mock-Up-1.png](https://i.postimg.cc/FsDXL0t7/Plant-Grid-Mock-Up-1.png)](https://postimg.cc/tYZc0Z4j)
-
-Plant Detail:
-
-[![Plant-Detail-Mock-Up-1.png](https://i.postimg.cc/kGqLVgf6/Plant-Detail-Mock-Up-1.png)](https://postimg.cc/bDVmWpXp)
-
-Analytics:
-
-[![Analytics-Mock-Up-1.png](https://i.postimg.cc/fRG2tbby/Analytics-Mock-Up-1.png)](https://postimg.cc/5XmqDbLW)
-
-Community:
-
-[![Community-Mock-Up-1.png](https://i.postimg.cc/XYCxb0kT/Community-Mock-Up-1.png)](https://postimg.cc/3k32XV6B)
-
-History:
-
-[![History-Mock-Up-1.png](https://i.postimg.cc/QNYqKM6P/History-Mock-Up-1.png)](https://postimg.cc/grRhfGbq)
-
-Settings:
-
-[![Settings-Mock-Up-1.png](https://i.postimg.cc/50Nw6c8L/Settings-Mock-Up-1.png)](https://postimg.cc/2qMqKKcS)
 
 ### 4.4.4. Applications User Flow Diagrams.
 
@@ -398,10 +314,5 @@ La presente sección incluye los prototipos interactivos desarrollados para repr
 
 [![image.png](https://i.postimg.cc/qqSKHrVC/image.png)](https://postimg.cc/Fkbz02K9)
 
-Link del video demostrativo en Microsoft Stream: [https://upcedupe-my.sharepoint.com/:v:/g/personal/u20221c362_upc_edu_pe/ER2OB0Z8ZYxDgETMe6z03FcBhrHLRdMAlxvaR94OMswaEw?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=gPzSG4](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20221c362_upc_edu_pe/ER2OB0Z8ZYxDgETMe6z03FcBhrHLRdMAlxvaR94OMswaEw?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=gPzSG4)
 
-### Mobile Application Prototype
 
-[![image.png](https://i.postimg.cc/0jVvHY3T/image.png)](https://postimg.cc/MffgnQz5)
-
-Link del video demostrativo en Microsoft Stream: [https://upcedupe-my.sharepoint.com/:v:/g/personal/u20221c362_upc_edu_pe/EUp1F0x6NpNGmcnWxEIED-kBeIuYPmkCeOyooGUNKfKkWQ?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=jAriNx](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20221c362_upc_edu_pe/EUp1F0x6NpNGmcnWxEIED-kBeIuYPmkCeOyooGUNKfKkWQ?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=jAriNx)
