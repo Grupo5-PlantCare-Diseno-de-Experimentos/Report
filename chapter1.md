@@ -27,6 +27,47 @@ Soy un estudiante con conocimientos en desarrollo frontend, diseño de interface
 #### 👤 Integrante 2
 
 <p align="center">
+<a href="https://imgbb.com/"><img src="https://i.ibb.co/1gK4HZ0/11.png" width="140" alt="11" border="0"></a>
+</p>
+
+| Campo | Información |
+|:--|:--|
+| **Nombres y Apellidos** | Brayan Alexis Corvacho Damian |
+| **Código de Estudiante** | U20231A257 |
+| **Carrera** | Ingeniería de Software |
+
+**Resumen Profesional**
+Estudiante de séptimo ciclo de Ingeniería de Software en la UPC
+Desarrollador enfocado en tecnologías como TypeScript, Vue 3, Angular y C#, con experiencia práctica en la creación de plataformas logísticas B2B.
+Profesional integral que complementa sus habilidades técnicas con experiencia administrativa comercial y de facturación en el sector automotriz.
+
+---
+
+---
+
+#### 👤 Integrante 3
+
+<p align="center">
+  <img src="images/member2.jpg" width="140" alt="Integrante 2">
+</p>
+
+| Campo | Información |
+|:--|:--|
+| **Nombres y Apellidos** | ______________________________ |
+| **Código de Estudiante** | U____________ |
+| **Carrera** | Ingeniería de Software |
+
+**Resumen Profesional**
+
+lorem ips.
+
+---
+
+---
+
+#### 👤 Integrante 4
+
+<p align="center">
   <img src="images/member2.jpg" width="140" alt="Integrante 2">
 </p>
 
