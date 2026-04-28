@@ -514,74 +514,33 @@ En el siguiente Empathy Map observamos a Luz Ramos, una mujer que vive en casa c
 
 [![Luz-Ramos-3.png](https://i.postimg.cc/5tS98Gfm/Luz-Ramos-3.png)](https://postimg.cc/t17HjBZ1)
 
-Es un taller colaborativo diseñado para que un grupo de personas (desarrolladores, expertos en el negocio, gerentes de producto, etc.) exploren y entiendan un dominio de negocio complejo de manera rápida.
+### 2.3.5. As-is Scenario Mapping.
 
-**Sus objetivos principales son:**
+**Segmento 1**
 
-- **Alinear a todos:** Asegurarse de que todo el equipo tenga el mismo entendimiento del proceso de negocio.
-- **Identificar problemas:** Descubrir cuellos de botella, dudas y complejidades que no son obvias a simple vista.
-- **Crear un lenguaje común:** Empezar a construir un "lenguaje ubicuo", es decir, un vocabulario compartido entre los expertos del negocio y el equipo técnico.
+**Persona: Paolo Loayza - Hobbyist Ocupado (25-55 años)**
 
-***1. Preparing the room***
+Usuario entre 25 y 55 años con jornadas laborales extensas, poco tiempo libre y entre 1 a 5 plantas decorativas en casa u oficina.
 
-Para garantizar comodidad, eficiencia y colaboración en tiempo real, elegimos la plataforma Discord como entorno virtual para nuestro primer encuentro. Allí, nos reunimos con el objetivo de alinear la comprensión del negocio, identificar dudas clave, mapear problemas recurrentes y fomentar un ambiente de confianza y comunicación abierta basado en el dominio del problema: el autocuidado de plantas en entornos domésticos.
+| Fila / Fase | Observación inicial | Evaluación manual | Decisión de riego | Acción de cuidado | Seguimiento posterior |
+|------------|-------------------|------------------|------------------|------------------|----------------------|
+| **Phases** | Nota la planta al pasar | Toca la tierra o mira hojas | Decide si regar hoy o luego | Riega rápidamente | Continúa su rutina |
+| **Doing** | Mira si la planta luce bien | Introduce dedo en tierra, revisa hojas secas | Pospone o ejecuta riego según tiempo disponible | Usa botella, jarra o vaso | Se olvida revisar varios días |
+| **Thinking** | “Espero que siga viva” | “No sé si necesita agua realmente” | “Ahora no tengo tiempo” | “Con esto debería bastar” | “Luego revisaré nuevamente” |
+| **Feeling** | Neutral | Duda | Estrés / presión por tiempo | Alivio momentáneo | Culpa si olvida |
 
-[![Whats-App-Image-2025-09-13-at-10-26-23-PM.jpg](https://i.postimg.cc/y8pZHzx7/Whats-App-Image-2025-09-13-at-10-26-23-PM.jpg)](https://postimg.cc/mPMDYJ7n)
+**Segmento 2**
 
-***2. Energizing the audience***
+**Persona: Luz Ramos - Enthusiast Collector (30-65 años)**
 
-Para activar la atención y crear un clima positivo, iniciamos la sesión con una breve rutina de estiramientos físicos realizados desde nuestros espacios personales, seguida de un ejercicio cognitivo ligero (como un juego de memoria o resolución rápida de acertijos). Esta actividad buscó estimular la concentración, reducir la tensión y promover la conexión humana entre los participantes antes de abordar temas complejos.
+Usuario entre 30 y 65 años con colección de 5 a 20 plantas y alto interés en mejorar técnicas de cuidado.
 
-***3. Briefing and presenting the plan***
-
-A continuación, presentamos los objetivos centrales del proyecto: desarrollar un producto IoT que facilite el autocuidado de plantas en espacios urbanos ya sean pequeños apartamentos o hogares más amplios mediante sensores inteligentes, alertas automatizadas y un ecosistema digital intuitivo.
-
-Además, explicamos el modelo de negocio: un servicio de suscripción mensual que ofrece soporte técnico, recomendaciones personalizadas y actualizaciones de cuidado, generando ingresos sostenibles. También se revisaron las convenciones básicas del negocio, como los roles esperados, los plazos clave y las herramientas de trabajo a utilizar.
-
-***4. Generating Domain Events***
-
-Pedimos a los participantes que escriban en post-its amarillos los "eventos" que ocurren en el proceso. Un evento es algo relevante para el negocio que ya sucedió (se escribe en pasado, ej: "Cliente se registró", "Factura fue pagada").
-[![Big-Picture-Event-Storming-5.jpg](https://i.postimg.cc/3N3tTYX8/Big-Picture-Event-Storming-5.jpg)](https://postimg.cc/YGy6NcDZ)
-
-***5. Sorting Domain Events***
-
-Pedimos al equipo que ordene cronológicamente los eventos colocados en post-its amarillos sobre una pared, de izquierda a derecha, para construir una línea temporal del proceso de autocuidado de plantas.
-
-Este ejercicio no es solo un mero ordenamiento: es el momento más valioso de la sesión. Al debatir si el orden propuesto es correcto, el equipo comienza a revelar diferencias en sus percepciones, asunciones ocultas y malentendidos sobre cómo funciona realmente el proceso. Estas discusiones, lejos de ser conflictos, son oportunidades clave para alinear la comprensión colectiva, identificar brechas en el flujo del negocio y construir un modelo compartido y preciso del dominio.
-
-[![Big-Picture-Event-Storming-6.jpg](https://i.postimg.cc/FzPVXcFS/Big-Picture-Event-Storming-6.jpg)](https://postimg.cc/ZvddrWdY)
-
-***6. Adding Actors and External Systems***
-
-Para profundizar en la modelación del dominio, asignamos colores distintos a los elementos clave que interactúan con los eventos ya ordenados:
-
-- Actores: Utilizando post-its de color naranja, identificamos quién (o qué rol) inicia o participa en cada evento. Estos actores representan personas, roles o entidades externas que intervienen en el proceso —por ejemplo: “Cliente”, “Administrador del sistema”, “Cuidador designado”. Esto permite mapear las responsabilidades humanas dentro del flujo.
-
-- Sistemas Externos: Con post-its de color azul, señalamos los sistemas, servicios o plataformas externas con los que el producto interactúa como “Plataforma de pagos”, “Servicio de envío de productos”, “API de clima local” o “Aplicación móvil del usuario”. Esto ayuda a definir los puntos de integración necesarios y a anticipar dependencias técnicas.
-
-- Problemas o Dudas : Utulizamos el rojo para detenerminar dudas o problemas en vez de ponernos a debatir o discutir.
-
-[![Big-Picture-Event-Storming-7.jpg](https://i.postimg.cc/KjsBH2Q5/Big-Picture-Event-Storming-7.jpg)](https://postimg.cc/ctwvvPpK)
-
-***7. Storytelling***
-
-Se recorre cronológicamente la línea de eventos, desde el inicio hasta el final, narrando la historia que los post-its construyen colectivamente. Esta narrativa permite validar la coherencia del flujo, identificar saltos lógicos, confirmar la secuencia de acciones y detectar eventuales omisiones o redundancias en el proceso.
-
-[![Big-Picture-Event-Storming-8.jpg](https://i.postimg.cc/26SqRtqV/Big-Picture-Event-Storming-8.jpg)](https://postimg.cc/TyB2nCJ6)
-
-
-***8. Reverse storytelling***
-
-Como complemento, se puede realizar una narración inversa: partir del último evento y retroceder hasta el inicial. Este enfoque revela dependencias ocultas, puntos de fricción no evidentes en el sentido directo y posibles fallos en la causalidad del proceso. Es especialmente útil para desafiar supuestos y descubrir interacciones críticas que podrían pasar desapercibidas al seguir solo el orden tradicional.
-
-***9. Closing***
-
-Al cierre de la sesión, se evalúan los logros alcanzados:
-
-- La construcción de un entendimiento compartido del dominio del negocio,
-- La identificación clara de problemas, dudas y puntos de incertidumbre,
-- El surgimiento de un lenguaje común entre los participantes, que facilita la comunicación 
-- técnica y operativa en futuras etapas.
+| Fila / Fase | Observación inicial | Evaluación manual | Decisión de riego | Acción de cuidado | Seguimiento posterior |
+|------------|-------------------|------------------|------------------|------------------|----------------------|
+| Phases | Revisa varias macetas | Analiza humedad, hojas y posición solar | Prioriza cuáles atender primero | Riega y ajusta cuidados | Observa evolución |
+| Doing | Recorre colección de plantas | Usa experiencia personal | Organiza orden de atención | Riega distintas cantidades | Toma notas mentales |
+| Thinking | “Esta especie necesita más atención” | “Creo que esta tierra aún está húmeda” | “Debo optimizar mi rutina” | “Espero no excederme” | “Necesito recordar lo que hice” |
+| Feeling | Interés | Concentración | Motivación | Satisfacción | Curiosidad |
 
 ## 2.4. Ubiquitous Language.
 
@@ -598,3 +557,5 @@ Al cierre de la sesión, se evalúan los logros alcanzados:
 | **Register Plant**             | Action of adding a new plant into the system with its data. |
 | **Web Platform/Mobile App**          | Digital interface accessible via computer or smartphone where users view and manage information of plants. |
 | **Device Monitoring**                | Functionality that allows providers to configure, monitor, or troubleshoot installed IoT sensors. |
+
+
