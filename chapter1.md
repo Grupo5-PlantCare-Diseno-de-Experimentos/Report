@@ -53,13 +53,13 @@ Profesional integral que complementa sus habilidades técnicas con experiencia a
 
 | Campo | Información |
 |:--|:--|
-| **Nombres y Apellidos** | ______________________________ |
-| **Código de Estudiante** | U____________ |
+| **Nombres y Apellidos** | Juan Sebastian Estupiñán Olortegui |
+| **Código de Estudiante** | U202223405 |
 | **Carrera** | Ingeniería de Software |
 
 **Resumen Profesional**
 
-lorem ips.
+Estudiante de 7mo ciclo de la carrera de Ingeniería de Software en la Universidad Peruana de Ciencias Aplicadas, con conocimientos intermedios en los lenguajes de programación C++, Python, JavaScript y Node.js. Prospero a ser más colaborativo con respecto a los trabajos en equipo, e ir mejorando mis habilidades conforme vamos avanzando los proyectos.
 
 ---
 
