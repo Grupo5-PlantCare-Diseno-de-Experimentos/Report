@@ -1689,6 +1689,10 @@ Feature: Importación de métricas IoT
 
 En conjunto, estos escenarios BDD validan comportamientos centrales del sistema desde la perspectiva del usuario: autenticación, monitoreo de salud de plantas, gestión de riego e integración de sensores IoT.
 
+
+#### !importante en el documento esta la documentacion de las prueba unitarias y integrales si deseas ver el codigo de las pruebas estan en la carpetas test en el repositorio de la web para fines academicos puedes clonarlo y verlo por tu mismo con el comando "nmp test" ejecutas todas las pruebas
+
+
 ### 6.1.4. Core System Tests. 
 
 Son pruebas de de sistema para validar que la aplicación
