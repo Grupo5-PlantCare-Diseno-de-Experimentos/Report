@@ -48,7 +48,7 @@ Profesional integral que complementa sus habilidades técnicas con experiencia a
 #### 👤 Integrante 3
 
 <p align="center">
-  <img src="images/member2.jpg" width="140" alt="Integrante 2">
+<a href="https://imgbb.com/"><img src="https://i.ibb.co/hxJny4fS/3-foto4.jpg" width="140" alt="11" border="0"></a>
 </p>
 
 | Campo | Información |
