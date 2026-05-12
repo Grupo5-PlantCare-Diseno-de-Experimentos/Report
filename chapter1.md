@@ -68,18 +68,18 @@ Estudiante de 7mo ciclo de la carrera de Ingeniería de Software en la Universid
 #### 👤 Integrante 4
 
 <p align="center">
-  <img src="images/member2.jpg" width="140" alt="Integrante 2">
+<a href="https://ibb.co/ymyqnyhT"><img src="https://i.ibb.co/ZR8x68Hs/20250918-054741.jpg" alt="20250918-054741" width="140" border="0"></a>
 </p>
 
 | Campo | Información |
 |:--|:--|
-| **Nombres y Apellidos** | ______________________________ |
-| **Código de Estudiante** | U____________ |
+| **Nombres y Apellidos** | Enrique Manuel Mantilla Maldonado |
+| **Código de Estudiante** | U20231b842 |
 | **Carrera** | Ingeniería de Software |
 
 **Resumen Profesional**
 
-lorem ips.
+Estudiante de sexto ciclo de la carrera de Ingenieria de Software en la Universidad Peruana de Ciencias Aplicadas. Tengo conociemientos en lenguajes de programación con C++, Python y Javascript. Busco retarme a mi mismo y tambien busco aprender todo lo que vea a mi alrededor para poder aplicarlo en el futuro.
 
 ---
 
