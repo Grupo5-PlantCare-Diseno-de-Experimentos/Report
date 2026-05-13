@@ -44,7 +44,7 @@ Séptimo Ciclo (07)
 <th>Apellidos y Nombres</th>
 </tr>
 
-<tr><td align="center">1</td><td>U20221B657</td><td>Casaverde De La Cru, Ernesto david</td></tr>
+<tr><td align="center">1</td><td>U20221B657</td><td>Casaverde De La Cruz, Ernesto david</td></tr>
 <tr><td align="center">2</td><td>u202223405</td><td>Juan Sebastian Estupiñán Olortegui</td></tr>
 <tr><td align="center">3</td><td>u20231b842</td><td>Enrique Manuel Mantilla Maldonado</td></tr>
 <tr><td align="center">4</td><td>u20231a257</td><td>Brayan Alexis Corvacho Damian</td></tr>
