@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://images.seeklogo.com/logo-png/40/2/universidad-peruana-de-ciencias-aplicadas-upc-logo-png_seeklogo-402620.png" width="110" alt="UPC Logo">
+  <img src="https://static.wikia.nocookie.net/logopedia/images/a/aa/UPC-Logo-con-fondo-circular.png/revision/latest/scale-to-width-down/250?cb=20230305162634&path-prefix=es" width="110" alt="UPC Logo">
 </p>
 
 <h2 align="center">Universidad Peruana de Ciencias Aplicadas</h2>
@@ -17,7 +17,7 @@ Séptimo Ciclo (07)
 
 
 
-<h1 align="center">📘 Informe de Trabajo Final</h1>
+<h1 align="center">📘 Informe del Trabajo Parcial</h1>
 
 <p align="center"><i>Diseño de Experimentos de Ingeniería de Software</i></p>
 
@@ -75,6 +75,7 @@ Séptimo Ciclo (07)
 |:------:|:------:|:------|:----------------------------|
 | v1.0 | 26/04/2026 | todos | Creación inicial del informe y estructura base |
 | v1.2 | 27/04/2026 | todos | creacion de la lading page y web app |
+| v2.2 |10/05/2026| todos | agregar las pruebas unitarias, integrales, gherkin y selenium|
 
 
 
@@ -98,6 +99,16 @@ https://github.com/Grupo5-PlantCare-Diseno-de-Experimentos
 - Desarrollo de portada y primeras secciones.
 - creacion de la lading pague y web app
 
+
+##### Entrega Trabajo Parcial
+
+###### Actividades realizadas
+
+- Pruebas unitarias 
+- Pruebas integrales
+- Pruebas en selenium
+- Base de datos
+- Pruebas gerkin
 
 ###  Contenido
 
@@ -194,5 +205,61 @@ https://github.com/Grupo5-PlantCare-Diseno-de-Experimentos
     - [6.4 Auditoría de Experiencias de Usuario](#64-auditoría-de-experiencias-de-usuario)
 
 
+
+
+### Student Outcome
+
+<div style="page-break-before: always;"></div>
+
+## ABET – EAC - Student Outcome 4
+
+Cada participante del equipo debe sustentar evidencia de cómo las actividades realizadas en el trabajo final han ayudado a desarrollar las dimensiones del student outcome. Por ello en esta sección debe haber una subsección por cada alumno donde éste describa por escrito la relación entre el outcome, sus dimensiones y el trabajo que ha realizado. Esto se complementa con lo reflejado en los testimonios expuestos que forman parte del video About The Team.
+
+
+<table style="width:100%; border-collapse:collapse; border:1px solid #999;">
+  <tr>
+    <th style="width:30%; border:1px solid #999; padding:10px; vertical-align:top; background:#f4f4f4; text-align:left;">Criterio específico</th>
+    <th style="width:45%; border:1px solid #999; padding:10px; vertical-align:top; background:#f4f4f4; text-align:left;">Acciones realizadas</th>
+    <th style="width:25%; border:1px solid #999; padding:10px; vertical-align:top; background:#f4f4f4; text-align:left;">Conclusiones</th>
+  </tr>
+  <tr>
+    <td style="border:1px solid #999; padding:10px; vertical-align:top;"><strong>4.c.1</strong><br>Reconoce responsabilidad ética y profesional en situaciones de ingeniería de software</td>
+    <td style="border:1px solid #999; padding:10px; vertical-align:top;">
+      <p><strong style="color:#333;">Casaverde De La Cruz, Ernesto David</strong><br><span style="color:#666; font-size:0.95em;">TB1</span>: Diseño de interfaz accesible y documentación técnica; enfoque en usabilidad para adultos mayores y usuarios ocupados.<br><span style="color:#666; font-size:0.95em;">TP</span>: Implementación frontend, pruebas de usabilidad y consideraciones de privacidad.</p>
+      <p><strong style="color:#333;">Brayan Alexis Corvacho Damian</strong><br><span style="color:#666; font-size:0.95em;">TB1</span>: Integración de lógica de negocio y comunicación con sensores.<br><span style="color:#666; font-size:0.95em;">TP</span>: Desarrollo de endpoints seguros y manejo responsable de datos de sensores.</p>
+      <p><strong style="color:#333;">Juan Sebastian Estupiñán Olortegui</strong><br><span style="color:#666; font-size:0.95em;">TB1</span>: Scripts de procesamiento y análisis de datos de sensores.<br><span style="color:#666; font-size:0.95em;">TP</span>: Calibración y validación para minimizar falsas alertas.</p>
+      <p><strong style="color:#333;">Enrique Manuel Mantilla Maldonado</strong><br><span style="color:#666; font-size:0.95em;">TB1</span>: Pruebas de hardware y control de calidad.<br><span style="color:#666; font-size:0.95em;">TP</span>: Coordinación de pruebas integradas y documentación de procedimientos.</p>
+    </td>
+    <td style="border:1px solid #999; padding:10px; vertical-align:top;">El grupo reconoce la responsabilidad ética y profesional en el diseño, desarrollo y prueba del sistema. Se priorizó accesibilidad, seguridad y calidad de mediciones para reducir riesgos y proteger a usuarios vulnerables. Las decisiones y documentación demuestran compromiso profesional acumulado.</td>
+  </tr>
+  <tr>
+    <td style="border:1px solid #999; padding:10px; vertical-align:top;"><strong>4.c.2</strong><br>Emite juicios informados considerando el impacto de las soluciones de ingeniería de software en contextos globales, económicos, ambientales y sociales</td>
+    <td style="border:1px solid #999; padding:10px; vertical-align:top;">
+      <p><strong style="color:#333;">Casaverde De La Cruz, Ernesto David</strong><br><span style="color:#666; font-size:0.95em;">TB1</span>: UI orientada a reducir fricción y pérdidas de plantas.<br><span style="color:#666; font-size:0.95em;">TP</span>: Mensajes sobre consumo y mantenimiento.</p>
+      <p><strong style="color:#333;">Brayan Alexis Corvacho Damian</strong><br><span style="color:#666; font-size:0.95em;">TB1</span>: Arquitectura optimizada para reducir recursos y costos.<br><span style="color:#666; font-size:0.95em;">TP</span>: Endpoints eficientes para minimizar consumo y latencia.</p>
+      <p><strong style="color:#333;">Juan Sebastian Estupiñán Olortegui</strong><br><span style="color:#666; font-size:0.95em;">TB1</span>: Análisis para optimizar notificaciones y evitar riegos innecesarios.<br><span style="color:#666; font-size:0.95em;">TP</span>: Calibración para reducir desperdicio de agua.</p>
+      <p><strong style="color:#333;">Enrique Manuel Mantilla Maldonado</strong><br><span style="color:#666; font-size:0.95em;">TB1</span>: Documentación de análisis de impacto.<br><span style="color:#666; font-size:0.95em;">TP</span>: Coordinación de pruebas piloto para evaluar efectos sociales y ambientales.</p>
+    </td>
+    <td style="border:1px solid #999; padding:10px; vertical-align:top;">El equipo tomó decisiones informadas que consideran ahorro de recursos, accesibilidad y beneficio social. Las pruebas y análisis permitieron priorizar sostenibilidad y equidad, reduciendo impactos negativos y mejorando el valor social y económico del producto.</td>
+  </tr>
+</table>
+
+---
+
+## Subsections por integrante (evidencia personal)
+
+### Casaverde De La Cruz, Ernesto David
+Mis actividades (diseño UI, documentación e implementación frontend) contribuyeron a Outcome 4 al priorizar la accesibilidad y la claridad en la interfaz, reduciendo la posibilidad de errores del usuario y facilitando el uso por adultos mayores. Documenté decisiones de diseño y consideraciones de privacidad, lo que demuestra responsabilidad profesional y juicio informado respecto al impacto social y económico de la solución.
+
+### Brayan Alexis Corvacho Damian
+Mi trabajo en la arquitectura, integración y endpoints se enfocó en la fiabilidad, seguridad y eficiencia. Estas acciones muestran responsabilidad profesional (calidad del software) y consideraciones de impacto económico y ambiental (optimizaciones que reducen consumo y costos operativos), apoyando juicios informados del equipo.
+
+### Juan Sebastian Estupiñán Olortegui
+Desarrollé scripts y realicé la calibración de sensores y análisis de datos. Al validar lecturas y minimizar falsas alertas, contribuí a la confianza del sistema y a decisiones que reducen desperdicio de agua y esfuerzo del usuario, vinculando directamente la ingeniería con impactos ambientales y sociales.
+
+### Enrique Manuel Mantilla Maldonado
+Encargado de pruebas de hardware, control de calidad y coordinación de pruebas integradas. Mis entregas incluyeron reportes de fallas y recomendaciones para despliegue responsable, evidenciando juicios profesionales y consideración de impactos sociales y ambientales antes del lanzamiento.
+
+---
 
 
