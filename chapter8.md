@@ -533,6 +533,7 @@ La selección de metas, KPI y métricas se alinea con el objetivo de medir solo 
 | EC-05 | Incrementar hábito de uso y retorno | Tasa de retención semanal de visitas (TRV) | Visitas activas por usuario por semana | Eventos de dashboard y logros |
 
 La lectura combinada de estas métricas permite relacionar el comportamiento del producto con el valor del negocio. En particular, el equipo prioriza indicadores de comportamiento observables sobre métricas decorativas para asegurar decisiones experimentales trazables.
+[![Captura-de-pantalla-2026-06-16-165513.png](https://i.postimg.cc/t40x0CKz/Captura-de-pantalla-2026-06-16-165513.png)](https://postimg.cc/mtwDCR2c)
 
 ### 8.2.8. Web and Mobile Tracking Plan
 
