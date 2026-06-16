@@ -2,6 +2,8 @@
 
 ## 8.1. Experiment Planning
 
+En este apartado veremos todos los artefactos para experimentar que problemas se nesesitan abordar 
+
 ### 8.1.1. As-Is Summary
 
 La aplicación actual de **PlantCare** se centra en ofrecer una plataforma integral para el monitoreo y cuidado de plantas mediante dispositivos de hardware IoT. Proporciona funcionalidades básicas como la gestión de perfiles de usuario, el registro y seguimiento de la salud de las plantas en tiempo real (midiendo humedad del suelo, temperatura ambiental, nivel de luz y nivel de batería del sensor) y un sistema básico de cálculo para la programación del próximo riego. 
@@ -50,7 +52,7 @@ A continuación, se agrupan los elementos de base (*raw material*) recopilados p
 - **Usuario Natalia:** "Revisar los gráficos de la aplicación web en mi celular en pleno día cuando estoy en el jardín es complicado debido al reflejo del sol en la pantalla, por lo que necesito mejor contraste."
 - **Usuario Vasco:** "No me gusta estar amarrado a una suscripción mensual fija solo por ver las estadísticas básicas; prefiero realizar una sola compra de hardware."
 - **Usuario María:** "He perdido varias plantas en el pasado por exceso de agua o fertilizante. Necesito que la aplicación me guíe de forma proactiva con alertas explicativas claras en mi canal de mensajería y no solo con gráficos difíciles de interpretar."
-- **Usuario Juan (Internacional):** "Se me dificulta interactuar con la configuración del perfil porque no entiendo los términos específicos de riego en español; preferiría configurar la aplicación en inglés."
+- **Usuario Derek (Internacional):** "Se me dificulta interactuar con la configuración del perfil porque no entiendo los términos específicos de riego en español; preferiría configurar la aplicación en inglés."
 
 ---
 

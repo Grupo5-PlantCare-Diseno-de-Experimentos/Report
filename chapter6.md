@@ -3,9 +3,6 @@
 ### 6.1.1. Core Entities Unit Tests.
 
 
-
-
-
 #### Bounded Context: Analytics
 Las 4 pruebas están en analytics-entity.spec.ts.
 Estas pruebas son unitarias porque no levantan Vue, no usan Supabase real, no consultan red, no usan Pinia ni componentes visuales. Solo prueban directamente la lógica de AnalyticsAssembler, que es la clase encargada de transformar y calcular datos de la entidad analítica.
@@ -1717,3 +1714,613 @@ En flujo es bueno cumple con todos los requirimientos nesesarios por ello la pru
 
 <a href="https://ibb.co/m50Qtsxf"><img src="https://i.ibb.co/qYCb9GZT/Captura-de-pantalla-2026-05-12-113234.png" alt="Captura de pantalla 2026 05 12 113234" border="0"></a>
 
+## 6.2. Static Testing & Verification
+
+La presente sección describe las actividades de verificación estática aplicadas durante el desarrollo del sistema, con el propósito de garantizar altos estándares de calidad, mantenibilidad, seguridad y consistencia del código fuente antes de su ejecución. La verificación estática permite identificar defectos de diseño, incumplimientos de estándares, vulnerabilidades de seguridad y oportunidades de mejora en etapas tempranas del ciclo de vida del software, reduciendo significativamente el costo asociado a su corrección.
+
+Las actividades de análisis estático y revisión de código forman parte de la estrategia de aseguramiento de calidad del proyecto y se integran dentro del flujo de desarrollo continuo, permitiendo detectar incidencias antes de que estas sean desplegadas a entornos de integración o producción.
+
+### Objetivos de la Verificación Estática
+
+| Objetivo              | Descripción                                                                                      |
+| --------------------- | ------------------------------------------------------------------------------------------------ |
+| Calidad del código    | Garantizar que el código cumpla con estándares de calidad definidos por el equipo de desarrollo. |
+| Mantenibilidad        | Facilitar la comprensión, modificación y evolución futura del sistema.                           |
+| Seguridad             | Detectar vulnerabilidades y riesgos de seguridad durante la implementación.                      |
+| Consistencia          | Mantener uniformidad en la estructura, nomenclatura y arquitectura del software.                 |
+| Reducción de defectos | Identificar errores tempranamente para disminuir retrabajos y costos de mantenimiento.           |
+
+---
+
+### 6.2.1. Static Code Analysis
+
+El análisis estático de código consiste en la evaluación sistemática del código fuente sin necesidad de ejecutar la aplicación. Esta práctica permite detectar defectos sintácticos, problemas de diseño, duplicación de código, incumplimientos de estándares de desarrollo y posibles vulnerabilidades de seguridad.
+
+Para la ejecución de esta actividad se emplean herramientas automatizadas y revisiones manuales que proporcionan retroalimentación continua a los desarrolladores durante todo el proceso de construcción del software.
+
+Los resultados obtenidos del análisis estático son considerados criterios de calidad obligatorios antes de aprobar cualquier integración de código dentro del repositorio principal.
+
+#### 6.2.1.1. Coding Standard & Code Conventions
+
+Con el objetivo de asegurar la uniformidad y legibilidad del código fuente, el equipo de desarrollo adopta estándares y convenciones de programación basados en buenas prácticas de ingeniería de software.
+
+##### Principios de Clean Code
+
+Se aplicarán los principios propuestos por Robert C. Martin (Clean Code), priorizando:
+
+* Uso de nombres descriptivos y significativos para variables, métodos, clases y módulos.
+* Métodos pequeños con una única responsabilidad.
+* Eliminación de código duplicado.
+* Reducción de dependencias innecesarias.
+* Eliminación de código muerto o no utilizado.
+* Comentarios únicamente cuando aporten valor al entendimiento del código.
+* Estructuración clara de responsabilidades mediante separación de capas.
+
+##### Aplicación de Domain-Driven Design (DDD)
+
+La arquitectura del sistema sigue los principios de Domain-Driven Design para garantizar una representación adecuada del dominio del negocio.
+
+Los principales lineamientos son:
+
+* Uso de un lenguaje ubicuo compartido entre desarrolladores y expertos del dominio.
+* Definición explícita de Bounded Contexts.
+* Implementación de Entidades (Entities) y Objetos de Valor (Value Objects).
+* Encapsulamiento de reglas de negocio dentro del dominio.
+* Uso de Repositorios para la persistencia de entidades.
+* Implementación de Servicios de Dominio cuando la lógica no pertenezca directamente a una entidad.
+* Minimización del acoplamiento entre contextos mediante contratos bien definidos.
+
+##### Convenciones de Código
+
+| Elemento   | Convención                           |
+| ---------- | ------------------------------------ |
+| Clases     | PascalCase                           |
+| Interfaces | Prefijo "I" + PascalCase             |
+| Métodos    | camelCase                            |
+| Variables  | camelCase                            |
+| Constantes | UPPER_SNAKE_CASE                     |
+| Archivos   | Nombre representativo del componente |
+| Paquetes   | Minúsculas y segmentados por dominio |
+
+##### Principios Arquitectónicos
+
+El desarrollo del sistema seguirá además los siguientes principios:
+
+* Single Responsibility Principle (SRP).
+* Open/Closed Principle (OCP).
+* Dependency Inversion Principle (DIP).
+* Separation of Concerns (SoC).
+* Low Coupling y High Cohesion.
+* Arquitectura orientada al dominio.
+
+---
+
+#### 6.2.1.2. Code Quality & Code Security
+
+La calidad y seguridad del código constituyen factores críticos para garantizar la confiabilidad, disponibilidad y mantenibilidad del sistema.
+
+##### Calidad del Código
+
+La calidad será monitoreada mediante indicadores cuantificables que permitan evaluar continuamente el estado del producto.
+
+| Métrica                   | Objetivo        |
+| ------------------------- | --------------- |
+| Cobertura de pruebas      | ≥ 80%           |
+| Duplicación de código     | ≤ 5%            |
+| Complejidad ciclomática   | ≤ 15 por método |
+| Bugs críticos             | 0               |
+| Code Smells críticos      | 0               |
+| Vulnerabilidades críticas | 0               |
+
+Para el monitoreo de estas métricas se utilizarán herramientas de análisis estático que permitan generar reportes periódicos y trazabilidad de los hallazgos encontrados.
+
+##### Seguridad del Código
+
+Se implementarán prácticas de desarrollo seguro orientadas a prevenir vulnerabilidades comunes identificadas por OWASP.
+
+Entre los principales controles se encuentran:
+
+* Validación y sanitización de entradas del usuario.
+* Protección contra inyección SQL.
+* Protección contra Cross-Site Scripting (XSS).
+* Gestión segura de credenciales y secretos.
+* Manejo adecuado de autenticación y autorización.
+* Validación de permisos de acceso.
+* Uso de conexiones seguras mediante HTTPS.
+* Protección contra exposición de información sensible.
+* Gestión adecuada de excepciones y registros.
+
+##### Herramientas de Análisis Estático
+
+Para fortalecer el proceso de aseguramiento de calidad se emplearán las siguientes herramientas:
+
+| Herramienta          | Propósito                                         |
+| -------------------- | ------------------------------------------------- |
+| SonarLint            | Análisis en tiempo real dentro del IDE.           |
+| SonarQube            | Monitoreo continuo de calidad y seguridad.        |
+| ESLint               | Validación de estándares JavaScript/TypeScript.   |
+| Prettier             | Estandarización automática del formato de código. |
+| GitHub Code Scanning | Detección automatizada de vulnerabilidades.       |
+
+SonarLint será utilizado durante la etapa de desarrollo para proporcionar retroalimentación inmediata al programador, mientras que SonarQube se integrará dentro del pipeline de integración continua para validar automáticamente los criterios de calidad establecidos por el proyecto.
+
+---
+
+### 6.2.2. Reviews
+
+Las revisiones de código constituyen una actividad obligatoria dentro del proceso de aseguramiento de calidad. Su finalidad es verificar que los cambios implementados cumplan con los estándares técnicos, arquitectónicos y de negocio definidos para el proyecto.
+
+Las revisiones permiten detectar defectos tempranamente, compartir conocimiento entre los miembros del equipo y garantizar la sostenibilidad del sistema a largo plazo.
+
+#### Tipos de Revisiones
+
+##### Revisión por Pares (Peer Review)
+
+Consiste en la evaluación del código por parte de otro desarrollador del equipo antes de su integración.
+
+Objetivos:
+
+* Detectar errores de implementación.
+* Verificar el cumplimiento de estándares.
+* Compartir conocimiento técnico.
+* Mejorar la mantenibilidad del código.
+
+##### Revisión Formal
+
+Proceso estructurado realizado mediante reuniones de inspección donde se utiliza una lista de verificación previamente definida.
+
+Objetivos:
+
+* Detectar defectos complejos.
+* Revisar decisiones arquitectónicas.
+* Validar requisitos críticos.
+
+##### Revisión Automática
+
+Se realiza mediante herramientas especializadas que verifican aspectos relacionados con:
+
+* Calidad del código.
+* Seguridad.
+* Complejidad.
+* Duplicación.
+* Cobertura de pruebas.
+
+---
+
+#### Proceso de Revisión
+
+##### 1. Creación del Pull Request (PR)
+
+Todo cambio deberá ser enviado mediante un Pull Request que incluya:
+
+* Descripción de la funcionalidad implementada.
+* Relación con historias de usuario o requisitos.
+* Evidencias de pruebas realizadas.
+* Capturas de pantalla cuando corresponda.
+* Resultados del análisis estático.
+
+##### 2. Ejecución de Validaciones Automáticas
+
+Antes de iniciar la revisión manual se deberá verificar:
+
+* Compilación exitosa.
+* Ejecución satisfactoria de pruebas.
+* Cumplimiento de métricas de calidad.
+* Ausencia de vulnerabilidades críticas.
+
+##### 3. Revisión Técnica
+
+Los revisores evaluarán:
+
+* Correctitud funcional.
+* Diseño de la solución.
+* Legibilidad del código.
+* Cumplimiento de estándares.
+* Impacto arquitectónico.
+* Seguridad.
+
+##### 4. Retroalimentación
+
+Los comentarios deberán:
+
+* Ser objetivos y verificables.
+* Incluir propuestas de mejora.
+* Estar sustentados técnicamente.
+* Mantener un enfoque constructivo.
+
+##### 5. Aprobación y Fusión
+
+El Pull Request podrá fusionarse únicamente cuando:
+
+* Todas las observaciones hayan sido resueltas.
+* Se obtenga la aprobación requerida.
+* Las validaciones automáticas sean satisfactorias.
+
+---
+
+#### Checklist de Revisión
+
+| Criterio                          | Verificación |
+| --------------------------------- | ------------ |
+| Cumple estándares de codificación | □            |
+| Sigue principios DDD              | □            |
+| Sigue principios SOLID            | □            |
+| No presenta código duplicado      | □            |
+| Incluye pruebas automatizadas     | □            |
+| Cobertura mínima alcanzada        | □            |
+| No introduce vulnerabilidades     | □            |
+| Manejo adecuado de errores        | □            |
+| Documentación actualizada         | □            |
+| Cumple requerimientos funcionales | □            |
+
+---
+
+#### Criterios de Aceptación
+
+Un Pull Request será aceptado únicamente si cumple con los siguientes criterios:
+
+* Cobertura mínima de pruebas igual o superior al 80%.
+* Ausencia de vulnerabilidades críticas o altas.
+* Ausencia de errores bloqueantes.
+* Cumplimiento de estándares de codificación.
+* Cumplimiento de principios arquitectónicos definidos.
+* Validación satisfactoria por las herramientas de análisis estático.
+* Aprobación de al menos un revisor distinto al autor del cambio.
+
+---
+
+#### Frecuencia de Revisiones
+
+Las revisiones serán realizadas de manera continua durante el desarrollo del proyecto.
+
+| Actividad                | Frecuencia                   |
+| ------------------------ | ---------------------------- |
+| Análisis SonarLint       | En cada desarrollo           |
+| Revisión de Pull Request | Antes de cada merge          |
+| Análisis SonarQube       | En cada integración continua |
+| Revisión Formal          | Al cierre de cada sprint     |
+| Auditoría de Calidad     | Al finalizar cada release    |
+
+La aplicación sistemática de estas prácticas de análisis estático y revisión de código permitirá mantener altos niveles de calidad, seguridad y mantenibilidad, contribuyendo a la construcción de un producto de software robusto y alineado con las mejores prácticas de ingeniería de software.
+
+## 6.3. Validation Interviews.
+
+### 6.3.1. Diseño de Entrevistas.
+
+**1. Introducción de la Entrevista**
+
+Objetivo:
+Validar la propuesta de valor, comprensión, navegabilidad y experiencia de usuario del sistema PlantCare en sus tres componentes: Landing Page, Aplicación Móvil y Aplicación Web.
+
+Script para el entrevistador:
+
+“Queremos validar una solución basada en IoT para el monitoreo y cuidado de plantas.”
+
+“No estamos evaluando su desempeño, sino la claridad y facilidad de uso del producto.”
+
+“Le pedimos que navegue libremente y piense en voz alta mientras interactúa con la plataforma.”
+
+“Cualquier duda, comentario o sugerencia es bienvenida.”
+
+**2. Preguntas Generales sobre el Usuario**
+
+¿Tiene plantas en casa o en su entorno cercano?
+
+¿Cuántas plantas tiene aproximadamente?
+
+¿Ha utilizado previamente alguna aplicación relacionada al cuidado de plantas?
+
+¿Qué tan familiarizado está con sistemas o dispositivos IoT?
+
+¿Qué problemas enfrenta actualmente para cuidar adecuadamente sus plantas?
+
+¿Qué tan cómodo se siente utilizando aplicaciones móviles y aplicaciones web?
+
+**3. Validación de la Landing Page**
+**3.1 Preguntas antes de usar la Landing Page**
+
+¿Qué cree que ofrece el producto con base en la primera impresión?
+
+¿Qué elementos llaman más su atención al ingresar?
+
+¿Percibe el diseño como confiable y profesional?
+
+**3.2 Tareas (User Flows – Landing Page)**
+
+“Identifique qué problema soluciona el sistema.”
+
+“Revise la sección donde se explica cómo funciona la solución.”
+
+“Acceda a la aplicación web o a la aplicación móvil mediante los botones o enlaces disponibles.”
+
+**3.3 Preguntas después de usar la Landing Page**
+
+¿El mensaje principal del producto le resultó claro?
+
+¿Pudo comprender adecuadamente el funcionamiento del sistema IoT?
+
+¿La navegación le resultó intuitiva?
+
+¿Hubo alguna parte que le generó confusión o que modificaría?
+
+¿La Landing Page le motivaría a usar la aplicación?
+
+**4. Validación de la Aplicación Móvil**
+**4.1 Preguntas antes de usar la Aplicación Móvil**
+
+¿Qué espera encontrar en una aplicación destinada al cuidado de plantas?
+
+¿Qué información considera más importante monitorear?
+
+**4.2 Tareas (User Flows – Aplicación Móvil)**
+
+Flujo 1 – Visualización del estado general (Dashboard)
+
+“Acceda al Dashboard e indique qué información comprende.”
+
+Flujo 2 – Visualizar detalles de una planta
+
+“Entre al detalle de una planta e indique qué información encuentra y cómo la interpreta.”
+
+Flujo 3 – Acceder a Configuración
+
+“Ingrese a la sección de Configuración e intente modificar algún ajuste disponible.”
+
+**4.3 Preguntas después de usar la Aplicación Móvil**
+
+¿Qué tan fácil fue encontrar la información o funciones que buscaba?
+
+¿La información del Dashboard le resultó clara y útil?
+
+¿Qué parte de la aplicación considera más útil y cuál menos útil?
+
+¿Experimentó confusión en algún punto del proceso?
+
+¿Cómo percibe el diseño y la organización visual de la aplicación?
+
+¿Agregarías o eliminaría alguna funcionalidad?
+
+**5. Validación de la Aplicación Web**
+**5.1 Preguntas antes de usar la Aplicación Web**
+
+¿Qué funcionalidades esperaría encontrar en una plataforma web para el monitoreo de plantas?
+
+¿Qué información o herramientas considera más importantes desde la versión de escritorio?
+
+**5.2 Tareas (User Flows – Aplicación Web)**
+
+Flujo 1 – Inicio de sesión
+
+“Ingrese a la plataforma utilizando el formulario de acceso.”
+
+Flujo 2 – Visualización del estado general de las plantas
+
+“Revise el Dashboard general e indique qué información comprende.”
+
+Flujo 3 – Agregar o editar un dispositivo IoT
+
+“Agregue un nuevo dispositivo IoT o edite uno existente, si es posible.”
+
+Flujo 4 – Visualizar reportes o datos históricos
+
+“Busque información histórica, métricas o reportes relevantes.”
+
+**5.3 Preguntas después de usar la Aplicación Web**
+
+¿La navegación en la plataforma le pareció intuitiva?
+
+¿Los títulos y nombres de las secciones son claros y comprensibles?
+
+¿La distribución de la información es adecuada?
+
+¿Hubo alguna parte que le generó confusión?
+
+¿Percibe coherencia visual y funcional respecto a la versión móvil?
+
+**6. Cierre de la Entrevista**
+
+¿Qué valoración general (en una escala del 1 al 10) asignaría a las plataformas?
+
+¿Utilizaría el sistema PlantCare si estuviera disponible actualmente?
+
+¿Qué aspecto considera más convincente del producto?
+
+¿Qué aspecto considera menos convincente?
+
+¿Tiene algún comentario adicional o sugerencia?
+
+### 6.3.2. Registro de Entrevistas.
+
+#### Segmento objetivo 1: Personas ocupadas (departamentos/oficinas)
+[![Image-validation-interview.png](https://i.postimg.cc/Xq9DZ7Ws/Captura-de-pantalla-2025-11-15-110522.png)](https://postimg.cc/sGDJqzvW)
+
+**Entrevistado:** Carlos <br>
+**Sexo:** Masculino <br>
+**Edad:** 21 años<br>
+**Domicilio:** San Martin de Porres <br>
+**Inicio de la Entrevista:** 00:00 <br>
+**Duración de la Entrevista:** 09:55   <br>
+
+**Resumen de la Entrevista:** <br>
+Carlos comprendió claramente la propuesta de PlantCare sobre el cuidado automatizado de plantas mediante IoT y una aplicación. Consideró que la Landing Page es atractiva y motivadora, y confirmó que utilizaría el producto, valorándolo con un 9 sobre 10.
+En cuanto a la usabilidad, aunque la navegación y los títulos son intuitivos y el Dashboard es claro y relevante (humedad, temperatura), se hizo una observación importante sobre la velocidad, indicando que el sistema se percibe como lento. Adicionalmente, se sugiere aclarar la interpretación de los datos de los sensores para novatos, simplificar la configuración inicial y permitir mayor personalización (frecuencia de notificaciones, más tipos de plantas) sin perder la simplicidad.
+
+[![Image-validation-interview.png](https://i.postimg.cc/TwsXjPZ1/image.png)](https://postimg.cc/TLnSfT2v)
+
+**Entrevistado:** Facundo <br>
+**Sexo:** Masculino <br>
+**Edad:** 23 años<br>
+**Domicilio:** Los Olivos <br>
+**Inicio de la Entrevista:** 09:55 <br>
+**Duración de la Entrevista:** 17:56   <br>
+
+**Resumen de la Entrevista:** <br>
+Facundo evaluó la aplicación con un notable 8.5 sobre 10, ya que comprendió muy bien su propósito y la encontró tanto útil como práctica. Resaltó que la función más valiosa para él fue el sistema de alertas de agua.
+
+Durante su análisis de la usabilidad, Facundo fue claro en que el diseño de la interfaz y la presentación de los indicadores (luz, humedad, etc.) le parecían correctos y fáciles de entender. Sin embargo, identificó un único problema significativo: la velocidad. Su observación central fue que la aplicación se sentía lenta en su funcionamiento, siendo este el único punto de fricción que experimentó.
+
+#### Segmento objetivo 2: Aficionados que cuidan varias macetas en casa
+
+[![Image-validation-interview.png](https://i.postimg.cc/wMCGcrFG/Image-validation-interview.png)](https://postimg.cc/GTjKbqWF)
+
+**Entrevistado:** Ana <br>
+**Sexo:** Femenino <br>
+**Edad:** 57 años<br>
+**Domicilio:** Puente Piedra <br>
+**Inicio de la Entrevista:** 17:56 <br>
+**Duración de la Entrevista:** 25:02   <br>
+
+**Resumen de la Entrevista:** <br>
+En general, Ana encontró el mensaje del producto claro: la idea de cuidar plantas de forma automatizada con IoT y la app se entiende bien. La Landing Page resulta atractiva y motivadora, afirmó que sí usaría PlantCare (valoración general: 8/10), destacando la automatización y las recomendaciones personalizadas como lo más convincente.
+
+En cuanto a usabilidad, la navegación y los títulos son intuitivos y la información está bien distribuida; el Dashboard muestra datos relevantes (humedad, temperatura) y es fácil de leer. La función más valorada son las notificaciones de cuidado; en cambio, la sección de análisis avanzado se percibe como menos útil para ella.
+
+Como observaciones, se sugiere aclarar un poco más la interpretación de los datos de los sensores para usuarios novatos; también convendría simplificar la configuración inicial. Finalmente, propone mayor personalización (frecuencia de notificaciones, más tipos de plantas) para aumentar la utilidad sin perder la simplicidad.
+
+[![Captura-de-pantalla-2025-11-14-235934.png](https://i.postimg.cc/Z5PVzKFP/Captura-de-pantalla-2025-11-14-235934.png)](https://postimg.cc/LJXzzSWh)
+**Entrevistado:** Natalia Ramirez <br>
+**Sexo:** Femenino <br>
+**Edad:** 61 años<br>
+**Domicilio:** San Martin de Porres <br>
+**Inicio de la Entrevista:** 25:02 <br>
+**Duración de la Entrevista:** 30:46   <br>
+
+**Resumen de la Entrevista:** <br>
+En general, el usuario entendió bien la propuesta de la aplicación: la pantalla principal comunica claramente el estado de la planta y los datos esenciales como temperatura, humedad y luz. Consideró que la app es útil y práctica para quienes suelen olvidar el riego, valorando especialmente el calendario que muestra la última y la próxima fecha estimada (valoración general: 8/10). También destacó que recibir alertas cuando la planta necesita agua sería una de las funciones más importantes.
+
+Sobre la usabilidad, el usuario mencionó que la interfaz es clara, pero algo cargada: las tarjetas son grandes y la información aparece un poco dispersa. Aunque la temperatura es fácil de interpretar, indicadores como el nivel de luz (por ejemplo, 750 lm) no resultan evidentes para usuarios sin experiencia. La descripción de la planta le pareció útil, pero demasiado larga para leerla completa de inmediato.
+
+Entre las observaciones, sugirió agrupar los indicadores ambientales en un solo bloque para hacer la pantalla más compacta y rápida de leer. También señaló que el botón de eliminar planta está muy expuesto y puede generar errores, recomendando añadir una confirmación adicional. Finalmente, comentó que sería útil entender mejor cómo se calcula la próxima fecha de riego y ofrecer una versión corta del texto descriptivo para mejorar la experiencia sin perder información.
+
+[![image.png](https://i.postimg.cc/3N0JkwKW/image.png)](https://postimg.cc/9wVjSCwj)
+
+**Entrevistado:** Derek <br>
+**Sexo:** Masculino <br>
+**Edad:** 21 años<br>
+**Domicilio:** San Miguel <br>
+**Inicio de la Entrevista:** 30:46 <br>
+**Duración de la Entrevista:** 37:49   <br>
+
+**Resumen de la Entrevista:** <br>
+El entrevistado, Derek, tiene 21 años y vive en San Miguel. Cuenta con varias plantas en casa y, aunque disfruta cuidarlas, suele organizar el riego únicamente por memoria, lo que a veces genera problemas por olvido o desconocimiento de cuánta agua o luz requiere cada especie. Tiene conocimientos básicos sobre IoT y se siente cómodo utilizando tecnología en su día a día. Usa una computadora personal, el navegador Brave y un smartphone Samsung S20 FE, lo que demuestra familiaridad con plataformas digitales y disposición a adoptar soluciones tecnológicas siempre que sean claras, accesibles y visualmente agradables.
+
+La Landing Page le pareció clara, profesional e intuitiva. Comprendió rápidamente que PlantCare es un sistema IoT orientado al monitoreo de plantas y destacó que la estructura facilita entender el funcionamiento general. Como sugerencia, indicó la necesidad de detallar mejor el proceso de instalación y conexión de los sensores para evitar dudas iniciales. La página le motivaría a usar la aplicación.
+
+En la aplicación móvil encontró la información organizada y fácil de localizar. Valoró el monitoreo en tiempo real y el diseño moderno de la interfaz. Consideró menos útil la sección de recomendaciones porque, según él, podría personalizarse más. Propuso añadir un historial de riego y crecimiento para visualizar la evolución de cada planta.
+
+En la aplicación web destacó la navegación clara, los títulos comprensibles y la buena distribución de la información. No encontró elementos confusos y percibió coherencia visual y funcional con la versión móvil. Valoró la manera en que los gráficos y el estado de las plantas se presentan en una vista más amplia.
+
+[![image.png](https://i.postimg.cc/hvNvsdyW/image.png)](https://postimg.cc/ctMd4rGX)
+
+**Entrevistado:** Vasco <br>
+**Sexo:** Masculino <br>
+**Edad:** 24 años<br>
+**Domicilio:** San Miguel <br>
+**Inicio de la Entrevista:** 37:49 <br>
+**Duración de la Entrevista:** 45:33   <br>
+
+**Resumen de la Entrevista:** <br>
+El entrevistado, Vasco, tiene 24 años y cuida aproximadamente 15 plantas en su departamento, principalmente suculentas y helechos. Aunque se interesa por el ambiente y disfruta el cuidado de sus plantas, suele organizar el riego de manera intuitiva y sin herramientas, lo que en ocasiones ha provocado problemas por exceso o falta de agua. Se siente cómodo usando tecnología y emplea con frecuencia su laptop con Windows, su smartphone Redmi 13C y el navegador Opera GX. Le interesan herramientas digitales que ofrezcan información clara, gráficos simples e historial del estado de sus plantas, además de recordatorios y recomendaciones basadas en el clima.
+
+La Landing Page le pareció clara, profesional y motivadora. Comprendió sin dificultad la propuesta del sistema IoT de PlantCare, destacando la buena organización del contenido. Su única sugerencia fue mejorar la explicación sobre cómo se conectan e instalan los sensores, especialmente para usuarios con menor experiencia técnica.
+
+En la aplicación móvil encontró la información bien estructurada y fácil de ubicar. Consideró particularmente útiles el Dashboard y las alertas de riego, ya que responden directamente a sus principales necesidades. La configuración inicial de los sensores fue el único punto que le generó confusión. Valoró el diseño limpio de la app y sugirió incorporar consejos simples que se adapten al clima o condiciones del entorno.
+
+En la versión web destacó la navegación intuitiva, la claridad de los títulos y la organización de los datos. Apreció especialmente los gráficos de humedad y riego, así como la posibilidad de visualizar varias plantas en una pantalla más amplia. Señaló que la configuración avanzada resultó un poco técnica, pero percibió coherencia visual y funcional respecto a la aplicación móvil.
+
+<div style="page-break-after: always;"></div>
+
+
+### 6.3.3. Evaluaciones según heurísticas.
+
+Esta sección contiene el proceso de evaluación realizado durante las sesiones de validación de usabilidad, con base en heurísticas de Usabilidad (Nielsen), Arquitectura de Información e Inclusive Design de la experiencia propuesta. El análisis identifica los problemas encontrados, la heurística violada, su impacto y recomendaciones, aplicando la Escala de Severidad correspondiente según el Anexo D: Formato para Evaluación UX según Heurísticas.
+
+### Escala de Severidad
+
+| Nivel | Descripción |
+|-------|-------------|
+| **1** | Problema superficial: puede superarse fácilmente y ocurre con baja frecuencia. No requiere acción inmediata. |
+| **2** | Problema menor: ocurre con más frecuencia, afecta usabilidad general. Prioridad baja para próxima versión. |
+| **3** | Problema mayor: impacta de manera significativa en la experiencia. Debe ser resuelto con prioridad alta. |
+| **4** | Problema crítico: impide continuar con el uso del sistema. Debe corregirse antes del lanzamiento. |
+
+---
+
+### Tabla Resumen de Problemas Detectados
+
+| # | Problema identificado | Escala | Heurística / Principio violado |
+|---|-----------------------|--------|--------------------------------|
+| 1 | La configuración inicial del sensor IoT resulta confusa para usuarios nuevos. | **3** | Usabilidad – Ayuda y documentación |
+| 2 | Indicadores ambientales como luminosidad (lm) no son fáciles de interpretar. | **3** | Usabilidad – Correspondencia con el mundo real |
+| 3 | El botón “Eliminar planta” está muy expuesto y puede presionarse accidentalmente. | **3** | Usabilidad – Prevención de errores |
+| 4 | El detalle de la planta contiene demasiado texto, lo que sobrecarga visualmente. | **2** | Arquitectura de Información – Minimizar carga cognitiva |
+| 5 | La sección de análisis avanzado no es clara y no se percibe como útil. | **2** | Usabilidad – Visibilidad de información relevante |
+| 6 | La Landing Page no explica claramente el proceso de instalación de los sensores. | **2** | Usabilidad – Reconocimiento antes que recuerdo |
+| 7 | Personalización limitada en notificaciones y recomendaciones. | **1** | Flexibilidad y eficiencia de uso |
+| 8 | La configuración avanzada en la versión web genera confusión para usuarios generales. | **2** | Usabilidad – Consistencia y estándares |
+
+---
+
+### Descripción de Problemas
+
+#### **Problema #1 – Configuración inicial del sensor IoT confusa**
+**Escala:** 3  
+**Heurística violada:** Usabilidad – Ayuda y documentación  
+**Descripción:**  
+Durante la configuración inicial del dispositivo IoT, los usuarios indicaron incertidumbre sobre los pasos necesarios y cómo validar que el sensor está activo correctamente.  
+**Recomendación:**  
+Implementar un asistente paso a paso con imágenes o video corto y estados visuales durante el proceso.
+
+---
+
+#### **Problema #2 – Indicadores ambientales poco interpretables**
+**Escala:** 3  
+**Heurística violada:** Usabilidad – Correspondencia con el mundo real  
+**Descripción:**  
+Valores como 750 lm (luminosidad) o porcentajes de humedad no resultan claros sin referencia contextual.  
+**Recomendación:**  
+Usar etiquetas visuales y rangos interpretables (Ej. *Baja / Adecuada / Alta*) o descripción comparativa.
+
+---
+
+#### **Problema #3 – Botón “Eliminar planta” expuesto**
+**Escala:** 3  
+**Heurística violada:** Usabilidad – Prevención de errores  
+**Descripción:**  
+El botón de eliminación está ubicado en una zona de acceso inmediato, lo cual puede llevar a activaciones accidentales.  
+**Recomendación:**  
+Reubicar la acción dentro de un menú secundario e incluir ventana de confirmación.
+
+---
+
+#### **Problema #4 – Texto extenso dentro del detalle de planta**
+**Escala:** 2  
+**Heurística violada:** Arquitectura de Información – Minimizar carga cognitiva  
+**Descripción:**  
+Los usuarios describieron la vista como “cargada” y difícil de leer rápidamente.  
+**Recomendación:**  
+Agregar opción *Leer más / Resumen*, mostrando inicialmente la versión corta.
+
+---
+
+#### **Problema #5 – Sección de análisis avanzado poco comprensible**
+**Escala:** 2  
+**Heurística violada:** Usabilidad – Visibilidad y relevancia de información  
+**Descripción:**  
+La sección no comunica claramente su propósito ni beneficios, por lo que se percibe poco relevante.  
+**Recomendación:**  
+Simplificar contenido o incluir ejemplos prácticos de valor agregado.
+
+---
+<!-- Esto Se Hace en plena clase -->
+
+
+### 6.4.1. Auditoría realizada.
+#### 6.4.1.1. Información del grupo auditado.
+#### 6.4.1.2. Cronograma de auditoría realizada.
+#### 6.4.1.3. Contenido de auditoría realizada.
+### 6.4.2. Auditoría recibida.
+#### 6.4.2.1. Información del grupo auditor.
+#### 6.4.2.2. Cronograma de auditoría recibida.
+#### 6.4.2.3. Contenido de auditoría recibida.
+#### 6.4.2.4. Resumen de modificaciones para subsanar hallazgos.
