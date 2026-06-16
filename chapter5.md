@@ -121,7 +121,7 @@ Ejemplo de commit:
  - feat: agregar autenticación con JWT en el backend
  - fix: error de conexión con la database
 
-### 6.1.3. Source Code Style Guide & Conventions.
+### 5.1.3. Source Code Style Guide & Conventions.
 
 El equipo ha definido una serie de convenciones y guías de estilo para asegurar la consistencia, legibilidad y mantenibilidad del código fuente del proyecto. Todas las convenciones adoptadas se basan en estándares ampliamente reconocidos en la industria y se aplican a cada uno de los lenguajes utilizados en la solución.
 

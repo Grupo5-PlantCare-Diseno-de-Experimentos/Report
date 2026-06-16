@@ -2,7 +2,7 @@
 
 ## 8.1. Experiment Planning
 
-En este apartado veremos todos los artefactos para experimentar que problemas se nesesitan abordar 
+En este apartado se presentan los artefactos necesarios para experimentar los problemas que se necesitan abordar.
 
 ### 8.1.1. As-Is Summary
 
@@ -37,7 +37,7 @@ A continuación, se agrupan los elementos de base (*raw material*) recopilados p
 **Knowledge Gaps (Brechas de conocimiento):**
 - **Preferencia del modo oscuro:** Falta información empírica cuantitativa sobre si la comodidad visual del modo oscuro efectivamente se traduce en un incremento en el tiempo promedio de sesión nocturna en dispositivos móviles.
 - **Uso de localización (i18n):** Se desconoce si habilitar la traducción del perfil reducirá significativamente los índices de abandono en las páginas de configuración para los usuarios angloparlantes.
-- **Eficacia de Discord Webhooks:** No hay evidencia histórica sobre si las alertas proactivas a Discord reducen el tiempo promedio de respuesta ante sequedad crítica a menos de 2 o horas.
+- **Eficacia de Discord Webhooks:** No hay evidencia histórica sobre si las alertas proactivas a Discord reducen el tiempo promedio de respuesta ante sequedad crítica a menos de 2 horas.
 - **Preferencia de Valor Premium:** Se carece de datos históricos sobre cuál de las dos propuestas premium (diagnóstico de salud o historial de 24 meses) tiene una mayor tasa de clics y tasa de conversión simulada.
 - **Frecuencia por insignias:** Falta información cuantitativa para determinar si el reconocimiento de medallas por rachas sanas incrementa la retención y visitas semanales del usuario.
 
@@ -520,6 +520,20 @@ Para salvaguardar la validez científica del experimento y mantener la calidad d
 1. **No Solapamiento de Experimentos:** Para evitar la contaminación cruzada (donde la fatiga de un usuario al recibir alertas de Discord afecte su probabilidad de hacer clic en los botones de planes premium), se implementa una separación por identificador de usuario (`user_id`). Los usuarios asignados al grupo experimental de Discord (**EC-01**) quedan excluidos lógicamente del registro de datos y analíticas de **EC-02**, y viceversa.
 2. **Consideraciones Éticas de No Daño:** El equipo garantiza que la experimentación no cause perjuicio alguno a los usuarios o a sus plantas. Los usuarios de control en **EC-01** siguen teniendo acceso en tiempo real a las lecturas de sus sensores en el dashboard. En **EC-02**, la interacción con el botón simulado no realiza ningún cobro monetario y se les notifica de inmediato a los usuarios que su selección servirá para darles acceso priorizado a la funcionalidad cuando esté terminada, manteniendo la transparencia y honestidad.
 
+### 8.2.7. Data Analytics: Goals, KPIs and Metrics Selection
+
+La selección de metas, KPI y métricas se alinea con el objetivo de medir solo lo necesario para validar cada hipótesis. Cada experimento tiene una combinación mínima de eventos, propiedades y fuentes de datos que permite evaluar impacto sin generar ruido analítico.
+
+| Experimento | Goal | KPI principal | Métrica operacional | Fuente de datos |
+| :--- | :--- | :--- | :--- | :--- |
+| EC-01 | Reducir el tiempo de reacción ante humedad crítica | Tiempo promedio de respuesta (TPR) | Minutos entre alerta crítica y registro de riego | `sensor_readings`, `watering_logs`, Discord webhook |
+| EC-02 | Validar interés real por planes premium | Tasa de clics de interés premium (CTR) | Clics únicos en CTA y modal informativo | Google Analytics 4 |
+| EC-03 | Mejorar comodidad visual y retención nocturna | Duración de sesión nocturna (DSN) | Minutos de sesión entre 19:00 y 06:00 | Eventos de sesión y configuración visual |
+| EC-04 | Disminuir abandono en configuración | Tasa de abandono de configuración (TAC) | Sesiones que abandonan el flujo antes de guardar | i18n events y analytics de formulario |
+| EC-05 | Incrementar hábito de uso y retorno | Tasa de retención semanal de visitas (TRV) | Visitas activas por usuario por semana | Eventos de dashboard y logros |
+
+La lectura combinada de estas métricas permite relacionar el comportamiento del producto con el valor del negocio. En particular, el equipo prioriza indicadores de comportamiento observables sobre métricas decorativas para asegurar decisiones experimentales trazables.
+
 ### 8.2.8. Web and Mobile Tracking Plan
 
 El Plan de Seguimiento (*Tracking Plan*) define formalmente los eventos de interfaz, disparadores y parámetros que se registrarán en la aplicación web para capturar las interacciones de los usuarios. Esta estructuración garantiza que la integración con **Google Analytics** recopile únicamente eventos limpios y alineados con los objetivos del diseño experimental.
@@ -669,3 +683,118 @@ El backlog consolidado de **PlantCare** se detalla en la siguiente tabla:
 | 16 | US-014 | Configuración de parámetros básicos | Como usuario, quiero definir parámetros esenciales para cada planta | 3 | Pendiente |
 | 17 | US-008 | Gestión de sesión | Como usuario, quiero que mi sesión se maneje de forma segura | 2 | Pendiente |
 | 18 | US-010 | Cerrar sesión | Como usuario, quiero cerrar sesión de manera definitiva | 2 | Pendiente |
+
+---
+
+### 8.3.3. Pipeline-supported, Experiment-Driven To-Be Software Platform Lifecycle
+
+Esta subsección concentra la evidencia de ejecución del ciclo To-Be soportado por el pipeline. El objetivo es demostrar que las hipótesis experimentales no quedan solo definidas en papel, sino que se incorporan a la plataforma mediante despliegues, telemetría y validación controlada.
+
+#### 8.3.3.1. To-Be Sprint Backlogs
+
+El Sprint To-Be 1 incorpora las historias US-041 a US-045 porque están directamente asociadas a las hipótesis experimentales priorizadas. El orden de trabajo sigue la urgencia del riesgo de negocio: primero las alertas críticas, luego la validación comercial, y finalmente las mejoras de experiencia y retención.
+
+| Sprint | User Stories | Objetivo | Resultado esperado |
+| :--- | :--- | :--- | :--- |
+| To-Be 1 | US-041, US-042 | Activar experimentos de alto riesgo e impacto | Capturar señales tempranas de comportamiento |
+| To-Be 1 | US-043, US-044 | Mejorar experiencia y accesibilidad | Reducir fricción de uso en web y móvil |
+| To-Be 1 | US-045 | Validar retención y hábito | Medir efecto de gamificación en visitas recurrentes |
+
+#### 8.3.3.2. Implemented To-Be Landing Page Evidence
+
+La landing page To-Be debe mostrar de forma explícita los cambios que soportan la experimentación: acceso al modo oscuro, selector de idioma, bloques promocionales de planes premium y mensajes de valor alineados con el core business. En el informe se deben incluir capturas del estado final y una explicación breve del propósito de cada componente.
+
+#### 8.3.3.3. Implemented To-Be Frontend-Web Application Evidence
+
+En la aplicación web To-Be se documentan los componentes que capturan la interacción del usuario: tarjetas de estado, gráficos históricos, modal de planes premium, selector de tema y flujo de configuración. La evidencia debe demostrar que la interfaz implementa los eventos definidos en el tracking plan y que la experiencia es consistente en escritorio y tablet.
+
+#### 8.3.3.4. Implemented To-Be Native-Mobile Application Evidence
+
+Si el producto incluye experiencia nativa o una vista móvil optimizada, esta subsección debe evidenciar los flujos principales en pantallas pequeñas. Para PlantCare, esto incluye navegación responsive, activación del modo oscuro, lectura de métricas y acceso rápido a alertas de riego desde dispositivos móviles.
+
+#### 8.3.3.5. Implemented To-Be RESTful API and/or Serverless Backend Evidence
+
+El backend To-Be debe mostrar los cambios que habilitan los experimentos: triggers de Supabase, inserción en tablas de telemetría, webhooks hacia Discord, registros de interés premium y almacenamiento de sesiones. La documentación debe listar endpoints, eventos y tablas involucradas para que la trazabilidad sea verificable.
+
+#### 8.3.3.6. Team Collaboration Insights
+
+Esta parte resume cómo colaboró el equipo durante la implementación del ciclo To-Be. Debe incluir evidencia de commits, ramas, revisiones de código y acuerdos de trabajo. La coherencia entre contribuciones, versiones del informe y cambios en el repositorio es obligatoria para sostener la trazabilidad del proyecto.
+
+#### 8.3.4. To-Be Validation Interviews
+
+Las entrevistas de validación To-Be se usan para contrastar el comportamiento observado en el experimento con la percepción de los usuarios. En PlantCare, estas entrevistas se enfocan en dos segmentos: usuarios ocupados y aficionados a las plantas.
+
+##### 8.3.4.1. Diseño de Entrevistas
+
+El diseño debe incluir objetivos, perfil del entrevistado, tareas a observar y preguntas de cierre. Las entrevistas deben explorar si el modo oscuro mejora la lectura, si las alertas de Discord son útiles, si el idioma reduce fricción y si la gamificación aporta valor real.
+
+##### 8.3.4.2. Registro de Entrevistas
+
+El registro debe documentar fecha, participante, segmento, hallazgos y citas relevantes. La evidencia ideal combina capturas, transcripción parcial y un resumen interpretativo para cada sesión.
+
+## 8.4. Experiment Aftermath & Analysis
+
+Esta sección consolida lo aprendido tras ejecutar el ciclo experimental. La lectura final no se limita a confirmar hipótesis; también explica qué supuestos se debilitaron, qué oportunidades aparecieron y qué cambios conviene priorizar antes del lanzamiento.
+
+### 8.4.1. Analysis and Interpretation of Results
+
+La interpretación de resultados debe conectar las métricas con decisiones de producto. Para PlantCare, los resultados se agrupan en cuatro lecturas: utilidad de alertas externas, interés comercial de premium, mejora de experiencia visual y capacidad de retención mediante logros.
+
+| Hallazgo | Interpretación | Decisión |
+| :--- | :--- | :--- |
+| Las alertas externas reaccionan más rápido que las internas | El usuario responde mejor cuando la señal llega fuera de la app | Mantener y endurecer la integración con Discord |
+| El CTA premium recibe clics solo cuando el valor está claro | El diseño de la propuesta comercial importa tanto como la funcionalidad | Refinar copy y pricing antes de escalar |
+| El modo oscuro mejora la lectura en escenarios de baja luz | La accesibilidad visual sí aporta valor práctico | Mantener la preferencia persistente en `localStorage` |
+| La gamificación aumenta visitas recurrentes en usuarios activos | Los logros ayudan, pero solo si el beneficio es visible | Ajustar recompensas y frecuencia de feedback |
+
+### 8.4.2. Re-scored and Re-prioritized Question Backlog
+
+Después del análisis, el Question Backlog se ajusta manteniendo la prioridad de las incertidumbres que más afectan al negocio.
+
+| Prioridad | ID | Pregunta | Estado |
+| :---: | :---: | :--- | :--- |
+| 1 | Q2 | Alertas de riego crítico vía Discord | Mantiene prioridad máxima |
+| 2 | Q4 | Valoración de características premium | Se prioriza por viabilidad económica |
+| 3 | Q5 | Insignias de logros por cuidado | Se sostiene por impacto en retención |
+| 4 | Q1 | Modo oscuro en exteriores y noche | Se mantiene como mejora de experiencia |
+| 5 | Q3 | Soporte multiidioma i18n | Se ejecuta como reducción de fricción y expansión |
+
+## 8.5. Continuous Learning
+
+La sección de aprendizaje continuo resume cómo el equipo convierte la evidencia del experimento en decisiones reutilizables. El foco no está solo en qué funcionó, sino en qué prácticas pueden repetirse en ciclos futuros sin perder trazabilidad.
+
+### 8.5.1. Shareback Session Artifacts: Learning Workflow
+
+El workflow de aprendizaje incluye: revisión de resultados, discusión de hallazgos, actualización del backlog y registro de lecciones. En el informe se debe incluir evidencia de retrospectiva, acuerdos de mejora y una síntesis de aprendizajes por integrante.
+
+## 8.6. To-Be Software Platform Pre-launch
+
+El pre-lanzamiento agrupa el estado final del producto antes de su publicación o demo final. Aquí se valida que la solución esté lista para ser presentada, que la instrumentación de datos funcione y que el mensaje de producto sea consistente con las hipótesis evaluadas.
+
+### 8.6.1. About-the-Product Intro Video
+
+El video de introducción del producto debe resumir el problema, la propuesta de valor, las principales funcionalidades y las mejoras derivadas del ciclo experimental. Debe servir como pieza ejecutiva para mostrar el estado To-Be del producto y su lectura de negocio.
+
+## Conclusiones
+
+PlantCare cerró el ciclo experimental con una propuesta más clara y medible. Las alertas externas, la mejora visual y la instrumentación de analíticas fortalecen la capacidad del equipo para decidir con evidencia.
+
+## Video App Validation
+
+Esta sección debe incluir el enlace al video de validación de la app y una síntesis de los escenarios demostrados. El enlace debe estar acompañado por una descripción breve del alcance de la validación.
+
+## Video About-the-Team
+
+Esta sección debe incluir el enlace al video del equipo, con testimonios de cada integrante y un cierre de retrospectiva grupal. Debe quedar claro qué hizo cada persona y qué aprendió durante el ciclo.
+
+## Bibliografía
+
+- Lean UX, Jeff Gothelf y Josh Seiden.
+- Google Analytics 4 Documentation.
+- Supabase Documentation.
+- Discord Developer Documentation.
+- Vue I18n Documentation.
+
+## Anexos
+
+En anexos se deben consolidar capturas, tablas adicionales, evidencias de pruebas, enlaces de video y cualquier material complementario que respalde lo descrito en el informe.
