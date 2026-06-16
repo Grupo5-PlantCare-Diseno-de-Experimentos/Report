@@ -203,9 +203,29 @@ https://github.com/Grupo5-PlantCare-Diseno-de-Experimentos
     - [6.2 Static testing & Verification](#62-static-testing--verification)
     - [6.3 Validation Interviews](#63-validation-interviews)
     - [6.4 Auditoría de Experiencias de Usuario](#64-auditoría-de-experiencias-de-usuario)
-
-
-
+  - [Capítulo VII: DevOps Practices](#capítulo-vii-devops-practices)
+    - [7.1. Continuous Integration](#71-continuous-integration)
+    - [7.2. Continuous Delivery](#72-continuous-delivery)
+    - [7.3. Operaciones en Producción y prácticas SRE](#73-operaciones-en-producción-y-prácticas-sre)
+    - [7.4. Continuous Monitoring](#74-continuous-monitoring)
+  - [Capítulo VIII: Experiment-Driven Development](#capítulo-viii-experiment-driven-development)
+    - [8.1. Experiment Planning](#81-experiment-planning)
+      - [8.1.1. As-Is Summary](#811-as-is-summary)
+      - [8.1.2. Raw Material: Assumptions, Knowledge Gaps, Ideas, Claims](#812-raw-material-assumptions-knowledge-gaps-ideas-claims)
+      - [8.1.3. Experiment-Ready Questions](#813-experiment-ready-questions)
+      - [8.1.4. Question Backlog](#814-question-backlog)
+      - [8.1.5. Experiment Cards](#815-experiment-cards)
+    - [8.2. Experiment Design](#82-experiment-design)
+      - [8.2.1. Hypotheses](#821-hypotheses)
+      - [8.2.2. Domain Business Metrics](#822-domain-business-metrics)
+      - [8.2.3. Measures](#823-measures)
+      - [8.2.4. Conditions](#824-conditions)
+      - [8.2.5. Scale Calculations and Decisions](#825-scale-calculations-and-decisions)
+      - [8.2.6. Methods Selection](#826-methods-selection)
+      - [8.2.8. Web and Mobile Tracking Plan](#828-web-and-mobile-tracking-plan)
+    - [8.3. Experimentation](#83-experimentation)
+      - [8.3.1. To-Be User Stories](#831-to-be-user-stories)
+      - [8.3.2. To-Be Product Backlog](#832-to-be-product-backlog)
 
 ### Student Outcome
 
