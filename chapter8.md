@@ -26,28 +26,33 @@ Para abordar los problemas identificados y optimizar la plataforma, se establece
 A continuación, se agrupan los elementos de base (*raw material*) recopilados para sustentar los experimentos de ingeniería de software orientados a la optimización y expansión de la plataforma **PlantCare**.
 
 **Assumptions (Supuestos):**
-- **Modo oscuro:** Se asume que los usuarios valoran la personalización de la interfaz gráfica y la comodidad visual, de modo que la implementación de un modo oscuro facilitará el monitoreo y cuidado de plantas en condiciones de baja luminosidad (de noche o en exteriores con luz cambiante), reduciendo la fatiga visual.
-- **Traducciones (Localización):** Se asume que existe un interés en mercados globales de aficionados a la jardinería urbana, por lo que ofrecer la aplicación en inglés y español incrementará la base de usuarios activos.
-- **Feed y foro de comunidad:** Se asume que los usuarios valoran disponer de un espacio social e interactivo dentro de la aplicación para compartir fotografías, registrar progresos de cultivo y recibir consejos colaborativos, lo que aumentará su compromiso y tasa de retención.
-- **Alertas preventivas y contextuales:** Se asume que los usuarios reaccionarán con mayor rapidez y efectividad ante alertas detalladas que explican causas probables (como exceso de calor o drenaje rápido) en lugar de alertas de métricas genéricas de sensores, disminuyendo la pérdida de plantas por descuidos.
-- **Modelo de suscripción premium:** Se asume que un segmento de usuarios avanzados (como jardineros coleccionistas o gestores de pequeños huertos urbanos) está dispuesto a pagar una tarifa mensual a cambio de diagnósticos avanzados detallados e historiales de métricas con retención extendida hasta 24 meses (en comparación con los 3 meses de la versión gratuita).
+- **Modo oscuro:** Se asume que los usuarios valoran la personalización de la interfaz gráfica y la comodidad visual, de modo que la implementación de un modo oscuro facilitará el monitoreo y cuidado de plantas en condiciones de baja luminosidad (de noche o en exteriores con luz cambiante), reduciendo la fatiga visual y prolongando la sesión del usuario.
+- **Traducciones (Localización):** Se asume que existe un interés en mercados globales de aficionados a la jardinería urbana, por lo que ofrecer la aplicación en inglés y español incrementará la base de usuarios activos e impedirá abandonos debido a la barrera lingüística.
+- **Alertas de riego en Discord:** Se asume que los usuarios reaccionarán con mayor rapidez y efectividad ante alertas instantáneas en un canal externo de Discord en lugar de notificaciones internas de la aplicación web, disminuyendo el tiempo de respuesta.
+- **Modelo de suscripción premium:** Se asume que un segmento de usuarios avanzados (como jardineros coleccionistas o gestores de pequeños huertos urbanos) está dispuesto a pagar una tarifa mensual a cambio de diagnósticos avanzados detallados en lugar de la retención extendida de datos históricos de sensores.
+- **Gamificación por logros:** Se asume que otorgar insignias virtuales por el mantenimiento de plantas sanas incentivará a los usuarios a ingresar a la plataforma de forma periódica e incremental.
 
 **Knowledge Gaps (Brechas de conocimiento):**
-- **Preferencia del modo oscuro:** Falta información empírica cuantitativa sobre qué porcentaje de la base de usuarios actual prefiere una interfaz en modo oscuro de forma permanente frente a la conmutación basada en sensores de luz ambiental.
-- **Demografía e idiomas:** Es necesario investigar en profundidad la distribución geográfica y demográfica de nuestra base potencial de usuarios para evaluar si es preciso priorizar otros idiomas en futuras iteraciones de localización (como portugués o alemán).
-- **Interacción y utilidad de la comunidad:** Se carece de datos históricos sobre qué tópicos de discusión son más atrayentes y si la visualización de casos de éxito en el feed comunitario influye positivamente en el cuidado efectivo de las plantas de otros usuarios.
-- **Impacto de las alertas contextuales:** No hay suficiente evidencia sobre si las recomendaciones de riego inteligentes disminuyen el tiempo de respuesta promedio de los usuarios en comparación con una notificación de alarma tradicional de nivel crítico.
-- **Elasticidad de precios de la suscripción:** Se carece de análisis financiero sobre el precio ideal que los usuarios de diferentes segmentos estarían dispuestos a pagar por el plan premium, y qué características específicas del plan impulsan de manera determinante la decisión de compra.
+- **Preferencia del modo oscuro:** Falta información empírica cuantitativa sobre si la comodidad visual del modo oscuro efectivamente se traduce en un incremento en el tiempo promedio de sesión nocturna en dispositivos móviles.
+- **Uso de localización (i18n):** Se desconoce si habilitar la traducción del perfil reducirá significativamente los índices de abandono en las páginas de configuración para los usuarios angloparlantes.
+- **Eficacia de Discord Webhooks:** No hay evidencia histórica sobre si las alertas proactivas a Discord reducen el tiempo promedio de respuesta ante sequedad crítica a menos de 2 o horas.
+- **Preferencia de Valor Premium:** Se carece de datos históricos sobre cuál de las dos propuestas premium (diagnóstico de salud o historial de 24 meses) tiene una mayor tasa de clics y tasa de conversión simulada.
+- **Frecuencia por insignias:** Falta información cuantitativa para determinar si el reconocimiento de medallas por rachas sanas incrementa la retención y visitas semanales del usuario.
 
 **Ideas:**
-- **Gamificación del cuidado diario:** Implementar un sistema de logros desbloqueables (medallas por días sin alertas críticas, rachas de plantas en estado "healthy") para incrementar el engagement de la aplicación web.
-- **Alertas y Webhooks en Discord:** Integrar un canal de notificaciones automáticas mediante Webhooks de Discord para avisar de forma inmediata a los usuarios sobre riegos urgentes o pérdida de conectividad de sensores sin necesidad de que tengan la aplicación web abierta.
-- **Caché en el cliente web:** Desarrollar un sistema de almacenamiento temporal en caché de las últimas métricas recibidas para que el renderizado de gráficos históricos del dashboard sea instantáneo (< 1.5 segundos).
+- **Modo oscuro con toggle superior:** Diseñar un botón de alternancia en la barra de navegación que guarde la preferencia en `localStorage` para activar el tema oscuro en la aplicación web Vue.js.
+- **Traducción i18n:** Integrar la biblioteca Vue I18n con selector manual y detección automática de idioma del navegador.
+- **Alertas a Discord:** Conectar triggers de base de datos en Supabase para enviar webhooks automatizados con enlaces parametrizados.
+- **Simulación de Compra (Fake Door):** Agregar botones informativos de planes premium en los dashboards de salud e historial para registrar la intención de compra del usuario mediante Google Analytics.
+- **Mecánica de Logros:** Diseñar un panel lateral que compute rachas de 7 días sanas y otorgue una insignia interactiva de "Cuidador Experto".
 
 **Claims (Afirmaciones de usuarios y stakeholders):**
-- **Usuario Vasco:** "No me gusta estar amarrado a una suscripción mensual fija solo por ver las estadísticas básicas; prefiero realizar una sola compra de hardware."
-- **Usuario María:** "He perdido varias plantas en el pasado por exceso de agua o fertilizante. Necesito que la aplicación me guíe de forma proactiva con alertas explicativas claras y no solo con gráficos difíciles de interpretar."
 - **Usuario Natalia:** "Revisar los gráficos de la aplicación web en mi celular en pleno día cuando estoy en el jardín es complicado debido al reflejo del sol en la pantalla, por lo que necesito mejor contraste."
+- **Usuario Vasco:** "No me gusta estar amarrado a una suscripción mensual fija solo por ver las estadísticas básicas; prefiero realizar una sola compra de hardware."
+- **Usuario María:** "He perdido varias plantas en el pasado por exceso de agua o fertilizante. Necesito que la aplicación me guíe de forma proactiva con alertas explicativas claras en mi canal de mensajería y no solo con gráficos difíciles de interpretar."
+- **Usuario Juan (Internacional):** "Se me dificulta interactuar con la configuración del perfil porque no entiendo los términos específicos de riego en español; preferiría configurar la aplicación en inglés."
+
+---
 
 ### 8.1.3. Experiment-Ready Questions
 
@@ -63,38 +68,48 @@ Para estructurar estas preguntas y descubrir supuestos subyacentes u ocultos, se
 #### 1. Preguntas Impulsadas por Creencias (Belief-led)
 
 ##### Pregunta 1: Monitoreo en exteriores mediante Modo Oscuro
-**¿La implementación de una interfaz de modo oscuro (alto contraste) en la aplicación web incrementará la duración de la sesión promedio de los usuarios en entornos exteriores o nocturnos en al menos un 15%?**
+**¿La implementación de una interfaz de modo oscuro (alto contraste) en la aplicación web incrementará la duración de la sesión promedio de los usuarios en dispositivos móviles durante la noche en al menos un 15%?**
 
-- **Who (Quién):** Aficionados a las plantas y cuidadores (con perfiles similares a Natalia y María) que interactúan con la interfaz bajo condiciones de iluminación exterior.
+- **Who (Quién):** Aficionados a las plantas y cuidadores (con perfiles similares a Natalia) que interactúan con la interfaz bajo condiciones de iluminación exterior o nocturna.
 - **What (Qué):** Una visualización alternativa en modo oscuro que optimice la legibilidad y reduzca el reflejo de la luz solar en las pantallas de los teléfonos móviles.
 - **Where (Dónde):** En el panel principal y las secciones de gráficos históricos de la aplicación web Vue.js.
 - **When (Cuándo):** Durante el monitoreo y registro de plantas en jardines o terrazas durante el día con alta luminosidad, o en interiores con poca luz durante la noche.
-- **Why (Por qué):** Para mitigar la fatiga visual provocada por el contraste excesivo del sol y evitar que la incomodidad visual cause que los usuarios abandonen la visualización de datos de manera temprana.
-- **How (Cómo):** Proveyendo un botón de alternancia en la configuración de la interfaz para activar de forma manual o automática el modo oscuro mediante hojas de estilo CSS dinámicas.
+- **Why (Por qué):** Para mitigar la fatiga visual provocada por el contraste excesivo del sol o la luz clara y evitar que la incomodidad visual cause que los usuarios abandonen la aplicación de manera temprana.
+- **How (Cómo):** Proveyendo un botón de alternancia en la barra de navegación superior de la interfaz para activar de forma manual el modo oscuro mediante hojas de estilo CSS dinámicas.
 
 ##### Pregunta 2: Notificaciones de Riego Crítico vía Discord Webhooks
 **¿El envío automático de alertas de riego crítico a un canal dedicado de Discord mediante Webhooks reducirá el tiempo de respuesta promedio de los usuarios ante estados críticos de humedad del suelo de 12 horas a menos de 2 horas?**
 
-- **Who (Quién):** Usuarios urbanos con rutinas ocupadas (con perfiles similares a Vasco y Ana) que a menudo olvidan abrir la aplicación web.
+- **Who (Quién):** Usuarios urbanos con rutinas ocupadas (con perfiles similares a María y Vasco) que a menudo olvidan abrir la aplicación web.
 - **What (Qué):** Envío automático de notificaciones estructuradas con el diagnóstico contextual del sensor afectado (ej. humedad del suelo menor al 20%).
-- **Where (Dónde):** Canal exclusivo `#alerts-critical` de la plataforma Discord.
+- **Where (Dónde):** Canal exclusivo de la plataforma Discord.
 - **When (Cuándo):** Inmediatamente después de que el backend de **Supabase** registre una lectura crítica de humedad del suelo.
 - **Why (Por qué):** Para eliminar la necesidad de que el usuario tenga que ingresar manualmente al panel web para enterarse del estado de la planta, asegurando una intervención inmediata.
 - **How (Cómo):** Conectando el pipeline de base de datos de Supabase con un servicio que envíe peticiones POST a la URL del webhook de Discord cada vez que se detecte una anomalía de riego.
 
+##### Pregunta 3: Soporte de Multiidioma i18n
+**¿La incorporación de un selector de idioma inglés/español mediante i18n reducirá la tasa de abandono de la configuración del perfil para usuarios con navegadores configurados en inglés en un 30%?**
+
+- **Who (Quién):** Usuarios internacionales y angloparlantes (con perfiles similares a Juan) que interactúan con el formulario de registro de sensores e información personal.
+- **What (Qué):** Una traducción completa y contextual de los campos del formulario de configuración mediante archivos JSON regionales en Vue.js.
+- **Where (Dónde):** En la sección de perfil y la ruta `/config` de la aplicación web.
+- **When (Cuándo):** En la carga inicial de configuración del perfil del usuario o del hardware IoT.
+- **Why (Por qué):** Para evitar que la barrera del idioma genere confusión en los campos obligatorios del perfil y provoque que los usuarios extranjeros desistan de completar el registro.
+- **How (Cómo):** Utilizando la biblioteca Vue I18n para mapear dinámicamente las cadenas del formulario y agregando un botón conmutador de traducción en la barra superior.
+
+##### Pregunta 5: Insignias de Logros por Cuidado (Gamificación)
+**¿La visualización de una insignia virtual de "Cuidador Experto" tras mantener todas las plantas sin alertas críticas por 7 días incrementará la frecuencia de visitas semanales al panel en al menos un 20%?**
+
+- **Who (Quién):** Cuidadores domésticos que requieren consistencia y un hábito regular para el mantenimiento de su huerto urbano.
+- **What (Qué):** Una medalla digital interactiva en el perfil lateral que reconoce el estado óptimo de sus plantas.
+- **Where (Dónde):** En el panel principal y perfil del usuario dentro de la aplicación.
+- **When (Cuándo):** Tras cumplir un lapso de 7 días consecutivos sin ningún registro de alertas de humedad críticas en la base de datos.
+- **Why (Por qué):** Para aprovechar motivadores extrínsecos (recompensas virtuales) e incentivar a los usuarios a realizar ingresos recurrentes para mantener su racha y proteger su medalla.
+- **How (Cómo):** Evaluando las alertas históricas en la tabla `sensor_readings` de Supabase asincrónicamente y mostrando la insignia ganada mediante animaciones CSS.
+
 ---
 
 #### 2. Preguntas Exploratorias (Exploratory)
-
-##### Pregunta 3: Demografía lingüística de los visitantes del Landing Page
-**¿Cuál es la proporción de visitas internacionales hispanohablantes frente a angloparlantes en nuestro Landing Page y qué porcentaje prefiere visualizar la información del producto en inglés?**
-
-- **Who (Quién):** Visitantes y posibles clientes en general que navegan por el Landing Page.
-- **What (Qué):** Idioma preferido del navegador e IP de origen del tráfico.
-- **Where (Dónde):** En el Landing Page público de PlantCare hospedado en GitHub Pages.
-- **When (Cuándo):** Durante las primeras cuatro semanas de lanzamiento de la campaña de validación inicial.
-- **Why (Por qué):** Para determinar de forma cuantitativa si el desarrollo de traducciones al inglés (implementado mediante la biblioteca i18n) en la aplicación web está plenamente justificado por el volumen de tráfico de esa audiencia.
-- **How (Cómo):** Evaluando las estadísticas del idioma por defecto del navegador web de las visitas mediante una herramienta analítica integrada en el Landing Page.
 
 ##### Pregunta 4: Valoración de características del plan Premium
 **¿Qué características premium (el diagnóstico detallado de salud basado en datos históricos o la retención de métricas por 24 meses) despiertan mayor interés de compra entre los usuarios de la versión básica?**
@@ -130,29 +145,35 @@ $$\text{Puntaje Total} = \text{Confianza} + \text{Riesgo} + \text{Impacto} + \te
 
 #### Tabla de Priorización (Broad Backlog)
 
-El siguiente cuadro detalla la evaluación de las cuatro preguntas clave identificadas en el proyecto:
+El siguiente cuadro detalla la evaluación de las cinco preguntas clave de investigación de la plataforma:
 
 | ID | Pregunta de Investigación | Motivación ("Por qué") | C | R | I | Int | Total | Estado |
 | :---: | :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: |
-| **Q2** | ¿Las alertas críticas de riego vía webhooks de Discord reducirán el tiempo de respuesta del usuario a menos de 2 horas? | Evitar la pérdida física de plantas por olvidos en el riego diario en usuarios ocupados. | 3 | **5** | 4 | 4 | **16** | Priorizada (Backlog Profundo) |
+| **Q2** | ¿Las alertas de Discord reducirán el tiempo de respuesta del usuario ante humedad crítica a menos de 2 horas? | Evitar la pérdida física de plantas por descuidos en el riego de usuarios ocupados. | 4 | **5** | 4 | 4 | **17** | Priorizada (Backlog Profundo) |
 | **Q4** | ¿Qué características premium (diagnósticos avanzados o historiales extendidos) despiertan mayor interés de compra? | Validar la viabilidad económica del modelo de suscripción SaaS para sustentar el proyecto. | 4 | **4** | 4 | 4 | **16** | Priorizada (Backlog Profundo) |
-| **Q1** | ¿La implementación del modo oscuro aumentará el tiempo de sesión promedio en exteriores o de noche en un 15%? | Mejorar la comodidad visual en entornos con exceso de sol o de noche. | 4 | 2 | 3 | 4 | **13** | Pendiente (Backlog Amplio) |
-| **Q3** | ¿Cuál es la proporción de visitas internacionales angloparlantes en nuestro Landing Page? | Justificar la necesidad y costos de soporte de internacionalización (i18n). | 5 | 1 | 2 | 3 | **11** | Pendiente (Backlog Amplio) |
+| **Q1** | ¿La interfaz de modo oscuro incrementará la duración de sesión promedio nocturna en móviles en un 15%? | Mejorar la usabilidad y reducir fatiga visual en exteriores y noches. | 4 | **2** | 3 | 4 | **13** | Priorizada (Backlog Profundo) |
+| **Q5** | ¿La insignia virtual de "Cuidador Experto" incrementará las visitas semanales al panel en un 20%? | Incentivar la frecuencia de monitoreo diario mediante gamificación interactiva. | 3 | **3** | 3 | 4 | **13** | Priorizada (Backlog Profundo) |
+| **Q3** | ¿El soporte i18n reducirá el abandono del formulario de perfil para usuarios con navegador en inglés en un 30%? | Eliminar la barrera de idioma en el registro inicial de perfiles y sensores. | 4 | **2** | 3 | 3 | **12** | Priorizada (Backlog Profundo) |
 
-*Nota sobre la aplicación de la regla de desempate:* Como se observa en la tabla, **Q2** y **Q4** empataron con un puntaje total de **16**. Aplicando la regla de desempate por riesgo, **Q2** se posiciona en el primer lugar del backlog profundo debido a que su nivel de riesgo es **5** (la pérdida de plantas debido a fallas de riego destruye el valor principal del producto), mientras que el riesgo de **Q4** es de **4** (la viabilidad de monetización).
+*Nota sobre la aplicación de la regla de desempate:* Las preguntas **Q1** y **Q5** empataron en un puntaje total de **13**. Aplicando la regla de desempate por riesgo, **Q5** se sitúa por encima de **Q1** en el backlog debido a que tiene un riesgo de **3** (las mecánicas de retención son críticas para el hábito diario) frente al riesgo de **2** de **Q1** (comodidad visual de modo oscuro).
 
 ---
 
 #### Estructura del Backlog Profundo (Deep Backlog)
 
-Basándonos en la priorización obtenida, el backlog profundo queda constituido por las siguientes preguntas de investigación para su experimentación inmediata:
+Debido a la naturaleza de las 5 hipótesis experimentales de software planteadas para las iteraciones inmediatas de desarrollo de **PlantCare**, todas las preguntas han sido seleccionadas para su experimentación y despliegue dentro del Backlog Profundo:
 
-1. **Prioridad 1 (Q2):** Impacto de las alertas de riego crítico vía webhooks de Discord en el tiempo de respuesta del usuario.
-2. **Prioridad 2 (Q4):** Interés de compra y valoración de características avanzadas para el plan de suscripción Premium.
+1. **Prioridad 1 (Q2):** Impacto de las alertas de riego crítico vía webhooks de Discord en el TPR.
+2. **Prioridad 2 (Q4):** Interés de compra y valoración de características de suscripción Premium.
+3. **Prioridad 3 (Q5):** Frecuencia de visitas semanales y retención mediante insignias de logros (Gamificación).
+4. **Prioridad 4 (Q1):** Incremento del tiempo de sesión en móviles mediante la activación del tema Modo Oscuro.
+5. **Prioridad 5 (Q3):** Reducción de la tasa de abandono en la configuración de perfiles mediante localización i18n.
+
+---
 
 ### 8.1.5. Experiment Cards
 
-Las Tarjetas de Experimento (*Experiment Cards*) sirven como la plantilla técnica estructurada que captura la información clave para cada experimento antes de su ejecución. Se han diseñado dos tarjetas correspondientes a las preguntas prioritarias del Backlog Profundo: **EC-01** (para las alertas en Discord) y **EC-02** (para las características de la suscripción Premium).
+Las Tarjetas de Experimento (*Experiment Cards*) sirven como la plantilla técnica estructurada que captura la información clave para cada experimento antes de su ejecución. Se han diseñado cinco tarjetas correspondientes a las hipótesis priorizadas del Backlog Profundo:
 
 ---
 
@@ -184,7 +205,7 @@ Las Tarjetas de Experimento (*Experiment Cards*) sirven como la plantilla técni
 ##### Lado Frontal (Front Side)
 - **Pregunta (Question):** ¿Qué características premium (el diagnóstico detallado de salud basado en datos históricos o la retención de métricas por 24 meses) despiertan mayor interés de compra entre los usuarios de la versión básica?
 - **Por qué (Why):** Validar qué características justifican la suscripción mensual del modelo SaaS para rentabilizar la startup y priorizar recursos de desarrollo técnico.
-- **Hipótesis (Hypothesis):** Creemos que el diagnóstico detallado de salud y las sugerencias avanzadas personalizadas generarán el doble de clics de interés que la retención de datos históricos por 24 meses, porque los usuarios valoran más la información orientada a la acción y salud inmediata que el almacenamiento masivo.
+- **Hipótesis (Hypothesis):** Creemos que el diagnóstico detallado de salud y las sugerencias avanzadas personalizadas generarán el doble de clics de interés que la retención de datos históricos por 24 meses, porque los usuarios de PlantCare valoran más la información orientada a la acción y salud inmediata que el almacenamiento masivo.
 - **Qué (What - Simplest Useful Thing):** Modificar la interfaz web para mostrar dos botones con la etiqueta de "Ver Planes Premium" asociados respectivamente a cada funcionalidad (uno en el panel de historial y otro en el panel de diagnóstico de salud), que abran una modal informativa con los precios de suscripción.
 
 ##### Lado Posterior (Back Side)
@@ -194,10 +215,79 @@ Las Tarjetas de Experimento (*Experiment Cards*) sirven como la plantilla técni
 - **Condiciones (Conditions):**
   - **Condición Experimental:** Exposición de ambos botones de forma simultánea a toda la base de usuarios activos del plan gratuito de PlantCare durante el periodo de prueba.
 - **Escala (Scale):**
-- **Nivel de significancia ($\alpha$):** 5%.
+  - **Nivel de significancia ($\alpha$):** 5%.
   - **Potencia estadística ($1-\beta$):** 80%.
   - **Efecto Mínimo Detectable (MDE):** Una diferencia absoluta de 5% en la tasa de clics entre ambos botones.
   - **Tamaño de muestra:** Exposición mínima de 150 usuarios únicos activos del plan básico por sección durante 15 días.
+
+---
+
+#### Tarjeta de Experimento 3: EC-03 (Modo Oscuro para Monitoreo Nocturno)
+
+##### Lado Frontal (Front Side)
+- **Pregunta (Question):** ¿La implementación de una interfaz de modo oscuro en la aplicación web incrementará la duración de la sesión promedio de los usuarios en dispositivos móviles durante la noche en al menos un 15%?
+- **Por qué (Why):** Evitar la fatiga visual y mejorar la legibilidad bajo condiciones de baja iluminación nocturna o excesivo brillo solar exterior, promoviendo interacciones prolongadas.
+- **Hipótesis (Hypothesis):** Creemos que si implementamos un botón de selección de modo oscuro en la barra de navegación superior de la aplicación web, entonces la duración promedio de las sesiones de los usuarios en dispositivos móviles durante la noche (de 19:00 a 06:00) aumentará en un 15%, debido a la reducción de la fatiga visual bajo condiciones de baja luminosidad.
+- **Qué (What - Simplest Useful Thing):** Implementar un conmutador simple en la cabecera que alterne clases CSS y guarde la preferencia del tema en `localStorage`.
+
+##### Lado Posterior (Back Side)
+- **Medidas (Measures):**
+  - **Métrica Primaria:** Duración promedio en minutos de la sesión de usuario en móviles durante la noche (Duración de Sesión Nocturna - DSN).
+  - **Métrica Secundaria:** Conteo de clics en el botón de alternancia del modo oscuro e interacciones con gráficos de sensores en la noche.
+- **Condiciones (Conditions):**
+  - **Condición de Control:** Interfaz fija en modo claro (sin opción de alternancia).
+  - **Condición Experimental:** Habilitación del selector de modo oscuro en la barra de navegación superior.
+- **Escala (Scale):**
+  - **Nivel de significancia ($\alpha$):** 5%.
+  - **Potencia estadística ($1-\beta$):** 80%.
+  - **Efecto Mínimo Detectable (MDE):** Un incremento del 15% (1.2 minutos sobre una línea base de 8 minutos).
+  - **Tamaño de muestra:** Recopilación de al menos 100 sesiones nocturnas registradas por cada grupo durante 14 días.
+
+---
+
+#### Tarjeta de Experimento 4: EC-04 (Soporte Multiidioma i18n)
+
+##### Lado Frontal (Front Side)
+- **Pregunta (Question):** ¿La integración de un selector de idioma inglés/español mediante i18n reducirá la tasa de abandono de la configuración del perfil para usuarios con navegadores configurados en inglés en un 30%?
+- **Por qué (Why):** Minimizar el abandono y la fricción lingüística en el proceso de configuración del perfil y registro del hardware IoT para usuarios internacionales.
+- **Hipótesis (Hypothesis):** Creemos que si incorporamos un selector de idioma (inglés/español) en la cabecera de la aplicación web mediante la biblioteca i18n, entonces la tasa de abandono en las páginas de configuración para usuarios con navegadores configurados en inglés se reducirá en un 30%, al eliminar la barra lingüística al interactuar con el sistema.
+- **Qué (What - Simplest Useful Thing):** Integrar la biblioteca Vue I18n con archivos locales de traducción JSON para el formulario de perfil.
+
+##### Lado Posterior (Back Side)
+- **Medidas (Measures):**
+  - **Métrica Primaria:** Tasa de Abandono de Configuración (TAC) en la ruta `/config` para usuarios con idioma del navegador en inglés.
+  - **Métrica Secundaria:** Conteo de cambios de idioma manuales e incidentes de error en la validación del formulario.
+- **Condiciones (Conditions):**
+  - **Condición de Control:** Formulario e interfaz web fija en español.
+  - **Condición Experimental:** Soporte i18n habilitado con selector inglés/español y detección automática del navegador.
+- **Escala (Scale):**
+  - **Nivel de significancia ($\alpha$):** 5%.
+  - **Potencia estadística ($1-\beta$):** 80%.
+  - **Efecto Mínimo Detectable (MDE):** Una reducción absoluta del 12% (del 40% histórico al 28% de TAC).
+  - **Tamaño de muestra:** Registro de al menos 80 usuarios únicos calificados por condición durante 20 días.
+
+---
+
+#### Tarjeta de Experimento 5: EC-05 (Insignias de Logros por Cuidado)
+
+##### Lado Frontal (Front Side)
+- **Pregunta (Question):** ¿La visualización de una insignia virtual de "Cuidador Experto" tras mantener todas las plantas sin alertas críticas por 7 días incrementará la frecuencia de visitas semanales al panel de control en un 20%?
+- **Por qué (Why):** Aumentar el compromiso del usuario y fomentar el hábito recurrente de monitoreo preventivo de plantas mediante la gamificación.
+- **Hipótesis (Hypothesis):** Creemos que si mostramos una insignia virtual de "Cuidador Experto" en el perfil del usuario tras mantener todas sus plantas sin alertas críticas durante 7 días consecutivos, entonces la frecuencia de visitas semanales al panel de control aumentará en un 20%, ya que la gamificación incentiva la revisión diaria del estado de las plantas.
+- **Qué (What - Simplest Useful Thing):** Agregar un panel lateral simple que dibuje el logro de la insignia tras procesarse una racha de 7 días sanos en Supabase.
+
+##### Lado Posterior (Back Side)
+- **Medidas (Measures):**
+  - **Métrica Primaria:** Tasa de Retención Semanal de Visitas (TRV) calculada como días activos semanales.
+  - **Métrica Secundaria:** Cantidad de insignias ganadas y número de clics en el widget de logros del perfil.
+- **Condiciones (Conditions):**
+  - **Condición de Control:** Panel lateral sin barra ni mecánicas de insignias.
+  - **Condición Experimental:** Panel lateral con widget activo de medallas y cálculo automático de rachas sanas.
+- **Escala (Scale):**
+  - **Nivel de significancia ($\alpha$):** 5%.
+  - **Potencia estadística ($1-\beta$):** 80%.
+  - **Efecto Mínimo Detectable (MDE):** Un incremento promedio de 0.7 días en TRV (línea base de 3.5 ingresos).
+  - **Tamaño de muestra:** Monitoreo de al menos 50 usuarios activos por grupo durante 14 días.
 
 ## 8.2. Experiment Design
 
@@ -205,37 +295,27 @@ La fase de diseño del experimento constituye un pilar fundamental para garantiz
 
 ### 8.2.1. Hypotheses
 
-En el marco de trabajo de desarrollo guiado por experimentos, las hipótesis no se formulan para ser validadas a priori o declaradas verdaderas sin cuestionamiento; por el contrario, se estructuran con el propósito de ser probadas (*tested*) y sometidas a un proceso de falsabilidad. Para cada uno de los experimentos prioritarios del backlog profundo (**EC-01** y **EC-02**), se define una hipótesis de trabajo ($H_1$) estructurada, medible y falsificable, junto con su correspondiente hipótesis nula ($H_0$), la cual asume la ausencia de efecto o que cualquier variación observada se debe meramente al azar.
+En el marco de trabajo de desarrollo guiado por experimentos, las hipótesis se formulan como declaraciones de creencia claras y orientadas a la acción, diseñadas con el propósito de ser probadas (*tested*) y sometidas a un proceso de falsabilidad mediante la interacción del usuario con características específicas del software. A continuación, se detallan las cinco hipótesis experimentales definidas a nivel de funcionalidades de software de **PlantCare**:
 
 ---
 
-#### Experimento EC-01: Alertas de Riego Crítico vía Discord
+#### Hipótesis 1: Notificaciones de Riego Crítico vía Discord (EC-01)
+Creemos que si implementamos el envío automático de notificaciones de alerta de riego crítico con diagnósticos contextuales al canal de Discord de los usuarios, entonces el tiempo promedio de respuesta ante el estado de sequedad crítica de la planta se reducirá a menos de 2 horas (120 minutos), en comparación con el tiempo promedio de 12 horas (720 minutos) observado en los usuarios que solo reciben alertas internas tradicionales en el panel de control.
 
-* **Hipótesis de Trabajo ($H_1$):**
-  Creemos que si implementamos y habilitamos el envío automático de notificaciones de alerta de riego crítico con diagnósticos contextuales al canal de Discord de los usuarios, entonces el tiempo promedio de respuesta ante el estado de sequedad crítica de la planta se reducirá a menos de 2 horas (120 minutos), en comparación con el tiempo promedio de 12 horas (720 minutos) observado en los usuarios del grupo de control que solo reciben alertas internas tradicionales en el dashboard web.
-  * **Criterio de Falsabilidad:** Esta hipótesis se considerará refutada si al finalizar el período de evaluación la diferencia en el tiempo promedio de respuesta entre el grupo experimental y el grupo de control no es estadísticamente significativa para un nivel de significación del 5% ($\alpha = 0.05$), o si el tiempo promedio de respuesta en el grupo experimental es igual o superior a 120 minutos.
-  * **Criterio de Testabilidad y Medibilidad:** Se evaluará de forma empírica dividiendo aleatoriamente a la base de usuarios en dos grupos uniformes (control y experimental) durante 14 días, midiendo el intervalo en minutos mediante las marcas de tiempo registradas en las tablas de la base de datos de **Supabase (PostgreSQL)**.
+#### Hipótesis 2: Valoración de Características Premium (EC-02)
+Creemos que el botón informativo de planes premium asociado a la característica de "diagnósticos avanzados de salud" generará al menos el doble (2x) de la tasa de clics (CTR) en comparación con el botón informativo asociado a la característica de "retención de datos históricos por 24 meses", cuando ambos se presenten simultáneamente en la interfaz.
+#### Hipótesis 3: Modo Oscuro para Monitoreo Nocturno
+Creemos que si implementamos un botón de selección de modo oscuro en la barra de navegación superior de la aplicación web, entonces la duración promedio de las sesiones de los usuarios en dispositivos móviles durante la noche (de 19:00 a 06:00) aumentará en un 15%, debido a la reducción de la fatiga visual bajo condiciones de baja luminosidad.
 
-* **Hipótesis Nula ($H_0$):**
-  La integración y envío de alertas automatizadas de riego crítico mediante webhooks de Discord no producirá ninguna diferencia estadísticamente significativa en el tiempo promedio de respuesta ante estados críticos de humedad del suelo en los usuarios de **PlantCare**, de modo que cualquier variación observada entre el grupo experimental y el grupo de control se deberá únicamente al azar.
+#### Hipótesis 4: Soporte Multiidioma (i18n)
+Creemos que si incorporamos un selector de idioma (inglés/español) en la cabecera de la aplicación web mediante la biblioteca i18n, entonces la tasa de abandono en las páginas de configuración para usuarios con navegadores configurados en inglés se reducirá en un 30%, al eliminar la barrera lingüística al interactuar con el sistema.
 
----
-
-#### Experimento EC-02: Valoración de Características Premium
-
-* **Hipótesis de Trabajo ($H_1$):**
-  Creemos que el botón informativo de planes premium asociado a la característica de "diagnósticos avanzados de salud basados en datos históricos" generará una tasa de clics (CTR) que será al menos el doble (2x) de la tasa de clics obtenida por el botón informativo asociado a la característica de "retención de datos históricos por 24 meses", cuando ambos se presenten simultáneamente a los usuarios de la versión gratuita de **PlantCare**.
-  * **Criterio de Falsabilidad:** Esta hipótesis se considerará refutada si la tasa de clics del botón de diagnóstico avanzado de salud no supera de forma estadísticamente significativa al doble de la tasa de clics del botón de retención de datos, o si los resultados muestran una preferencia inversa con un nivel de significación del 5% ($\alpha = 0.05$).
-  * **Criterio de Testabilidad y Medibilidad:** Se probará modificando la aplicación web frontend en Vue.js para incorporar ambos botones de llamada a la acción en sus secciones correspondientes, capturando los identificadores únicos de usuario y los clics efectuados para realizar la comparación estadística directa de las tasas de clics.
-
-* **Hipótesis Nula ($H_0$):**
-  No existirá una diferencia estadísticamente significativa en la tasa de clics (CTR) de interés entre la característica de diagnósticos avanzados de salud y la retención extendida de datos históricos por 24 meses en la aplicación **PlantCare**, de forma que la preferencia de los usuarios se distribuirá de manera uniforme o cualquier variación registrada será consecuencia del azar.
-
----
+#### Hipótesis 5: Insignias de Logros por Cuidado (Gamificación)
+Creemos que si mostramos una insignia virtual de "Cuidador Experto" en el perfil del usuario tras mantener todas sus plantas sin alertas críticas durante 7 días consecutivos, entonces la frecuencia de visitas semanales al panel de control aumentará en un 20%, ya que la gamificación incentiva la revisión diaria del estado de las plantas.
 
 ### 8.2.2. Domain Business Metrics
 
-Para asegurar que los experimentos no se evalúen con base en métricas de vanidad o datos aislados, el equipo establece un conjunto de métricas de negocio del dominio de **PlantCare**. Estas métricas se definen formalmente a continuación y servirán como el único catálogo de referencia para las tarjetas de experimento del proyecto.
+Para asegurar que los experimentos no se evalúen con base en métricas de vanidad o datos aislados, el equipo establece un conjunto de métricas de negocio del dominio de **PlantCare**. Estas métricas se definen formalmente a continuación y servirán como el único catálogo de referencia para los experimentos y el seguimiento de la plataforma.
 
 #### 1. Tiempo Promedio de Respuesta ante Alertas Críticas (TPR)
 * **Definición:** Mide la rapidez con la que un usuario interviene físicamente para regar su planta tras la emisión de una alerta por falta de humedad.
@@ -243,30 +323,47 @@ Para asegurar que los experimentos no se evalúen con base en métricas de vanid
   $$\text{TPR} = \frac{\sum_{i=1}^{n} (T_{\text{riego}, i} - T_{\text{alerta}, i})}{n}$$
   Donde:
   * $T_{\text{riego}, i}$ es la marca de tiempo (timestamp UTC) del registro de riego de la planta $i$ en la tabla `watering_logs` de **Supabase**.
-  * $T_{\text{alerta}, i}$ es la marca de tiempo (timestamp UTC) del primer registro en la tabla `sensor_readings` que documenta un valor de humedad del suelo igual o inferior al 20% ($soil\_moisture\_pct \le 20$) para la misma planta, y que desencadenó la notificación.
-  * $n$ es el número total de transiciones críticas de humedad resueltas mediante riego durante el intervalo del experimento.
-* **Técnica de recolección:** Consulta SQL de agregación y cálculo de intervalos de tiempo en la base de datos de **Supabase (PostgreSQL)**, ejecutando un cruzamiento (*join*) entre las tablas `sensor_readings` y `watering_logs` agrupadas por identificador de planta (`plant_id`).
-* **Meta deseada:** Lograr un $\text{TPR} \le 120$ minutos (2 horas) en el grupo experimental de usuarios que disponen del canal de Discord configurado.
+  * $T_{\text{alerta}, i}$ es la marca de tiempo (timestamp UTC) del primer registro en la tabla `sensor_readings` que documenta un valor de humedad del suelo igual o inferior al 20% ($soil\_moisture\_pct \le 20$) para la misma planta.
+  * $n$ es el número total de transiciones críticas de humedad resueltas mediante riego.
+* **Técnica de recolección:** Consulta SQL de agregación en **Supabase (PostgreSQL)**, ejecutando un cruzamiento (*join*) entre las tablas `sensor_readings` y `watering_logs` agrupadas por identificador de planta (`plant_id`).
+* **Meta deseada:** Lograr un $\text{TPR} \le 120$ minutos (2 horas) en el grupo expuesto a Discord.
 
 #### 2. Tasa de Clics de Interés Premium (CTR)
-* **Definición:** Porcentaje de usuarios únicos expuestos a una propuesta de valor premium que manifiestan interés activo interactuando con el botón de información correspondiente.
+* **Definición:** Porcentaje de usuarios únicos expuestos a una propuesta de valor premium que manifiestan interés activo interactuando con el botón informativo.
 * **Fórmula de cálculo:**
   $$\text{CTR}_{\text{característica}} = \frac{U_{\text{clics, característica}}}{U_{\text{vistas, sección}}} \times 100\%$$
-  Donde:
-  * $U_{\text{clics, característica}}$ es el conteo de usuarios únicos que presionaron el botón "Ver Planes Premium" para una característica específica (diagnóstico avanzado o historial extendido) en un día.
-  * $U_{\text{vistas, sección}}$ es el conteo de usuarios únicos que accedieron a la sección de la interfaz donde se muestra dicho botón en el mismo día.
-* **Técnica de recolección:** Registro de eventos de clic y de carga de componentes del lado del cliente web en Vue.js. Los eventos se registran en una tabla de auditoría en la base de datos de **Supabase** denominada `feature_interaction_logs` mediante llamadas seguras a la API del cliente de Supabase.
-* **Meta deseada:** Obtener un $\text{CTR}_{\text{diagnostico}} \ge 10\%$ y demostrar estadísticamente que la relación $\text{CTR}_{\text{diagnostico}} \ge 2 \times \text{CTR}_{\text{retencion}}$ se cumple con un intervalo de confianza del 95%.
+* **Técnica de recolección:** Registro de eventos de clic en Vue.js enviados a la tabla `feature_interaction_logs` de **Supabase**.
+* **Meta deseada:** Obtener un $\text{CTR}_{\text{diagnostico}} \ge 10\%$ y demostrar que $\text{CTR}_{\text{diagnostico}} \ge 2 \times \text{CTR}_{\text{retencion}}$.
 
 #### 3. Tasa de Mortalidad de Plantas (TMP)
-* **Definición:** Mide la eficacia global del sistema de monitoreo y alertas en la prevención de la pérdida física de cultivos y plantas domésticas.
+* **Definición:** Porcentaje de plantas registradas bajo monitoreo activo que son dadas de baja o declaradas muertas.
 * **Fórmula de cálculo:**
   $$\text{TMP} = \frac{P_{\text{muertas}}}{P_{\text{totales}}} \times 100\%$$
-  Donde:
-  * $P_{\text{muertas}}$ es el número de plantas cuyo estado en la base de datos se actualizó a "Muerta" o que fueron eliminadas por el usuario seleccionando como motivo "Marchitamiento por sequedad" durante el experimento.
-  * $P_{\text{totales}}$ es el número total de plantas activas registradas en la aplicación bajo monitoreo de sensores.
-* **Técnica de recolección:** Consulta periódica en la tabla `plants` de la base de datos de **Supabase**, filtrando por la columna de estado de la planta y el registro histórico de bajas.
-* **Meta deseada:** Reducir la tasa de mortalidad a un $\text{TMP} \le 3\%$ en el grupo expuesto a las alertas proactivas (frente al 10% estimado en la base de usuarios sin notificaciones optimizadas).
+* **Técnica de recolección:** Consulta en la tabla `plants` de **Supabase**, filtrando por la columna de estado.
+* **Meta deseada:** Reducir la tasa de mortalidad a un $\text{TMP} \le 3\%$.
+
+#### 4. Duración de Sesión Nocturna en Móviles (DSN)
+* **Definición:** Tiempo promedio en minutos que un usuario mantiene una sesión activa en la aplicación web en dispositivos móviles durante la noche (de 19:00 a 06:00).
+* **Fórmula de cálculo:**
+  $$\text{DSN} = \frac{\sum_{i=1}^{m} \text{Duración de la sesión } i}{m}$$
+  Donde $m$ es el total de sesiones registradas en el rango horario establecido.
+* **Técnica de recolección:** Registro de telemetría de sesiones web enviado a la tabla `user_sessions` en **Supabase**.
+* **Meta deseada:** Incrementar la DSN en un 15% en el grupo expuesto al modo oscuro.
+
+#### 5. Tasa de Abandono de Configuración (TAC)
+* **Definición:** Porcentaje de usuarios con configuración de navegador en inglés que acceden a la página de configuración del perfil pero la abandonan sin guardar cambios.
+* **Fórmula de cálculo:**
+  $$\text{TAC} = \frac{\text{Visitas con abandono sin guardar}}{\text{Total de visitas a la sección de configuración}} \times 100\%$$
+* **Técnica de recolección:** Registro de eventos de carga y abandono de la ruta `/config` a través de Google Analytics.
+* **Meta deseada:** Reducir la TAC en un 30% en los usuarios con soporte de traducción i18n activo.
+
+#### 6. Tasa de Retención Semanal de Visitas (TRV)
+* **Definición:** Frecuencia promedio de días en una semana en los que un usuario ingresa a la aplicación.
+* **Fórmula de cálculo:**
+  $$\text{TRV} = \frac{\sum_{j=1}^{u} \text{Días de ingreso de usuario } j}{u}$$
+  Donde $u$ es el total de usuarios bajo observación.
+* **Técnica de recolección:** Auditoría de accesos diarios en la tabla `user_daily_access` de **Supabase**.
+* **Meta deseada:** Incrementar la TRV en un 20% en el grupo expuesto al sistema de insignias de logros.
 
 ---
 
@@ -276,69 +373,107 @@ La selección de medidas estructuradas define de manera explícita qué datos co
 
 #### Clasificación de Medidas por Experimento
 
-##### Experimento EC-01 (Alertas de Riego Crítico vía Discord)
-* **Medida Primaria:**
-  * El intervalo temporal en minutos transcurrido desde la marca de tiempo de la lectura crítica de sensor en la base de datos hasta la inserción de la bitácora de riego en la base de datos para la misma planta.
-* **Medidas Secundarias:**
-  * Cantidad de visitas únicas a la aplicación web procedentes de la URL incrustada en la notificación de Discord (rastreada mediante el parámetro de consulta `?utm_source=discord_webhook`).
-  * Nivel de satisfacción de la utilidad de la alerta recopilado en el canal de Discord, calculado mediante la proporción de reacciones de emoji positivo frente a negativo en el mensaje enviado por el bot.
+##### Experimento 1: Notificaciones de Riego Crítico vía Discord (EC-01)
+* **Medida Primaria:** Intervalo temporal en minutos transcurrido desde la lectura crítica de sensor en la base de datos hasta la inserción del log de riego en la base de datos para la misma planta.
+* **Medidas Secundarias:** Clics en la URL incrustada en la notificación de Discord (`?utm_source=discord_webhook`) y nivel de satisfacción auto-reportado mediante reacciones de emoji en Discord.
 
-##### Experimento EC-02 (Valoración de Características Premium)
-* **Medida Primaria:**
-  * Clics únicos y eventos de carga asociados a los botones de "Ver Planes Premium" para la sección de diagnóstico avanzado de salud de la planta y la sección de retención de métricas históricas de 24 meses.
-* **Medidas Secundarias:**
-  * Tasa de conversión secundaria: Porcentaje de usuarios que, tras abrir el modal de planes premium, hacen clic en el botón de suscripción simulada "Comenzar Prueba de 14 Días".
-  * Tiempo de permanencia promedio (en segundos) dentro de la modal de planes premium antes de que el usuario cierre el cuadro de diálogo.
+##### Experimento 2: Valoración de Características Premium (EC-02)
+* **Medida Primaria:** Clics únicos y eventos de carga asociados a los botones de "Ver Planes Premium" para la sección de diagnóstico de salud y la sección de retención de datos.
+* **Medidas Secundarias:** Clics en el botón simulado "Comenzar Prueba de 14 Días" en la modal e intervalo de tiempo de visualización de la modal.
+
+##### Experimento 3: Modo Oscuro para Monitoreo Nocturno
+* **Medida Primaria:** Tiempo de permanencia en minutos por sesión en móviles en el rango nocturno (19:00 a 06:00).
+* **Medidas Secundarias:** Frecuencia de interacción con gráficos en el panel nocturno y conteo de clics en el botón de alternancia del modo oscuro.
+
+##### Experimento 4: Soporte Multiidioma (i18n)
+* **Medida Primaria:** Conteo de cambios de idioma seleccionados y tasa de abandono en la página de configuración del perfil.
+* **Medida Secundaria:** Tasa de errores en el formulario de configuración cometidos por usuarios con navegadores configurados en inglés.
+
+##### Experimento 5: Insignias de Logros por Cuidado (Gamificación)
+* **Medida Primaria:** Frecuencia de ingresos al panel de control en un período de 7 días.
+* **Medidas Secundarias:** Cantidad de insignias de "Cuidador Experto" otorgadas y tasa de interacción con el widget de logros.
 
 #### Racionalidad y Principio de Economía de Datos
 
-El diseño de medición de **PlantCare** se rige por el principio de economía de datos, lo que implica recopilar únicamente la información estrictamente necesaria durante el tiempo justo del experimento para minimizar la latencia de red, evitar la acumulación de datos redundantes y reducir los costos de almacenamiento y procesamiento en la base de datos de **Supabase**.
-
-Para lograr esto, se implementan las siguientes políticas de optimización y gobernanza de datos:
-1. **Frecuencia de Notificaciones Controlada por Transición:** En lugar de emitir notificaciones constantes a Discord cada vez que el sensor envíe una lectura de humedad inferior al 20% (lo cual saturaría el canal del usuario y consumiría recursos innecesarios de red y base de datos), el sistema utiliza un mecanismo de transición de estado lógico en la base de datos. Una alerta solo se dispara cuando el estado de la planta cambia de "Óptimo" a "Crítico". Las notificaciones subsiguientes quedan suspendidas hasta que se registre un evento de riego que retorne la humedad a un nivel superior al 30%.
-2. **Eventos Frontend Agregados y Batching:** Para el experimento **EC-02**, los eventos de interacción con los botones de planes no se envían de forma individual e inmediata por cada acción del cursor. El frontend en Vue.js consolida los eventos de visualización y clic localmente en la memoria del navegador y los transmite en un único paquete consolidado (*batch*) cada vez que el usuario abandona la página o cierra la sesión, disminuyendo la carga de peticiones HTTP en el backend.
-3. **Purga Automática de Telemetría Histórica:** Las lecturas detalladas de sensores que se envían cada minuto representan un volumen masivo de datos. En conformidad con la propuesta de valor diferenciada del plan premium, el sistema ejecuta un proceso programado (*cron job*) mensual en **Supabase** que purga de forma definitiva todas las lecturas de sensores con antigüedad mayor a 3 meses para los usuarios de la versión gratuita. Esto reduce los costos de almacenamiento físico en PostgreSQL y mantiene optimizados los índices de búsqueda para las consultas de la aplicación.
+El diseño de medición de **PlantCare** se rige por el principio de economía de datos para minimizar la latencia de red, evitar datos redundantes y reducir los costos de almacenamiento en la base de datos de **Supabase**:
+1. **Frecuencia de Notificaciones Controlada por Transición:** Para el Experimento 1, la alerta de Discord solo se envía la primera vez que se cruza el umbral crítico del 20%, suspendiendo las notificaciones posteriores hasta que se registre un riego válido en `watering_logs`.
+2. **Eventos Frontend Agregados y Batching:** Para el Experimento 2 y el Experimento 3, los eventos de clics e interacciones de sesión no se envían individualmente. Se consolidan en el almacenamiento local del navegador y se transmiten en un paquete consolidado (*batch*) al finalizar la sesión del usuario.
+3. **Purga Automática de Telemetría Histórica:** Se ejecuta una tarea programada mensual en **Supabase** que elimina todas las lecturas detalladas de sensores con antigüedad mayor a 3 meses para usuarios gratuitos, manteniendo optimizados los índices de la base de datos.
+4. **Cálculo Asincrónico de Logros:** Para el Experimento 5, la concesión de insignias y cálculo de metas se procesa una vez al día en segundo plano en el servidor de Supabase, evitando sobrecargar el procesamiento del lado del cliente web.
 
 ---
 
 ### 8.2.4. Conditions
 
-Las condiciones experimentales definen el entorno operativo y los grupos a los que se exponen los usuarios para identificar de forma clara la relación causa-efecto en cada pregunta de investigación. A continuación, se detallan las condiciones estructuradas para los experimentos prioritarios de **PlantCare**.
+Las condiciones experimentales definen el entorno operativo y los grupos a los que se exponen los usuarios para identificar la relación causa-efecto en cada hipótesis planteada.
 
-#### Experimento EC-01: Alertas de Riego Crítico vía Discord
-Para evaluar de manera confiable el impacto de las alertas proactivas, se configuran dos grupos de usuarios con perfiles comparables bajo las siguientes condiciones durante un período de prueba uniforme de 14 días:
-* **Condición Experimental ($C_E$):** Constituida por un grupo piloto de 15 usuarios que activan la integración de Discord en su perfil de la aplicación. Cada vez que el backend de **Supabase** registre que la humedad del suelo de una planta desciende de la cota crítica del 20%, se gatilla un webhook que envía de forma automática una notificación enriquecida con información diagnóstica contextual al canal privado de Discord del usuario, incluyendo un enlace directo a la sección de diagnóstico de salud.
-* **Condición de Control ($C_C$):** Constituida por un grupo piloto de 15 usuarios que operan bajo el comportamiento heredado (*As-Is*). Estos usuarios no reciben notificaciones automáticas fuera de la aplicación. Para enterarse del estado de sequedad crítica de sus cultivos, deben abrir manualmente la aplicación web Vue.js y consultar el estado del dashboard principal.
-
-#### Experimento EC-02: Valoración de Características Premium
-Dado el carácter exploratorio de esta investigación de mercado, se configuran límites precisos para el grupo de estudio con el fin de recopilar respuestas fiables y significativas:
-* **Definición del Grupo de Estudio:** El experimento se restringe a usuarios de la versión gratuita que demuestren un uso básico consolidado de la plataforma. Los criterios de inclusión en el grupo son: poseer al menos 3 plantas registradas y tener más de 30 días de uso activo en la aplicación. Esto previene sesgos causados por usuarios nuevos o inactivos.
-* **Condición Experimental 1 ($C_{E1}$):** Exposición de los usuarios elegibles al botón informativo "Ver Planes Premium" ubicado dentro del panel de diagnósticos detallados de salud de las plantas.
-* **Condición Experimental 2 ($C_{E2}$):** Exposición simultánea de los mismos usuarios al botón informativo "Ver Planes Premium" ubicado dentro de la sección de visualización de gráficos históricos de sensores.
+* **Experimento 1 (Discord):**
+  * *Condición Experimental ($C_E$):* Grupo piloto de 15 usuarios con la integración de Discord activa que reciben webhooks con diagnósticos contextuales al bajar la humedad del 20%.
+  * *Condición de Control ($C_C$):* Grupo piloto de 15 usuarios que operan bajo el sistema tradicional, debiendo ingresar manualmente a la aplicación para notar las alertas críticas.
+* **Experimento 2 (Características Premium):**
+  * *Límites del Grupo de Estudio:* Exclusivo para usuarios gratuitos con más de 3 plantas y 30 días activos.
+  * *Condición Experimental 1 ($C_{E1}$):* Exposición al botón "Ver Planes Premium" dentro del panel de diagnósticos detallados.
+  * *Condición Experimental 2 ($C_{E2}$):* Exposición al botón "Ver Planes Premium" dentro de la sección de visualización de gráficos históricos.
+* **Experimento 3 (Modo Oscuro):**
+  * *Condición Experimental:* Habilitación del selector de modo oscuro (alto contraste) en la barra de navegación superior.
+  * *Condición de Control:* Interfaz fija en modo claro clásica (sin opción de alternancia).
+* **Experimento 4 (Soporte Multiidioma):**
+  * *Condición Experimental:* Habilitación de soporte i18n con selector inglés/español y detección automática del idioma del navegador.
+  * *Condición de Control:* Interfaz fija en español sin capacidad de traducción.
+* **Experimento 5 (Gamificación):**
+  * *Condición Experimental:* Acceso al panel lateral de logros y concesión de la insignia de "Cuidador Experto".
+  * *Condición de Control:* Panel lateral básico sin insignias ni mecánicas de logros.
 
 ---
 
 ### 8.2.5. Scale Calculations and Decisions
 
-Las decisiones de escala determinan la magnitud del experimento en función del nivel de certidumbre requerido y la precisión del cambio que se pretende detectar. Los parámetros estadísticos se han calibrado para equilibrar el rigor científico y la economía de datos.
+Las decisiones de escala determinan la magnitud de cada experimento en función del nivel de certidumbre requerido y la precisión del cambio que se pretende detectar. Los parámetros estadísticos se han calibrado para equilibrar el rigor científico y la economía de datos, minimizando la recolección innecesaria de telemetría.
 
-#### Experimento EC-01: Alertas de Riego Crítico vía Discord
+#### Experimento 1: Notificaciones de Riego Crítico vía Discord (EC-01)
 * **Certeza (Certainty):**
-  * **Nivel de Significación ($\alpha$):** Se define en 5% (0.05). Esto indica que hay un 5% de probabilidad de cometer un error Tipo I (rechazar falsamente la hipótesis nula, asumiendo un beneficio de Discord que no es real).
-  * **Poder Estadístico ($1-\beta$):** Se establece en 80% (0.80) para reducir al 20% la probabilidad de cometer un error Tipo II (fallar en detectar una reducción real en el tiempo de riego provocada por Discord).
+  * **Nivel de Significación ($\alpha$):** 5% (0.05). Indica la probabilidad máxima aceptada de registrar un falso positivo (Error Tipo I).
+  * **Poder Estadístico ($1-\beta$):** 80% (0.80). Asegura una probabilidad de detectar el impacto real si este existe (reducción de Error Tipo II).
 * **Precisión y Efecto Mínimo Detectable (MDE):**
-  * Se establece un MDE de una reducción de 10 horas (600 minutos) en el tiempo de respuesta promedio de riego. Dado que la línea base histórica del grupo de control es de 12 horas, una diferencia menor no justificaría los esfuerzos de infraestructura técnica.
+  * Se establece un MDE de una reducción de 10 horas (600 minutos) en el tiempo promedio de respuesta de riego (TPR), partiendo de la línea base histórica del grupo de control de 12 horas.
 * **Decisión de Tamaño de Muestra:**
-  * Asumiendo una desviación estándar histórica de la respuesta de riego de aproximadamente 8 horas ($\sigma = 480$ minutos) y aplicando una prueba de diferencia de medias de dos colas con $\alpha = 0.05$ y poder de 80%, el cálculo de escala matemática determina que se requiere recopilar al menos 30 eventos críticos de riego por cada condición ($C_E$ y $C_C$). Con 15 usuarios por grupo monitoreados de manera proactiva durante 14 días (estimando entre 2 y 3 alertas críticas de sequedad por planta en dicho lapso), se garantiza superar el umbral estadístico requerido.
+  * Asumiendo una desviación estándar histórica en la respuesta de riego de aproximadamente 8 horas ($\sigma = 480$ minutos) y aplicando una prueba de diferencia de medias con $\alpha = 0.05$ y poder de 80%, se determina que se requiere recopilar al menos 30 eventos críticos de riego por cada condición ($C_E$ y $C_C$). Con un grupo piloto de 15 usuarios por condición durante 14 días (donde se estiman 2 a 3 alertas por usuario), se cumple con la escala estadística requerida.
 
-#### Experimento EC-02: Valoración de Características Premium
+#### Experimento 2: Valoración de Características Premium (EC-02)
 * **Certeza (Certainty):**
   * **Nivel de Significación ($\alpha$):** 5% (0.05).
   * **Poder Estadístico ($1-\beta$):** 80% (0.80).
 * **Precisión y Efecto Mínimo Detectable (MDE):**
-  * El MDE se define como una diferencia absoluta del 5% en la tasa de clics (CTR) entre el botón de diagnóstico avanzado de salud y el botón de retención extendida de datos.
+  * El MDE se define como una diferencia absoluta de 5% en la tasa de clics (CTR) entre las dos opciones expuestas.
 * **Decisión de Tamaño de Muestra:**
-  * Estimando una tasa de clics base (CTR) del 5% para llamados a la acción y aplicando una prueba de comparación de dos proporciones independientes, se calcula que es necesaria una exposición mínima de 150 usuarios únicos activos del plan gratuito por cada sección evaluada durante un período continuo de 15 días de observación.
+  * Estimando una tasa de clics base (CTR) del 5% y aplicando una prueba de comparación de proporciones independientes, se determina que se requiere una exposición mínima de 150 usuarios únicos activos del plan gratuito por cada sección evaluada. Para alcanzar esto, el experimento tendrá una duración fija de 15 días continuos de observación.
+
+#### Experimento 3: Modo Oscuro para Monitoreo Nocturno (EC-03)
+* **Certeza (Certainty):**
+  * **Nivel de Significación ($\alpha$):** 5% (0.05).
+  * **Poder Estadístico ($1-\beta$):** 80% (0.80).
+* **Precisión y Efecto Mínimo Detectable (MDE):**
+  * Se establece un MDE de un incremento del 15% en la Duración de Sesión Nocturna (DSN) en móviles. Asumiendo una sesión nocturna promedio de 8 minutos, esto equivale a una mejora de 1.2 minutos.
+* **Decisión de Tamaño de Muestra:**
+  * Utilizando una desviación estándar histórica de la duración de sesiones móviles de 3 minutos ($\sigma = 180$ segundos) y aplicando una prueba t de Student para muestras independientes, se determina que se requiere un tamaño de muestra mínimo de 100 sesiones nocturnas registradas por cada grupo ($C_E$ y $C_C$) durante un lapso de 14 días.
+
+#### Experimento 4: Soporte Multiidioma i18n (EC-04)
+* **Certeza (Certainty):**
+  * **Nivel de Significación ($\alpha$):** 5% (0.05).
+  * **Poder Estadístico ($1-\beta$):** 80% (0.80).
+* **Precisión y Efecto Mínimo Detectable (MDE):**
+  * Se define un MDE de una reducción del 30% en la Tasa de Abandono de Configuración (TAC) para usuarios con idioma del navegador en inglés. Con una tasa de abandono histórica base del 40%, el objetivo es detectar una reducción absoluta del 12% (alcanzando una tasa del 28%).
+* **Decisión de Tamaño de Muestra:**
+  * Aplicando una prueba de comparación de proporciones de una cola, se determina que se requiere la participación de al menos 80 usuarios únicos que tengan el navegador configurado en inglés y accedan a la vista de configuración del perfil. Para lograr este volumen de usuarios específicos, el período de prueba se extenderá por 20 días.
+
+#### Experimento 5: Insignias de Logros por Cuidado (EC-05)
+* **Certeza (Certainty):**
+  * **Nivel de Significación ($\alpha$):** 5% (0.05).
+  * **Poder Estadístico ($1-\beta$):** 80% (0.80).
+* **Precisión y Efecto Mínimo Detectable (MDE):**
+  * Se establece un MDE de un incremento de 20% en la Tasa de Retención Semanal de Visitas (TRV). Con una frecuencia base de 3.5 ingresos por semana, esto equivale a un incremento promedio de 0.7 días.
+* **Decisión de Tamaño de Muestra:**
+  * Considerando una desviación estándar de la frecuencia semanal de visitas de 1.2 días ($\sigma = 1.2$) y empleando una prueba t de Student para muestras independientes, se requiere un tamaño muestral de al menos 50 usuarios activos por grupo. El experimento se ejecutará durante 14 días completos para evaluar de forma consistente la retención del hábito de cuidado.
 
 ---
 
@@ -372,7 +507,7 @@ Basándose en la comparación anterior y aplicando el principio de la **Simplest
    * **Objeto de Investigación:** Medir el interés real de los usuarios en diagnósticos avanzados frente a retención de datos antes de proceder con su codificación compleja.
    * **Herramientas Seleccionadas:** 
      * **Google Analytics:** Seleccionado por su facilidad de integración en aplicaciones Vue.js, su sencillo aprendizaje de métricas y su excelente capacidad para generar reportes automáticos de la tasa de clics (CTR). Es la herramienta más simple y útil en comparación con alternativas de pago complejas como Catchpoint.
-   * **Método de Prueba:** Un diseño de **Botón Simulado (Fake Door Testing / Smoke Testing)** para capturar de forma directa el interés y registrar clics únicos.
+   * **Método de Prueba:** Un diseño de **Botón Simulado (Prueba de Puerta Falsa / Humo (Fake Door / Smoke))** para capturar de forma directa el interés y registrar clics únicos.
 
 ---
 
@@ -399,11 +534,11 @@ El Plan de Seguimiento (*Tracking Plan*) define formalmente los eventos de inter
 
 ## 8.3. Experimentation
 
-La fase de experimentación ejecuta de forma práctica los diseños definidos para obtener los datos empíricos que darán respuesta a las hipótesis de negocio de **PlantCare**. Este proceso se integra dentro del ciclo de vida de desarrollo de la plataforma, utilizando el pipeline de entrega continua para desplegar de manera ágil los cambios en la interfaz web frontend y en los triggers del backend serverless en **Supabase**, permitiendo una recopilación controlada de eventos bajo las condiciones establecidas.
+La fase de experimentación ejecuta de forma práctica los diseños definidos para obtener los datos empíricos que darán respuesta a las hipótesis de negocio de **PlantCare**. Este proceso se integra dentro del ciclo de vida de desarrollo de la plataforma, utilizando el pipeline de entrega continua para desplegar de manera ágil los cambios en la interfaz web frontend y en los triggers del backend serverless en **Supabase**, permitiendo una recopilación controlada de eventos bajo las condiciones establecidas para las 5 hipótesis experimentales de software.
 
 ### 8.3.1. To-Be User Stories
 
-Para dar soporte a la infraestructura de recolección de datos y ejecutar los experimentos propuestos, se incorporan al backlog dos nuevas Historias de Usuario (*User Stories*). Estas historias siguen la misma estructura y formalidad empleadas en el Capítulo III, detallando descripciones, escenarios con lenguaje Gherkin y reglas específicas de negocio.
+Para dar soporte a la infraestructura de recolección de datos y ejecutar los experimentos propuestos, se incorporan al backlog cinco nuevas Historias de Usuario (*User Stories*). Estas historias siguen la misma estructura y formalidad empleadas en el Capítulo III, detallando descripciones, escenarios con lenguaje Gherkin y reglas específicas de negocio.
 
 ---
 
@@ -447,9 +582,68 @@ Para dar soporte a la infraestructura de recolección de datos y ejecutar los ex
 
 ---
 
+#### US-043: Activación de Modo Oscuro para Comodidad Visual (Soporte a EC-03)
+* **Epic ID:** EPIC 002 (Usabilidad y Accesibilidad)
+* **Story ID:** US-043
+* **Título:** Activación de Modo Oscuro para Comodidad Visual
+* **Descripción:** Como cuidador de plantas en exteriores, quiero cambiar la interfaz de la aplicación web a modo oscuro mediante un botón en la barra de navegación, para reducir la fatiga visual al consultar el estado de mis plantas de noche o bajo condiciones de alta luminosidad solar.
+* **Criterios de Aceptación:**
+  * **Escenario 01: Alternancia exitosa a modo oscuro**
+    * Dado que un usuario accede al panel principal de la aplicación web
+    * Cuando hace clic en el selector de modo oscuro ubicado en la barra de navegación superior
+    * Entonces el tema de la aplicación cambia de forma inmediata a alto contraste oscuro y se almacena la preferencia en la memoria local del navegador (`localStorage`).
+  * **Escenario 02: Registro de telemetría de la sesión nocturna**
+    * Dado que un usuario inicia sesión en la aplicación móvil o web en el rango nocturno (19:00 a 06:00)
+    * Cuando interactúa con el dashboard principal en modo oscuro
+    * Entonces el sistema registra el tiempo de inicio y fin de la sesión nocturna y lo envía a la tabla `user_sessions` en **Supabase** de manera agregada para medir la Duración de Sesión Nocturna (DSN).
+* **Reglas de Negocio:**
+  * El modo oscuro debe aplicar una paleta de colores HSL consistente con alto contraste para garantizar la legibilidad en pantallas de teléfonos móviles.
+  * Si la preferencia ya fue almacenada en `localStorage`, la aplicación web debe renderizar por defecto el modo oscuro en la carga inicial de la página.
+
+---
+
+#### US-044: Soporte de Multiidioma i18n en la Aplicación Web (Soporte a EC-04)
+* **Epic ID:** EPIC 008 (Internacionalización y Localización)
+* **Story ID:** US-044
+* **Título:** Soporte de Multiidioma i18n en la Aplicación Web
+* **Descripción:** Como usuario internacional que tiene el navegador configurado en inglés, quiero poder visualizar toda la interfaz de configuración del perfil y del dashboard en mi idioma de preferencia mediante traducción por i18n, para comprender claramente cada uno de los campos requeridos y evitar abandonar el proceso.
+* **Criterios de Aceptación:**
+  * **Escenario 01: Detección automática de idioma del navegador**
+    * Dado que un usuario nuevo con navegador en inglés accede por primera vez a la aplicación web
+    * Cuando el sistema detecta que el idioma por defecto del navegador es `en` (inglés)
+    * Entonces la interfaz se renderiza automáticamente en inglés empleando las traducciones locales de la biblioteca i18n.
+  * **Escenario 02: Cambio manual de idioma**
+    * Dado que un usuario visualiza la interfaz de la página de configuración
+    * Cuando selecciona el idioma inglés en el conmutador de la cabecera
+    * Entonces el sistema actualiza la traducción de todos los textos del formulario al inglés de manera instantánea y sin recargar la página.
+* **Reglas de Negocio:**
+  * Toda etiqueta, botón y mensaje de validación del formulario de configuración de perfil debe contar con su correspondiente traducción en los archivos `locales/es.json` y `locales/en.json`.
+
+---
+
+#### US-045: Visualización de Insignia de Logros por Cuidado (Soporte a EC-05)
+* **Epic ID:** EPIC 009 (Mecánicas de Gamificación)
+* **Story ID:** US-045
+* **Título:** Visualización de Insignia de Logros por Cuidado
+* **Descripción:** Como cuidador de plantas domésticas, quiero visualizar una insignia de "Cuidador Experto" en mi panel de perfil cuando mantenga a mis plantas sanas por 7 días consecutivos, para sentirme motivado a ingresar frecuentemente a revisar su estado.
+* **Criterios de Aceptación:**
+  * **Escenario 01: Otorgamiento automático de insignia**
+    * Dado que la base de datos registra que las plantas de un usuario no han tenido ninguna lectura de humedad del suelo menor o igual al 20% por 7 días consecutivos
+    * Cuando el cron job del servidor procesa las estadísticas de cuidado diarias
+    * Entonces asigna la insignia "Cuidador Experto" al usuario y guarda el logro en la tabla `user_achievements` de **Supabase**.
+  * **Escenario 02: Visualización del panel de logros**
+    * Dado que un usuario calificado ingresa al panel principal
+    * Cuando hace clic en la pestaña "Logros" del panel lateral
+    * Entonces el widget muestra la insignia virtual desbloqueada con una animación interactiva.
+* **Reglas de Negocio:**
+  * Si alguna planta del usuario registra un estado crítico de humedad durante el período de 7 días, el contador de días consecutivos se reinicia a cero de forma automática.
+  * El widget de logros se actualizará de forma asincrónica una vez al día para no degradar el rendimiento del dashboard del cliente web.
+
+---
+
 ### 8.3.2. To-Be Product Backlog
 
-El Backlog de Producto se actualiza para incorporar las nuevas Historias de Usuario diseñadas para dar soporte a los experimentos. Para el Sprint To-Be 1, se priorizan las historias de experimentación (**US-041** y **US-042**) por encima de los requisitos pendientes del backlog original, con el fin de mitigar el riesgo de producto en la etapa más temprana posible del ciclo de desarrollo.
+El Backlog de Producto se actualiza para incorporar las nuevas Historias de Usuario diseñadas para dar soporte a los experimentos. Para el Sprint To-Be 1, se priorizan las historias de experimentación (**US-041** a **US-045**) por encima de los requisitos pendientes del backlog original, con el fin de mitigar el riesgo de producto en la etapa más temprana posible del ciclo de desarrollo.
 
 El backlog consolidado de **PlantCare** se detalla en la siguiente tabla:
 
@@ -457,16 +651,19 @@ El backlog consolidado de **PlantCare** se detalla en la siguiente tabla:
 | :---: | :--- | :--- | :--- | :---: | :--- |
 | **1** | **US-041** | Alertas contextuales de riego a Discord | Como usuario ocupado, quiero recibir alertas automáticas en Discord ante estados críticos de humedad | 8 | Priorizado (Sprint To-Be 1) |
 | **2** | **US-042** | Simulación de compra de suscripción premium | Como usuario gratuito, quiero pulsar en opciones premium para registrar mi interés de compra | 5 | Priorizado (Sprint To-Be 1) |
-| 3 | US-015 | Visualización unificada de plantas | Como usuario, quiero ver todas mis plantas en una vista consolidada con estado de salud | 8 | Completado (Sprint As-Is 1) |
-| 4 | US-020 | Visualización avanzada en tiempo real | Como aficionado, quiero ver datos de sensores en tiempo real con múltiples parámetros | 8 | Completado (Sprint As-Is 1) |
-| 5 | US-011 | Registro simplificado de planta | Como usuario, quiero registrar una nueva planta completando información básica esencial | 3 | Completado (Sprint As-Is 1) |
-| 6 | US-012 | Edición rápida de información de planta | Como usuario, quiero editar la información básica de una planta registrada | 2 | Completado (Sprint As-Is 1) |
-| 7 | US-005 | Registro de usuario | Como visitante, quiero registrarme con datos básicos protegidos para crear una cuenta segura | 5 | Completado (Sprint As-Is 1) |
-| 8 | US-006 | Inicio de sesión | Como usuario registrado, quiero autenticarme de forma segura con mis credenciales | 3 | Completado (Sprint As-Is 1) |
-| 9 | US-023 | Reportes de largo plazo | Como aficionado, quiero acceder a reportes mensuales y anuales consolidados | 5 | Pendiente |
-| 10 | US-019 | Monitoreo detallado de humedad | Como aficionado, quiero monitorear precisamente la humedad del aire | 5 | Pendiente |
-| 11 | US-040 | Sistema de confirmación y seguimiento | Como usuario, quiero confirmar cuando he aplicado riego y recibir seguimiento del historial | 5 | Pendiente |
-| 12 | US-013 | Eliminación confirmada de planta | Como usuario, quiero eliminar plantas que ya no cuido | 2 | Pendiente |
-| 13 | US-014 | Configuración de parámetros básicos | Como usuario, quiero definir parámetros esenciales para cada planta | 3 | Pendiente |
-| 14 | US-008 | Gestión de sesión | Como usuario, quiero que mi sesión se maneje de forma segura | 2 | Pendiente |
-| 15 | US-010 | Cerrar sesión | Como usuario, quiero cerrar sesión de manera definitiva | 2 | Pendiente |
+| **3** | **US-043** | Activación de Modo Oscuro para Comodidad Visual | Como cuidador de plantas, quiero alternar a modo oscuro para mejorar la legibilidad bajo el sol o de noche | 5 | Priorizado (Sprint To-Be 1) |
+| **4** | **US-044** | Soporte de Multiidioma i18n en la Aplicación Web | Como usuario internacional, quiero la interfaz en inglés para evitar errores lingüísticos | 5 | Priorizado (Sprint To-Be 1) |
+| **5** | **US-045** | Visualización de Insignia de Logros por Cuidado | Como cuidador, quiero ganar medallas por la racha de plantas sanas para motivarme a ingresar | 8 | Priorizado (Sprint To-Be 1) |
+| 6 | US-015 | Visualización unificada de plantas | Como usuario, quiero ver todas mis plantas en una vista consolidada con estado de salud | 8 | Completado (Sprint As-Is 1) |
+| 7 | US-020 | Visualización avanzada en tiempo real | Como aficionado, quiero ver datos de sensores en tiempo real con múltiples parámetros | 8 | Completado (Sprint As-Is 1) |
+| 8 | US-011 | Registro simplificado de planta | Como usuario, quiero registrar una nueva planta completando información básica esencial | 3 | Completado (Sprint As-Is 1) |
+| 9 | US-012 | Edición rápida de información de planta | Como usuario, quiero editar la información básica de una planta registrada | 2 | Completado (Sprint As-Is 1) |
+| 10 | US-005 | Registro de usuario | Como visitante, quiero registrarme con datos básicos protegidos para crear una cuenta segura | 5 | Completado (Sprint As-Is 1) |
+| 11 | US-006 | Inicio de sesión | Como usuario registrado, quiero autenticarme de forma segura con mis credenciales | 3 | Completado (Sprint As-Is 1) |
+| 12 | US-023 | Reportes de largo plazo | Como aficionado, quiero acceder a reportes mensuales y anuales consolidados | 5 | Pendiente |
+| 13 | US-019 | Monitoreo detallado de humedad | Como aficionado, quiero monitorear precisamente la humedad del aire | 5 | Pendiente |
+| 14 | US-040 | Sistema de confirmación y seguimiento | Como usuario, quiero confirmar cuando he aplicado riego y recibir seguimiento del historial | 5 | Pendiente |
+| 15 | US-013 | Eliminación confirmada de planta | Como usuario, quiero eliminar plantas que ya no cuido | 2 | Pendiente |
+| 16 | US-014 | Configuración de parámetros básicos | Como usuario, quiero definir parámetros esenciales para cada planta | 3 | Pendiente |
+| 17 | US-008 | Gestión de sesión | Como usuario, quiero que mi sesión se maneje de forma segura | 2 | Pendiente |
+| 18 | US-010 | Cerrar sesión | Como usuario, quiero cerrar sesión de manera definitiva | 2 | Pendiente |
