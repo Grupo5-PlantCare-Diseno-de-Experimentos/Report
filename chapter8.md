@@ -671,20 +671,6 @@ El backlog consolidado de **PlantCare** se detalla en la siguiente tabla:
 | **3** | **US-043** | Activación de Modo Oscuro para Comodidad Visual | Como cuidador de plantas, quiero alternar a modo oscuro para mejorar la legibilidad bajo el sol o de noche | 5 | Priorizado (Sprint To-Be 1) |
 | **4** | **US-044** | Soporte de Multiidioma i18n en la Aplicación Web | Como usuario internacional, quiero la interfaz en inglés para evitar errores lingüísticos | 5 | Priorizado (Sprint To-Be 1) |
 | **5** | **US-045** | Visualización de Insignia de Logros por Cuidado | Como cuidador, quiero ganar medallas por la racha de plantas sanas para motivarme a ingresar | 8 | Priorizado (Sprint To-Be 1) |
-| 6 | US-015 | Visualización unificada de plantas | Como usuario, quiero ver todas mis plantas en una vista consolidada con estado de salud | 8 | Completado (Sprint As-Is 1) |
-| 7 | US-020 | Visualización avanzada en tiempo real | Como aficionado, quiero ver datos de sensores en tiempo real con múltiples parámetros | 8 | Completado (Sprint As-Is 1) |
-| 8 | US-011 | Registro simplificado de planta | Como usuario, quiero registrar una nueva planta completando información básica esencial | 3 | Completado (Sprint As-Is 1) |
-| 9 | US-012 | Edición rápida de información de planta | Como usuario, quiero editar la información básica de una planta registrada | 2 | Completado (Sprint As-Is 1) |
-| 10 | US-005 | Registro de usuario | Como visitante, quiero registrarme con datos básicos protegidos para crear una cuenta segura | 5 | Completado (Sprint As-Is 1) |
-| 11 | US-006 | Inicio de sesión | Como usuario registrado, quiero autenticarme de forma segura con mis credenciales | 3 | Completado (Sprint As-Is 1) |
-| 12 | US-023 | Reportes de largo plazo | Como aficionado, quiero acceder a reportes mensuales y anuales consolidados | 5 | Pendiente |
-| 13 | US-019 | Monitoreo detallado de humedad | Como aficionado, quiero monitorear precisamente la humedad del aire | 5 | Pendiente |
-| 14 | US-040 | Sistema de confirmación y seguimiento | Como usuario, quiero confirmar cuando he aplicado riego y recibir seguimiento del historial | 5 | Pendiente |
-| 15 | US-013 | Eliminación confirmada de planta | Como usuario, quiero eliminar plantas que ya no cuido | 2 | Pendiente |
-| 16 | US-014 | Configuración de parámetros básicos | Como usuario, quiero definir parámetros esenciales para cada planta | 3 | Pendiente |
-| 17 | US-008 | Gestión de sesión | Como usuario, quiero que mi sesión se maneje de forma segura | 2 | Pendiente |
-| 18 | US-010 | Cerrar sesión | Como usuario, quiero cerrar sesión de manera definitiva | 2 | Pendiente |
-
 ---
 
 ### 8.3.3. Pipeline-supported, Experiment-Driven To-Be Software Platform Lifecycle
