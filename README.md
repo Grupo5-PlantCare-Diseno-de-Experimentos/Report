@@ -17,7 +17,7 @@ Séptimo Ciclo (07)
 
 
 
-<h1 align="center">📘 Informe del TB2</h1>
+<h1 align="center">📘 Informe del Trabajo Final</h1>
 
 <p align="center"><i>Diseño de Experimentos de Ingeniería de Software</i></p>
 
