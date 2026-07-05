@@ -246,6 +246,7 @@ https://github.com/Grupo5-PlantCare-Diseno-de-Experimentos
       - [8.5.1. Shareback Session Artifacts: Learning Workflow](#851-shareback-session-artifacts-learning-workflow)
     - [8.6. To-Be Software Platform Pre-launch](#86-to-be-software-platform-pre-launch)
       - [8.6.1. About-the-Product Intro Video](#861-about-the-product-intro-video)
+    - [Matriz de Evaluación Ética y de Impacto](#matriz-de-evaluación-ética-y-de-impacto)
     - [Conclusiones](#conclusiones)
     - [Video App Validation](#video-app-validation)
     - [Video About-the-Team](#video-about-the-team)
