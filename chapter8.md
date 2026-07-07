@@ -748,19 +748,67 @@ Después del análisis, el Question Backlog se ajusta manteniendo la prioridad d
 
 ## 8.5. Continuous Learning
 
-La sección de aprendizaje continuo resume cómo el equipo convierte la evidencia del experimento en decisiones reutilizables. El foco no está solo en qué funcionó, sino en qué prácticas pueden repetirse en ciclos futuros sin perder trazabilidad.
+La etapa de aprendizaje continuo permitió que el equipo de **PlantCare** transforme los resultados del ciclo experimental en decisiones reutilizables para las siguientes iteraciones del producto. Esta sección no se limita a indicar qué funcionalidades fueron implementadas, sino que explica cómo la evidencia obtenida mediante pruebas, despliegue web, analíticas y revisión del backlog se convierte en conocimiento útil para el equipo.
+
+Durante el ciclo To-Be se identificó que las mejoras con mayor valor no son necesariamente las más complejas técnicamente, sino aquellas que reducen riesgos directos para el usuario. Por ejemplo, las alertas externas permiten actuar con mayor rapidez ante estados críticos de humedad, mientras que el modo oscuro y la adaptación visual mejoran la comodidad de uso en escenarios reales como jardines, interiores con poca luz o consultas rápidas desde dispositivos móviles.
+
+El aprendizaje principal fue que cada cambio debe mantenerse conectado con una hipótesis, una métrica y una decisión posterior. Por ello, el equipo organizó los hallazgos en torno a tres preguntas: qué se aprendió, qué decisión se toma y qué debe probarse en la siguiente iteración. Esta práctica ayuda a evitar que la experimentación quede como una actividad aislada y permite que el backlog evolucione con trazabilidad.
+
+Asimismo, la web desplegada sirvió como punto de validación para revisar la consistencia del mensaje de producto, la navegación, la presentación de funcionalidades y la preparación de la plataforma para una demostración final. Al contar con una versión pública, el equipo pudo evaluar la solución desde la perspectiva del usuario final y no solo desde el entorno local de desarrollo.
 
 ### 8.5.1. Shareback Session Artifacts: Learning Workflow
 
-El workflow de aprendizaje incluye: revisión de resultados, discusión de hallazgos, actualización del backlog y registro de lecciones. En el informe se debe incluir evidencia de retrospectiva, acuerdos de mejora y una síntesis de aprendizajes por integrante.
+La sesión de shareback se realizó como una retrospectiva del ciclo experimental. El objetivo fue revisar los resultados obtenidos, discutir los hallazgos más importantes, actualizar el backlog y registrar las lecciones aprendidas por el equipo. La dinámica permitió conectar el trabajo técnico con el impacto esperado en usuarios y negocio.
+
+| Etapa del workflow | Actividad realizada | Resultado obtenido |
+| :--- | :--- | :--- |
+| Revisión de resultados | Se revisaron los cambios implementados en la plataforma To-Be, incluyendo alertas externas, modo oscuro, soporte multiidioma, propuesta premium y gamificación. | El equipo identificó qué funcionalidades aportan mayor valor y cuáles requieren mayor validación. |
+| Discusión de hallazgos | Se compararon los supuestos iniciales con la evidencia recopilada durante la implementación y revisión de la web desplegada. | Se confirmó que las alertas, la accesibilidad visual y la claridad del valor premium son puntos críticos para el producto. |
+| Actualización del backlog | Se reorganizaron las preguntas del Question Backlog según riesgo, impacto y viabilidad. | Las alertas críticas y la validación del plan premium se mantuvieron como prioridades principales. |
+| Registro de lecciones | Cada integrante documentó qué aprendió desde su rol y cómo ese aprendizaje puede aplicarse en futuros ciclos. | Se consolidó una base de conocimiento para repetir el proceso experimental con mayor orden y trazabilidad. |
+
+**Acuerdos de mejora definidos por el equipo:**
+
+- Mantener una relación explícita entre cada historia de usuario, hipótesis, métrica y evidencia.
+- Priorizar primero las funcionalidades que reducen riesgos para el usuario, como alertas críticas y seguridad de datos.
+- Validar la experiencia en la web desplegada antes de cerrar una funcionalidad como terminada.
+- Registrar los cambios del backlog después de cada ciclo experimental para conservar trazabilidad.
+- Mejorar la claridad de los mensajes de producto, especialmente en planes premium, alertas y funcionalidades nuevas.
+
+**Síntesis de aprendizajes por integrante:**
+
+| Integrante | Aprendizaje principal | Aplicación en próximos ciclos |
+| :--- | :--- | :--- |
+| Casaverde De La Cruz, Ernesto David | Comprendió la importancia de que la interfaz no solo sea visualmente correcta, sino también accesible y fácil de validar desde una versión desplegada. | Reforzar pruebas de usabilidad, contraste visual y claridad de navegación antes de presentar nuevas versiones. |
+| Brayan Alexis Corvacho Damian | Identificó que la arquitectura y los endpoints deben diseñarse pensando en trazabilidad, seguridad y capacidad de medición. | Mantener eventos, logs y respuestas del backend alineados con las hipótesis del experimento. |
+| Juan Sebastian Estupiñán Olortegui | Reforzó la necesidad de usar datos y métricas para evaluar si una funcionalidad realmente mejora el comportamiento del usuario. | Definir indicadores claros antes de implementar nuevas mejoras o experimentos. |
+| Enrique Manuel Mantilla Maldonado | Aprendió que las pruebas integradas y la validación previa al lanzamiento reducen riesgos técnicos y mejoran la confianza del equipo. | Fortalecer la documentación de pruebas, evidencias y criterios de aceptación para cada entrega. |
 
 ## 8.6. To-Be Software Platform Pre-launch
 
-El pre-lanzamiento agrupa el estado final del producto antes de su publicación o demo final. Aquí se valida que la solución esté lista para ser presentada, que la instrumentación de datos funcione y que el mensaje de producto sea consistente con las hipótesis evaluadas.
+El pre-lanzamiento de la plataforma To-Be agrupa el estado final de **PlantCare** antes de su presentación o demo final. En esta etapa se revisó que la solución desplegada mantenga coherencia con las hipótesis evaluadas, que el mensaje de producto sea claro para los usuarios y que las funcionalidades principales puedan demostrarse desde una versión pública.
+
+La web desplegada representa el punto de cierre del ciclo experimental, porque permite validar el producto fuera del entorno local y observar la experiencia como la recibiría un usuario real. Esta versión permite mostrar la propuesta de valor, el acceso a las funcionalidades principales y la evolución del producto después de aplicar las mejoras definidas en el capítulo.
+
+**Versión pública desplegada:** https://plant-care-web-experimental.vercel.app/login
+
+| Criterio de pre-lanzamiento | Estado | Evidencia / validación |
+| :--- | :---: | :--- |
+| Disponibilidad de la web | Completado | La plataforma cuenta con una versión pública desplegada para revisión y demostración. |
+| Coherencia con hipótesis | Completado | Las funcionalidades To-Be se relacionan con alertas, experiencia visual, localización, premium y gamificación. |
+| Mensaje de producto | Completado | La propuesta comunica el valor de PlantCare como solución para monitoreo y cuidado inteligente de plantas. |
+| Preparación para demo | Completado | La versión pública permite explicar el flujo principal del usuario y las mejoras del ciclo experimental. |
+| Instrumentación y medición | En validación | Se definieron eventos, KPIs y métricas para evaluar comportamiento del usuario en ciclos posteriores. |
+| Riesgos pendientes | Identificado | Se requiere seguir validando privacidad, precisión de alertas, accesibilidad y respuesta real de usuarios. |
+
+Como resultado del pre-lanzamiento, el equipo concluye que la plataforma se encuentra lista para ser presentada como versión To-Be del proyecto. Sin embargo, el lanzamiento no se considera un cierre definitivo, sino una base para continuar recolectando evidencia, ajustar prioridades y mejorar la solución mediante nuevos ciclos de experimentación.
 
 ### 8.6.1. About-the-Product Intro Video
 
-El video de introducción del producto debe resumir el problema, la propuesta de valor, las principales funcionalidades y las mejoras derivadas del ciclo experimental. Debe servir como pieza ejecutiva para mostrar el estado To-Be del producto y su lectura de negocio.
+El video de introducción del producto resume el problema abordado por **PlantCare**, la propuesta de valor, las principales funcionalidades y las mejoras derivadas del ciclo experimental. Esta pieza funciona como evidencia ejecutiva del estado To-Be del producto, ya que permite presentar de forma breve cómo la solución evolucionó a partir de las hipótesis, pruebas y decisiones descritas en el capítulo.
+
+
+Versión pública: https://goo.su/NFZgK 
 
 ## Matriz de Evaluación Ética y de Impacto
 
@@ -780,13 +828,18 @@ La Matriz de Evaluación Ética y de Impacto permite al equipo de **PlantCare** 
 
 PlantCare cerró el ciclo experimental con una propuesta más clara y medible. Las alertas externas, la mejora visual y la instrumentación de analíticas fortalecen la capacidad del equipo para decidir con evidencia.
 
-## Video App Validation
+Además, el trabajo de Experiment-Driven Development permitió convertir supuestos iniciales en preguntas verificables. Esto hizo posible priorizar los riesgos reales del producto, especialmente aquellos relacionados con la respuesta del usuario ante alertas críticas, la percepción de valor del plan premium y la comodidad de uso en distintos contextos.
 
-Esta sección debe incluir el enlace al video de validación de la app y una síntesis de los escenarios demostrados. El enlace debe estar acompañado por una descripción breve del alcance de la validación.
+La incorporación de mejoras como el modo oscuro, la localización y las notificaciones por canales externos no solo responde a necesidades funcionales, sino también a problemas de usabilidad y accesibilidad. Con ello, PlantCare deja de ser una propuesta centrada únicamente en monitoreo y pasa a una solución más completa, adaptable y orientada a distintos perfiles de usuario.
 
-## Video About-the-Team
+Por otra parte, la matriz de evaluación ética y de impacto mostró que el proyecto también debe analizar sus efectos fuera del plano técnico. El equipo identificó riesgos asociados a la privacidad, la accesibilidad, el consumo de recursos y la seguridad del sistema, lo que refuerza la importancia de diseñar con responsabilidad y no solo con eficiencia.
 
-Esta sección debe incluir el enlace al video del equipo, con testimonios de cada integrante y un cierre de retrospectiva grupal. Debe quedar claro qué hizo cada persona y qué aprendió durante el ciclo.
+Finalmente, el capítulo 8 demuestra que el valor del experimento no está solamente en validar funcionalidades, sino en orientar decisiones de producto con mayor fundamento. Gracias a la medición, la priorización y la revisión continua, el equipo cuenta con una base más sólida para futuras iteraciones y para un eventual lanzamiento con menor incertidumbre.
+
+
+
+
+
 
 ## Bibliografía
 
