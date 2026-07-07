@@ -689,35 +689,101 @@ El Sprint To-Be 1 incorpora las historias US-041 a US-045 porque están directam
 
 #### 8.3.3.2. Implemented To-Be Landing Page Evidence
 
-La landing page To-Be debe mostrar de forma explícita los cambios que soportan la experimentación: acceso al modo oscuro, selector de idioma, bloques promocionales de planes premium y mensajes de valor alineados con el core business. En el informe se deben incluir capturas del estado final y una explicación breve del propósito de cada componente.
+La landing page To-Be muestra de forma explícita los cambios que soportan la experimentación y que preparan al usuario para entrar al flujo principal de PlantCare. La cabecera concentra tres acciones clave: activación del modo oscuro, selección de idioma y acceso a los mensajes de valor del producto. Con ello se valida la primera interacción del usuario antes de ingresar al panel.
+
+**Componentes evidenciados en la landing page:**
+
+| Componente | Propósito dentro del experimento |
+| :--- | :--- |
+| Selector de modo oscuro | Permite comprobar la hipótesis de comodidad visual y persistir la preferencia del usuario para consultas en exteriores o de noche. |
+| Selector de idioma | Reduce fricción para usuarios internacionales y valida el soporte i18n del flujo de acceso inicial. |
+| Bloques promocionales premium | Presentan el valor diferencial del plan avanzado y sirven como punto de medición del interés comercial. |
+| Mensajes de valor de PlantCare | Refuerzan el core business: monitoreo inteligente, alertas oportunas y cuidado asistido de plantas. |
+
+La evidencia final debe incluir capturas de escritorio y tablet, además de la vista en tema oscuro, para demostrar que la landing page conserva legibilidad, jerarquía visual y consistencia responsive. En particular, la sección hero y los bloques promocionales deben mostrar claramente el beneficio del producto sin distraer del objetivo principal de conversión.
+
+**Propósito de la landing page en el ciclo To-Be:** validar el mensaje de producto, orientar al usuario hacia la exploración de funciones experimentales y registrar la primera señal de interacción sobre idioma, tema y planes premium.
 
 #### 8.3.3.3. Implemented To-Be Frontend-Web Application Evidence
 
-En la aplicación web To-Be se documentan los componentes que capturan la interacción del usuario: tarjetas de estado, gráficos históricos, modal de planes premium, selector de tema y flujo de configuración. La evidencia debe demostrar que la interfaz implementa los eventos definidos en el tracking plan y que la experiencia es consistente en escritorio y tablet.
+En la aplicación web To-Be se documentan los componentes que capturan la interacción del usuario y generan la telemetría necesaria para el experimento. El dashboard integra tarjetas de estado, gráficos históricos, modal de planes premium, selector de tema y flujo de configuración del perfil, de modo que cada interacción quede asociada a una hipótesis medible.
+
+**Componentes principales del frontend web:**
+
+| Componente | Evidencia funcional | Relación con el tracking plan |
+| :--- | :--- | :--- |
+| Tarjetas de estado | Exponen humedad, temperatura, luz y batería para visualizar el estado operativo de cada planta. | Permiten medir qué módulos del panel reciben más atención y cómo cambia la navegación del usuario. |
+| Gráficos históricos | Presentan la evolución temporal de las métricas para validar lectura y comprensión de tendencias. | Registran interacción con históricos y consulta repetida de métricas. |
+| Modal de planes premium | Expone beneficios, beneficios diferenciales y llamada a la acción de prueba o interés. | Registra señales de interés comercial y apertura del contenido promocional. |
+| Selector de tema | Cambia entre tema claro y oscuro sin recargar la aplicación. | Permite evaluar uso real del modo oscuro y su persistencia. |
+| Flujo de configuración | Centraliza idioma, preferencias de usuario y ajustes de experiencia. | Instrumenta acciones de configuración y fricción en el onboarding. |
+
+La evidencia debe demostrar que la interfaz activa los eventos definidos en el plan de seguimiento al abrir el modal, cambiar el tema, modificar el idioma o confirmar interés en premium. También debe mostrarse que el diseño se comporta de forma consistente en escritorio y tablet, conservando la disposición de las tarjetas, la legibilidad de los gráficos y la accesibilidad de la configuración.
+
+**Propósito del frontend web en el ciclo To-Be:** capturar la interacción real del usuario, sostener la experimentación con eventos observables y demostrar que la experiencia se mantiene usable en pantallas de distinto tamaño.
 
 #### 8.3.3.4. Implemented To-Be Native-Mobile Application Evidence
 
-Si el producto incluye experiencia nativa o una vista móvil optimizada, esta subsección debe evidenciar los flujos principales en pantallas pequeñas. Para PlantCare, esto incluye navegación responsive, activación del modo oscuro, lectura de métricas y acceso rápido a alertas de riego desde dispositivos móviles.
+PlantCare no incorpora en este ciclo una aplicación nativa separada; sin embargo, la versión web implementa una vista móvil optimizada que cumple el rol de experiencia compacta para pantallas pequeñas. Esta decisión permite validar los flujos críticos sin duplicar la lógica del producto y conserva coherencia con la base tecnológica del proyecto.
+
+**Flujos móviles evidenciados:**
+
+| Flujo | Comportamiento esperado | Valor para el experimento |
+| :--- | :--- | :--- |
+| Navegación responsive | El menú y los bloques principales se reacomodan para facilitar el uso con una sola mano. | Permite validar que la información esencial siga siendo accesible en pantallas reducidas. |
+| Activación de modo oscuro | El usuario puede cambiar el tema desde móvil con la misma preferencia persistente. | Mide si la comodidad visual también aporta valor en consultas rápidas fuera de escritorio. |
+| Lectura de métricas | Las tarjetas y gráficos se adaptan para priorizar claridad sobre densidad visual. | Permite revisar si el usuario puede interpretar el estado de la planta sin zoom adicional. |
+| Acceso rápido a alertas | Las rutas de riego o advertencias quedan visibles desde la vista móvil. | Reduce el tiempo entre la detección de un problema y la acción del usuario. |
+
+La evidencia ideal debe mostrar capturas de teléfono o emulación móvil donde se observe el menú adaptable, el dashboard resumido y la lectura de alertas o métricas sin pérdida de funcionalidad. Si se desea incluir una referencia a experiencia nativa futura, esta sección puede tratar la vista móvil como base para una eventual app móvil dedicada.
 
 #### 8.3.3.5. Implemented To-Be RESTful API and/or Serverless Backend Evidence
 
-El backend To-Be debe mostrar los cambios que habilitan los experimentos: triggers de Supabase, inserción en tablas de telemetría, webhooks hacia Discord, registros de interés premium y almacenamiento de sesiones. La documentación debe listar endpoints, eventos y tablas involucradas para que la trazabilidad sea verificable.
+El backend To-Be habilita los experimentos mediante triggers de Supabase, inserción de registros de telemetría, webhooks hacia Discord, registros de interés premium y almacenamiento de sesiones. La trazabilidad se apoya en eventos explícitos y en tablas que permiten reconstruir cada interacción relevante del usuario.
+
+| Evento o proceso | Tabla / integración | Evidencia esperada |
+| :--- | :--- | :--- |
+| Detección de humedad crítica | `sensor_readings` + trigger serverless | Dispara la lógica que prepara y envía la alerta contextual hacia Discord. |
+| Notificación de riego crítico | Webhook de Discord | Registra el envío del mensaje con enlace parametrizado al diagnóstico. |
+| Interés en premium | `premium_leads` | Guarda la señal de compra simulada generada desde el modal promocional. |
+| Sesiones de uso | `user_sessions` | Almacena la duración de la sesión, especialmente en horario nocturno para medir DSN. |
+| Racha de cuidado | `user_achievements` | Registra la insignia cuando el usuario cumple la condición de 7 días sin estados críticos. |
+| Retorno a riego normal | `watering_logs` | Reinicia la lógica de alertas y evita spam al confirmar recuperación de humedad. |
+
+**Endpoints, eventos y salidas documentadas:**
+
+- Evento de inserción en lectura crítica de sensores.
+- Evento de disparo hacia webhook externo de Discord.
+- Evento de apertura y confirmación del modal premium.
+- Evento de persistencia de sesión y preferencia de experiencia.
+- Evento de cálculo de logros y actualización de historial de cuidado.
+
+La documentación debe dejar claro qué tabla alimenta cada experimento, qué proceso serverless lo procesa y qué salida genera. Con ello se verifica que la capa backend no solo guarda datos, sino que también ejecuta la lógica necesaria para sostener las hipótesis del To-Be.
 
 #### 8.3.3.6. Team Collaboration Insights
 
-Esta parte resume cómo colaboró el equipo durante la implementación del ciclo To-Be. Debe incluir evidencia de commits, ramas, revisiones de código y acuerdos de trabajo. La coherencia entre contribuciones, versiones del informe y cambios en el repositorio es obligatoria para sostener la trazabilidad del proyecto.
+La colaboración del equipo durante el ciclo To-Be quedó registrada en el historial de Git y en las actualizaciones sucesivas del informe. El repositorio muestra una secuencia clara de trabajo sobre `main`, con ramas remotas de soporte para los capítulos previos (`Feature/Chapter1` a `Feature/Chapter6`) y commits específicos dedicados a la consolidación de Chapter 7 y Chapter 8.
 
-#### 8.3.4. To-Be Validation Interviews
+**Evidencia de trazabilidad observada en Git:**
 
-Las entrevistas de validación To-Be se usan para contrastar el comportamiento observado en el experimento con la percepción de los usuarios. En PlantCare, estas entrevistas se enfocan en dos segmentos: usuarios ocupados y aficionados a las plantas.
+| Tipo de evidencia | Ejemplo encontrado | Lectura de colaboración |
+| :--- | :--- | :--- |
+| Rama principal | `main`, `origin/main` | Sirvió como línea de integración final para consolidar el informe. |
+| Ramas de trabajo previas | `origin/Feature/Chapter1` a `origin/Feature/Chapter6` | Indican división por capítulos y trabajo incremental por entregables. |
+| Commit de ajuste To-Be | `91754c5` - `update to-be backlog` | Muestra una corrección puntual sobre la priorización experimental. |
+| Commit de consolidación final | `af3bf2e` - `feat: final commit` | Resume el cierre del capítulo con la versión final del documento. |
+| Correcciones intermedias | `1f1f336`, `7a5d79a`, `c543f9e` | Evidencian revisión iterativa y depuración de contenido antes del cierre. |
 
-##### 8.3.4.1. Diseño de Entrevistas
+**Acuerdos de trabajo que se desprenden del historial:**
 
-El diseño debe incluir objetivos, perfil del entrevistado, tareas a observar y preguntas de cierre. Las entrevistas deben explorar si el modo oscuro mejora la lectura, si las alertas de Discord son útiles, si el idioma reduce fricción y si la gamificación aporta valor real.
+- Mantener el informe alineado con la implementación descrita en el backlog To-Be.
+- Revisar y ajustar capítulos en iteraciones cortas antes de consolidar la versión final.
+- Priorizar trazabilidad entre historias de usuario, commits y secciones del informe.
+- Cerrar cambios en una rama principal estable una vez verificada la coherencia documental.
 
-##### 8.3.4.2. Registro de Entrevistas
+La coherencia entre contribuciones, versiones del informe y cambios en el repositorio permite sostener la trazabilidad del proyecto. Además, el historial de commits muestra que el equipo trabajó con una lógica de avance incremental, donde cada ajuste posterior afinó la documentación del experimento sin romper la estructura global del informe.
 
-El registro debe documentar fecha, participante, segmento, hallazgos y citas relevantes. La evidencia ideal combina capturas, transcripción parcial y un resumen interpretativo para cada sesión.
+
 
 ## 8.4. Experiment Aftermath & Analysis
 
